@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cgtwv07q80ihg"]
+
+[node name="Worldboundries" type="StaticBody2D"]

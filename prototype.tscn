@@ -1,0 +1,171 @@
+[gd_scene load_steps=4 format=3 uid="uid://bowthejlbql7e"]
+
+[ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
+[ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udnpg"]
+size = Vector2(21.9677, 1403.56)
+
+[node name="prototype" type="Node2D"]
+position = Vector2(1.60001, 0.120216)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_vmgys")]
+z_index = 1
+position = Vector2(-240, 128)
+
+[node name="kitchen" type="Node" parent="."]
+
+[node name="Polygon2D2" type="Polygon2D" parent="kitchen"]
+position = Vector2(26.5796, 0.120209)
+scale = Vector2(0.954082, 1.5)
+color = Color(0.519163, 0.519161, 0.519162, 1)
+polygon = PackedVector2Array(89.5315, -0.0801392, 89.5315, 79.9199, 318.956, 80, 544, 80, 544, 0)
+
+[node name="Polygon2D5" type="Polygon2D" parent="kitchen"]
+position = Vector2(25.6, 528.12)
+scale = Vector2(0.954082, 1.5)
+color = Color(0.519163, 0.519161, 0.519162, 1)
+polygon = PackedVector2Array(91.2086, 0, 91.2086, 80, 318.956, 80, 544, 80, 544, 0)
+
+[node name="Polygon2D3" type="Polygon2D" parent="kitchen"]
+position = Vector2(1.3078, 781.208)
+rotation = -1.56944
+scale = Vector2(1.43561, 1.40043)
+color = Color(0.519163, 0.519161, 0.519162, 1)
+polygon = PackedVector2Array(92.7871, -1.06287, 92.7739, 38.6346, 92.863, 79.642, 315.794, 78.6026, 544.269, 78.2849, 544.163, -1.69046)
+
+[node name="Polygon2D4" type="Polygon2D" parent="kitchen"]
+position = Vector2(673.61, -91.8621)
+rotation = 1.56819
+scale = Vector2(0.9569, 1.60898)
+color = Color(0.519163, 0.519161, 0.519162, 1)
+polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="kitchen"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(112, 0, 672, 0, 672, 432, 544, 432, 544, 120, 112, 120)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
+z_index = 1
+position = Vector2(1.60001, 24.1202)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
+z_index = 1
+position = Vector2(4.76837e-07, -192)
+scale = Vector2(1.03571, 1.63243)
+polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.138, 514.57, 4.76837e-07, 514.57)
+
+[node name="Tables" type="Node" parent="."]
+
+[node name="Polygon2D5" type="Polygon2D" parent="Tables"]
+position = Vector2(969.312, 56.2384)
+rotation = 1.56819
+scale = Vector2(0.247517, 1.60898)
+color = Color(0.917265, 0.685786, 0.741524, 1)
+polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tables/Polygon2D5"]
+position = Vector2(-203.192, 546.851)
+rotation = -1.55386
+scale = Vector2(0.621599, 4.04011)
+skew = -0.0165401
+polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Tables"]
+position = Vector2(1209.31, 56.2384)
+rotation = 1.56819
+scale = Vector2(0.247517, 1.60898)
+color = Color(0.917647, 0.686275, 0.741176, 1)
+polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tables/Polygon2D6"]
+position = Vector2(-203.192, 546.851)
+rotation = -1.55386
+scale = Vector2(0.621599, 4.04011)
+skew = -0.0165401
+polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Tables"]
+position = Vector2(969.312, 304)
+rotation = 1.56819
+scale = Vector2(0.247517, 1.60898)
+color = Color(0.917647, 0.686275, 0.741176, 1)
+polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tables/Polygon2D7"]
+position = Vector2(-203.192, 546.851)
+rotation = -1.55386
+scale = Vector2(0.621599, 4.04011)
+skew = -0.0165401
+polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Tables"]
+position = Vector2(1209.31, 304)
+rotation = 1.56819
+scale = Vector2(0.247517, 1.60898)
+color = Color(0.917647, 0.686275, 0.741176, 1)
+polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tables"]
+position = Vector2(1208, 304)
+rotation = 1.56819
+scale = Vector2(0.247517, 1.60898)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
+position = Vector2(-205.719, 696.013)
+rotation = -1.55386
+scale = Vector2(0.621599, 4.04011)
+skew = -0.0165401
+polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
+position = Vector2(-203.192, 546.851)
+rotation = -1.55386
+scale = Vector2(0.621599, 4.04011)
+skew = -0.0165401
+polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
+position = Vector2(-1207.67, 695.611)
+rotation = -1.55386
+scale = Vector2(0.621599, 4.04011)
+skew = -0.0165401
+polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
+position = Vector2(-1205.14, 546.449)
+rotation = -1.55386
+scale = Vector2(0.621599, 4.04011)
+skew = -0.0165401
+polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+
+[node name="Worldboundries" parent="." instance=ExtResource("2_8ftn4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundries"]
+position = Vector2(-9.60001, 335.88)
+scale = Vector2(0.728342, 1.00315)
+shape = SubResource("RectangleShape2D_udnpg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Worldboundries"]
+position = Vector2(1406.4, 311.88)
+scale = Vector2(0.728342, 1.00315)
+shape = SubResource("RectangleShape2D_udnpg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Worldboundries"]
+position = Vector2(694.404, 656.94)
+rotation = 1.5708
+scale = Vector2(0.728342, 1.00315)
+shape = SubResource("RectangleShape2D_udnpg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Worldboundries"]
+position = Vector2(694.4, -8.12022)
+rotation = 1.5708
+scale = Vector2(0.728342, 1.00315)
+shape = SubResource("RectangleShape2D_udnpg")
