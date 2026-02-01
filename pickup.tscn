@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c4gkxmrs74ef0"]
+
+[ext_resource type="Script" uid="uid://bgs6filmp2yfe" path="res://pickup.gd" id="1_iqk3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weqpt"]
+size = Vector2(96, 88)
+
+[node name="Pickup" type="Node2D" unique_id=20684267]
+script = ExtResource("1_iqk3k")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=995401027]
+color = Color(1, 0.67058825, 0.8117647, 1)
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 8, 0, 8)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1801435309]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1089179451]
+position = Vector2(24, 12)
+shape = SubResource("RectangleShape2D_weqpt")

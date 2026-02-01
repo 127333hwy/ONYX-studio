@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl31m"]
 size = Vector2(93.0909, 60.8004)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2028192205]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2028192205 groups=["player"]]
 script = ExtResource("1_rdf1g")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=403578624]
@@ -17,6 +17,9 @@ polygon = PackedVector2Array(552, 200, 808, 200, 808, 352, 552, 352, 552, 208)
 position = Vector2(632, 336)
 scale = Vector2(0.34375, 0.526316)
 shape = SubResource("RectangleShape2D_bl31m")
+
+[node name="PickupPoint" type="Node2D" parent="." unique_id=1223218335 groups=["pickup_point"]]
+position = Vector2(608, 336)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=841719822]
 position = Vector2(632, 344)

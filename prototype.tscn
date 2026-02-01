@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
+[ext_resource type="PackedScene" uid="uid://c4gkxmrs74ef0" path="res://pickup.tscn" id="2_883nb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udnpg"]
 size = Vector2(21.9677, 1403.56)
@@ -167,3 +168,23 @@ position = Vector2(694.4, -8.12022)
 rotation = 1.5708
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
+
+[node name="Ingredients" type="Node" parent="." unique_id=2066173555]
+
+[node name="Polygon2D" type="Polygon2D" parent="Ingredients" unique_id=967997748]
+polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Ingredients" unique_id=488867673]
+position = Vector2(-104, 0)
+polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Ingredients" unique_id=1326047765]
+position = Vector2(-208, 0)
+polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Ingredients" unique_id=348413365]
+position = Vector2(-312, 0)
+polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
+
+[node name="Pickup" parent="." unique_id=20684267 instance=ExtResource("2_883nb")]
+position = Vector2(478.4, 543.87976)

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var max_speed:=600.0
+@export var max_speed:= 600.0
 @export var acceleration:=2000.0
 @export var deceleration := 1080.0
 
@@ -14,3 +14,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO,deceleration*delta)
 	move_and_slide()
+
+var holding_item := false
