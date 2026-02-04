@@ -18,6 +18,10 @@ config/name="ONYX Project"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalData="*uid://bosqsgpwm1ljn"
+
 [input]
 
 move_left={
