@@ -1,58 +1,58 @@
 [gd_scene format=3 uid="uid://dksw63ymgd5gd"]
 
-[node name="Backyard" type="Node2D" unique_id=81882489]
+[node name="Backyard" type="Node2D"]
 
-[node name="Grass" type="Polygon2D" parent="." unique_id=564724516]
-scale = Vector2(1, 1.037037)
-color = Color(1.0636896e-05, 0.7666576, 0.3672915, 1)
+[node name="Grass" type="Polygon2D" parent="."]
+scale = Vector2(1, 1.03704)
+color = Color(1.06369e-05, 0.766658, 0.367292, 1)
 polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
 
-[node name="Lake" type="Polygon2D" parent="." unique_id=617805772]
+[node name="Lake" type="Polygon2D" parent="."]
 position = Vector2(-1296, 8)
-scale = Vector2(2.125, 1.5490196)
-color = Color(0.15583405, 0.64200014, 0.9450411, 1)
-polygon = PackedVector2Array(1072.9412, -5.164558, 1057.8823, 20.65823, 1053.1277, 48.929504, 1061.6471, 72.3038, 1076.7059, 118.78482, 1069.1765, 160.10129, 1054.1177, 196.25319, 1046.5883, 237.56966, 1050.353, 273.72156, 1057.8823, 294.3798, 1084.2354, 325.36713, 1091.7648, 351.1899, 1099.2942, 371.84814, 1114.353, 392.50638, 1136.9412, 408.00006, 1152, 408.00006, 1152, 384, 1152, 0, 1152, -5.164558)
+scale = Vector2(2.125, 1.54902)
+color = Color(0.155834, 0.642, 0.945041, 1)
+polygon = PackedVector2Array(1072.94, -5.16456, 1057.88, 20.6582, 1053.13, 48.9295, 1061.65, 72.3038, 1076.71, 118.785, 1069.18, 160.101, 1054.12, 196.253, 1046.59, 237.57, 1050.35, 273.722, 1057.88, 294.38, 1084.24, 325.367, 1091.76, 351.19, 1099.29, 371.848, 1114.35, 392.506, 1136.94, 408, 1152, 408, 1152, 384, 1152, 0, 1152, -5.16456)
 
-[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=832386292]
-position = Vector2(24.000122, -8.000002)
-scale = Vector2(1, 1.0370371)
-color = Color(0.9031246, 0.7655448, 0.37693632, 1)
-polygon = PackedVector2Array(800, 162, 800, 270, 1056, 270, 1056, 138.85715, 800, 138.85715)
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(24.0001, -8)
+scale = Vector2(1, 1.03704)
+color = Color(0.903125, 0.765545, 0.376936, 1)
+polygon = PackedVector2Array(800, 162, 800, 270, 1056, 270, 1056, 138.857, 800, 138.857)
 
-[node name="Land" type="Node" parent="." unique_id=1223978276]
+[node name="Land" type="Node" parent="."]
 
-[node name="Polygon2D3" type="Polygon2D" parent="Land" unique_id=709464565]
+[node name="Polygon2D3" type="Polygon2D" parent="Land"]
 position = Vector2(232, 128)
-scale = Vector2(1.0192, 1.0018905)
-color = Color(0.43529412, 0.30980393, 0.15686275, 1)
+scale = Vector2(1.0192, 1.00189)
+color = Color(0.435294, 0.309804, 0.156863, 1)
 polygon = PackedVector2Array(104, 296, 184, 376, 304, 272, 224, 192)
 
-[node name="Polygon2D4" type="Polygon2D" parent="Land" unique_id=995305979]
-position = Vector2(0, 144.00002)
-scale = Vector2(1.04, 1.0434783)
-color = Color(0.43529412, 0.30980393, 0.15686275, 1)
-polygon = PackedVector2Array(107.692314, 291.3333, 184.61539, 367.99997, 304, 272, 224, 192)
+[node name="Polygon2D4" type="Polygon2D" parent="Land"]
+position = Vector2(0, 144)
+scale = Vector2(1.04, 1.04348)
+color = Color(0.435294, 0.309804, 0.156863, 1)
+polygon = PackedVector2Array(107.692, 291.333, 184.615, 368, 304, 272, 224, 192)
 
-[node name="Polygon2D5" type="Polygon2D" parent="Land" unique_id=1945084797]
+[node name="Polygon2D5" type="Polygon2D" parent="Land"]
 position = Vector2(136, 40)
-scale = Vector2(1.0375681, 1.0076435)
-color = Color(0.43529412, 0.30980393, 0.15686275, 1)
+scale = Vector2(1.03757, 1.00764)
+color = Color(0.435294, 0.309804, 0.156863, 1)
 polygon = PackedVector2Array(104, 296, 184, 376, 304, 272, 224, 192)
 
-[node name="Polygon2D6" type="Polygon2D" parent="Land" unique_id=1395533000]
+[node name="Polygon2D6" type="Polygon2D" parent="Land"]
 position = Vector2(96, 232)
-scale = Vector2(1.04, 1.0434783)
-color = Color(0.43529412, 0.30980393, 0.15686275, 1)
-polygon = PackedVector2Array(104, 296, 184, 376, 304, 272, 223.07693, 191.66666)
+scale = Vector2(1.04, 1.04348)
+color = Color(0.435294, 0.309804, 0.156863, 1)
+polygon = PackedVector2Array(104, 296, 184, 376, 304, 272, 223.077, 191.667)
 
-[node name="Polygon2D7" type="Polygon2D" parent="Land" unique_id=709104160]
+[node name="Polygon2D7" type="Polygon2D" parent="Land"]
 position = Vector2(256, 264)
-scale = Vector2(1.0599679, 1.045451)
-color = Color(0.43491197, 0.30846483, 0.15527204, 1)
-polygon = PackedVector2Array(105.663605, 298.4358, 188.68497, 374.9578, 304, 272, 224, 192)
+scale = Vector2(1.05997, 1.04545)
+color = Color(0.434912, 0.308465, 0.155272, 1)
+polygon = PackedVector2Array(105.664, 298.436, 188.685, 374.958, 304, 272, 224, 192)
 
-[node name="Resturant" type="Polygon2D" parent="." unique_id=1015332755]
-position = Vector2(-17.756096, 0)
-scale = Vector2(1.3170732, 1.037037)
-color = Color(1, 0.85490197, 1, 1)
-polygon = PackedVector2Array(56, 15.428572, 56, 115.71429, 168, 115.71429, 168, 138.85715, 292.8889, 138.85715, 292.8889, 115.714294, 384, 115.71429, 384, 0, 56, 0, 56, 7.714286)
+[node name="Resturant" type="Polygon2D" parent="."]
+position = Vector2(-17.7561, 0)
+scale = Vector2(1.31707, 1.03704)
+color = Color(1, 0.854902, 1, 1)
+polygon = PackedVector2Array(56, 15.4286, 56, 115.714, 168, 115.714, 168, 138.857, 292.889, 138.857, 292.889, 115.714, 384, 115.714, 384, 0, 56, 0, 56, 7.71429)

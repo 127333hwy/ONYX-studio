@@ -1,190 +1,226 @@
-[gd_scene format=3 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=8 format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
-[ext_resource type="PackedScene" uid="uid://c4gkxmrs74ef0" path="res://pickup.tscn" id="2_883nb"]
+[ext_resource type="PackedScene" path="res://pickup.tscn" id="2_883nb"]
+[ext_resource type="Script" path="res://area_2d.gd" id="3_w6r6j"]
+
+[sub_resource type="GDScript" id="GDScript_uxwpr"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udnpg"]
 size = Vector2(21.9677, 1403.56)
 
-[node name="prototype" type="Node2D" unique_id=993622860]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3uba"]
+size = Vector2(150.266, 18.8889)
+
+[node name="prototype" type="Node2D"]
 position = Vector2(1.60001, 0.120216)
+script = SubResource("GDScript_uxwpr")
 
-[node name="CharacterBody2D" parent="." unique_id=85808671 instance=ExtResource("1_vmgys")]
-z_index = 1
-position = Vector2(-240, 128)
+[node name="kitchen" type="Node" parent="."]
 
-[node name="kitchen" type="Node" parent="." unique_id=263574663]
-
-[node name="Polygon2D2" type="Polygon2D" parent="kitchen" unique_id=159328504]
-position = Vector2(26.5796, 0.120209)
-scale = Vector2(0.954082, 1.5)
+[node name="Polygon2D2" type="Polygon2D" parent="kitchen"]
+position = Vector2(103.188, 0.120209)
+scale = Vector2(0.813258, 1.5)
 color = Color(0.519163, 0.519161, 0.519162, 1)
 polygon = PackedVector2Array(89.5315, -0.0801392, 89.5315, 79.9199, 318.956, 80, 544, 80, 544, 0)
 
-[node name="Polygon2D5" type="Polygon2D" parent="kitchen" unique_id=1486956621]
+[node name="Polygon2D5" type="Polygon2D" parent="kitchen"]
 position = Vector2(25.6, 528.12)
 scale = Vector2(0.954082, 1.5)
 color = Color(0.519163, 0.519161, 0.519162, 1)
 polygon = PackedVector2Array(91.2086, 0, 91.2086, 80, 318.956, 80, 544, 80, 544, 0)
 
-[node name="Polygon2D3" type="Polygon2D" parent="kitchen" unique_id=1152219094]
-position = Vector2(1.3078, 781.208)
+[node name="Polygon2D3" type="Polygon2D" parent="kitchen"]
+position = Vector2(1.33314, 762.523)
 rotation = -1.56944
-scale = Vector2(1.43561, 1.40043)
+scale = Vector2(1.2342, 1.40043)
 color = Color(0.519163, 0.519161, 0.519162, 1)
 polygon = PackedVector2Array(92.7871, -1.06287, 92.7739, 38.6346, 92.863, 79.642, 315.794, 78.6026, 544.269, 78.2849, 544.163, -1.69046)
 
-[node name="Polygon2D4" type="Polygon2D" parent="kitchen" unique_id=993628758]
+[node name="Polygon2D4" type="Polygon2D" parent="kitchen"]
 position = Vector2(673.61, -91.8621)
 rotation = 1.56819
 scale = Vector2(0.9569, 1.60898)
 color = Color(0.519163, 0.519161, 0.519162, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="kitchen" unique_id=1853551448]
+[node name="StaticBody2D" type="StaticBody2D" parent="kitchen"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=1052804611]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true
-polygon = PackedVector2Array(112, 0, 672, 0, 672, 432, 544, 432, 544, 120, 112, 120)
+position = Vector2(80, 8)
+scale = Vector2(0.913755, 1)
+polygon = PackedVector2Array(105.061, -8, 647.876, -8, 647.876, 424, 507.795, 424, 507.795, 120, 105.061, 120)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=1289338294]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
 z_index = 1
 position = Vector2(1.60001, 24.1202)
 polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=870298439]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
 z_index = 1
-position = Vector2(4.76837e-07, -192)
-scale = Vector2(1.03571, 1.63243)
+position = Vector2(4.76837e-07, -77.9259)
+scale = Vector2(1.03571, 1.41074)
 polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.138, 514.57, 4.76837e-07, 514.57)
 
-[node name="Tables" type="Node" parent="." unique_id=867564110]
+[node name="Tables" type="Node" parent="."]
 
-[node name="Polygon2D5" type="Polygon2D" parent="Tables" unique_id=1057854519]
+[node name="Polygon2D5" type="Polygon2D" parent="Tables"]
 position = Vector2(969.312, 56.2384)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 color = Color(0.917265, 0.685786, 0.741524, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tables/Polygon2D5" unique_id=1848277926]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tables/Polygon2D5"]
 position = Vector2(-203.192, 546.851)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
-[node name="Polygon2D6" type="Polygon2D" parent="Tables" unique_id=2118969021]
+[node name="Polygon2D6" type="Polygon2D" parent="Tables"]
 position = Vector2(1209.31, 56.2384)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 color = Color(0.917647, 0.686275, 0.741176, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tables/Polygon2D6" unique_id=1164904879]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tables/Polygon2D6"]
 position = Vector2(-203.192, 546.851)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
-[node name="Polygon2D7" type="Polygon2D" parent="Tables" unique_id=1134219571]
+[node name="Polygon2D7" type="Polygon2D" parent="Tables"]
 position = Vector2(969.312, 304)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 color = Color(0.917647, 0.686275, 0.741176, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tables/Polygon2D7" unique_id=629610489]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tables/Polygon2D7"]
 position = Vector2(-203.192, 546.851)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
-[node name="Polygon2D8" type="Polygon2D" parent="Tables" unique_id=165067239]
+[node name="Polygon2D8" type="Polygon2D" parent="Tables"]
 position = Vector2(1209.31, 304)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 color = Color(0.917647, 0.686275, 0.741176, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Tables" unique_id=1927724412]
+[node name="StaticBody2D" type="StaticBody2D" parent="Tables"]
 position = Vector2(1208, 304)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=1672442735]
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
 position = Vector2(-205.719, 696.013)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=1145972880]
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
 position = Vector2(-203.192, 546.851)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=690917602]
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
 position = Vector2(-1207.67, 695.611)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=1443753441]
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
 position = Vector2(-1205.14, 546.449)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
-[node name="Worldboundries" parent="." unique_id=1517796087 instance=ExtResource("2_8ftn4")]
+[node name="Worldboundries" parent="." instance=ExtResource("2_8ftn4")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundries" unique_id=165763129]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundries"]
 position = Vector2(-9.60001, 335.88)
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Worldboundries" unique_id=1677823262]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Worldboundries"]
 position = Vector2(1406.4, 311.88)
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Worldboundries" unique_id=1650626975]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Worldboundries"]
 position = Vector2(694.404, 656.94)
 rotation = 1.5708
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Worldboundries" unique_id=456003651]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Worldboundries"]
 position = Vector2(694.4, -8.12022)
 rotation = 1.5708
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="Ingredients" type="Node" parent="." unique_id=2066173555]
+[node name="Ingredients" type="Node" parent="."]
 
-[node name="Polygon2D" type="Polygon2D" parent="Ingredients" unique_id=967997748]
+[node name="Polygon2D" type="Polygon2D" parent="Ingredients"]
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Ingredients" unique_id=488867673]
+[node name="Polygon2D2" type="Polygon2D" parent="Ingredients"]
 position = Vector2(-104, 0)
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Ingredients" unique_id=1326047765]
+[node name="Polygon2D3" type="Polygon2D" parent="Ingredients"]
 position = Vector2(-208, 0)
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
-[node name="Polygon2D4" type="Polygon2D" parent="Ingredients" unique_id=348413365]
+[node name="Polygon2D4" type="Polygon2D" parent="Ingredients"]
 position = Vector2(-312, 0)
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
-[node name="Pickup" parent="." unique_id=20684267 instance=ExtResource("2_883nb")]
-position = Vector2(478.4, 543.87976)
+[node name="Pickup" parent="." instance=ExtResource("2_883nb")]
+position = Vector2(478.4, 543.88)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_w6r6j")
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+position = Vector2(-1.60001, -0.120216)
+scale = Vector2(0.425912, 4.65882)
+polygon = PackedVector2Array(2.04359e-07, 18.8235, 150.857, 18.8235, 150.857, 1.40246e-08, -1.60001, -0.120216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(30.4, 43.8798)
+scale = Vector2(0.425912, 4.65882)
+shape = SubResource("RectangleShape2D_f3uba")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_vmgys")]
+z_index = 10
+position = Vector2(-240, 128)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

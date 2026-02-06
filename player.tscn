@@ -1,27 +1,28 @@
-[gd_scene format=3 uid="uid://qex813hye4h5"]
+[gd_scene load_steps=3 format=3 uid="uid://qex813hye4h5"]
 
-[ext_resource type="Script" uid="uid://ban3g5oc2c738" path="res://player.gd" id="1_rdf1g"]
+[ext_resource type="Script" path="res://player.gd" id="1_rdf1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl31m"]
 size = Vector2(93.0909, 60.8004)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2028192205 groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_rdf1g")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=403578624]
+[node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(547, 277.894)
 scale = Vector2(0.125, 0.210528)
+color = Color(0.333333, 1, 1, 1)
 polygon = PackedVector2Array(552, 200, 808, 200, 808, 352, 552, 352, 552, 208)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999347330]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(632, 336)
 scale = Vector2(0.34375, 0.526316)
 shape = SubResource("RectangleShape2D_bl31m")
 
-[node name="PickupPoint" type="Node2D" parent="." unique_id=1223218335 groups=["pickup_point"]]
+[node name="PickupPoint" type="Node2D" parent="." groups=["pickup_point"]]
 position = Vector2(608, 336)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=841719822]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(632, 344)
 zoom = Vector2(3, 3)
 limit_left = 0
