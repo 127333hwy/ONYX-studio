@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
-[ext_resource type="PackedScene" path="res://pickup.tscn" id="2_883nb"]
+[ext_resource type="PackedScene" uid="uid://c4gkxmrs74ef0" path="res://pickup.tscn" id="2_883nb"]
 [ext_resource type="Script" path="res://area_2d.gd" id="3_w6r6j"]
 
 [sub_resource type="GDScript" id="GDScript_uxwpr"]
@@ -81,86 +81,79 @@ polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.138, 5
 [node name="Tables" type="Node" parent="."]
 
 [node name="Polygon2D5" type="Polygon2D" parent="Tables"]
-position = Vector2(969.312, 56.2384)
+position = Vector2(953.312, 209.839)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 color = Color(0.917265, 0.685786, 0.741524, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tables/Polygon2D5"]
-position = Vector2(-203.192, 546.851)
-rotation = -1.55386
-scale = Vector2(0.621599, 4.04011)
-skew = -0.0165401
-polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
-
 [node name="Polygon2D6" type="Polygon2D" parent="Tables"]
-position = Vector2(1209.31, 56.2384)
+position = Vector2(1161.31, 208.238)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 color = Color(0.917647, 0.686275, 0.741176, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tables/Polygon2D6"]
-position = Vector2(-203.192, 546.851)
-rotation = -1.55386
-scale = Vector2(0.621599, 4.04011)
-skew = -0.0165401
-polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
 [node name="Polygon2D7" type="Polygon2D" parent="Tables"]
-position = Vector2(969.312, 304)
+position = Vector2(953.312, 385.839)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 color = Color(0.917647, 0.686275, 0.741176, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tables/Polygon2D7"]
-position = Vector2(-203.192, 546.851)
-rotation = -1.55386
-scale = Vector2(0.621599, 4.04011)
-skew = -0.0165401
-polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
 [node name="Polygon2D8" type="Polygon2D" parent="Tables"]
-position = Vector2(1209.31, 304)
+position = Vector2(1161.31, 384.238)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 color = Color(0.917647, 0.686275, 0.741176, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
 
+[node name="Polygon2D" type="Polygon2D" parent="Tables"]
+position = Vector2(283.545, 0)
+scale = Vector2(0.797468, 1.18182)
+polygon = PackedVector2Array(768, 8, 768, 88, 1081.3, 88, 1400, 88, 1400, 40, 1400, 0, 768, 0)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Tables"]
+position = Vector2(1296.5, 1032.23)
+rotation = 4.71239
+scale = Vector2(0.732857, 1.19799)
+polygon = PackedVector2Array(768, 8, 768, 88, 1081.3, 88, 1408.5, 86.2756, 1406.03, 43.1378, 1408.5, 0, 768, 0)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Tables"]
-position = Vector2(1208, 304)
+position = Vector2(1160, 366.399)
 rotation = 1.56819
 scale = Vector2(0.247517, 1.60898)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
-position = Vector2(-205.719, 696.013)
+position = Vector2(-134.273, 676.154)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
-position = Vector2(-203.192, 546.851)
+position = Vector2(-132.083, 546.881)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
-position = Vector2(-1207.67, 695.611)
+position = Vector2(-845.333, 675.869)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
-position = Vector2(-1205.14, 546.449)
+position = Vector2(-843.143, 546.594)
 rotation = -1.55386
 scale = Vector2(0.621599, 4.04011)
 skew = -0.0165401
 polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tables/StaticBody2D"]
+polygon = PackedVector2Array(-1483.07, 163.486, -1062.9, 163.655, -1058.69, -84.9491, 428.071, -84.353, 429.166, -148.99, -1477.77, -149.755)
 
 [node name="Worldboundries" parent="." instance=ExtResource("2_8ftn4")]
 

@@ -1,58 +1,133 @@
-[gd_scene format=3 uid="uid://dksw63ymgd5gd"]
+[gd_scene load_steps=6 format=3 uid="uid://dksw63ymgd5gd"]
+
+[ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_apbot"]
+[ext_resource type="Script" path="res://area_2d 2.gd" id="1_e6qmv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8oy4"]
+size = Vector2(125.408, 25.4285)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8xls"]
+size = Vector2(128, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43wym"]
+size = Vector2(28, 1320)
 
 [node name="Backyard" type="Node2D"]
 
 [node name="Grass" type="Polygon2D" parent="."]
-scale = Vector2(1, 1.03704)
+position = Vector2(-16, -48)
+scale = Vector2(1.23611, 1.11111)
 color = Color(1.06369e-05, 0.766658, 0.367292, 1)
 polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648)
 
 [node name="Lake" type="Polygon2D" parent="."]
-position = Vector2(-1296, 8)
-scale = Vector2(2.125, 1.54902)
+position = Vector2(-3996.61, 8.2)
+scale = Vector2(4.7054, 1.58775)
 color = Color(0.155834, 0.642, 0.945041, 1)
 polygon = PackedVector2Array(1072.94, -5.16456, 1057.88, 20.6582, 1053.13, 48.9295, 1061.65, 72.3038, 1076.71, 118.785, 1069.18, 160.101, 1054.12, 196.253, 1046.59, 237.57, 1050.35, 273.722, 1057.88, 294.38, 1084.24, 325.367, 1091.76, 351.19, 1099.29, 371.848, 1114.35, 392.506, 1136.94, 408, 1152, 408, 1152, 384, 1152, 0, 1152, -5.16456)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
-position = Vector2(24.0001, -8)
-scale = Vector2(1, 1.03704)
+position = Vector2(-101, -8)
+scale = Vector2(1.15625, 1.03704)
 color = Color(0.903125, 0.765545, 0.376936, 1)
-polygon = PackedVector2Array(800, 162, 800, 270, 1056, 270, 1056, 138.857, 800, 138.857)
-
-[node name="Land" type="Node" parent="."]
-
-[node name="Polygon2D3" type="Polygon2D" parent="Land"]
-position = Vector2(232, 128)
-scale = Vector2(1.0192, 1.00189)
-color = Color(0.435294, 0.309804, 0.156863, 1)
-polygon = PackedVector2Array(104, 296, 184, 376, 304, 272, 224, 192)
-
-[node name="Polygon2D4" type="Polygon2D" parent="Land"]
-position = Vector2(0, 144)
-scale = Vector2(1.04, 1.04348)
-color = Color(0.435294, 0.309804, 0.156863, 1)
-polygon = PackedVector2Array(107.692, 291.333, 184.615, 368, 304, 272, 224, 192)
-
-[node name="Polygon2D5" type="Polygon2D" parent="Land"]
-position = Vector2(136, 40)
-scale = Vector2(1.03757, 1.00764)
-color = Color(0.435294, 0.309804, 0.156863, 1)
-polygon = PackedVector2Array(104, 296, 184, 376, 304, 272, 224, 192)
-
-[node name="Polygon2D6" type="Polygon2D" parent="Land"]
-position = Vector2(96, 232)
-scale = Vector2(1.04, 1.04348)
-color = Color(0.435294, 0.309804, 0.156863, 1)
-polygon = PackedVector2Array(104, 296, 184, 376, 304, 272, 223.077, 191.667)
-
-[node name="Polygon2D7" type="Polygon2D" parent="Land"]
-position = Vector2(256, 264)
-scale = Vector2(1.05997, 1.04545)
-color = Color(0.434912, 0.308465, 0.155272, 1)
-polygon = PackedVector2Array(105.664, 298.436, 188.685, 374.958, 304, 272, 224, 192)
+polygon = PackedVector2Array(800, 162, 800, 270, 1056, 270, 1062.92, 239.142, 1069.84, 200.571, 1062.63, 168.431, 1056, 138.857, 800, 138.857)
 
 [node name="Resturant" type="Polygon2D" parent="."]
 position = Vector2(-17.7561, 0)
 scale = Vector2(1.31707, 1.03704)
 color = Color(1, 0.854902, 1, 1)
 polygon = PackedVector2Array(56, 15.4286, 56, 115.714, 168, 115.714, 168, 138.857, 292.889, 138.857, 292.889, 115.714, 384, 115.714, 384, 0, 56, 0, 56, 7.71429)
+
+[node name="Area2D" type="Area2D" parent="Resturant"]
+script = ExtResource("1_e6qmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Resturant/Area2D"]
+position = Vector2(230.186, 126.142)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_w8oy4")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_apbot")]
+z_index = 1
+position = Vector2(-312, -160)
+
+[node name="Land" type="Node" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Land"]
+position = Vector2(-48, -64)
+color = Color(0.639381, 0.633007, 7.70092e-07, 1)
+polygon = PackedVector2Array(128, 384, 128, 512, 256, 512, 256, 384)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Land"]
+position = Vector2(80, -64)
+scale = Vector2(1.0625, 1)
+color = Color(0.639381, 0.633007, 7.70092e-07, 1)
+polygon = PackedVector2Array(128, 384, 128, 512, 256, 512, 256, 384)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Land"]
+position = Vector2(232, -64)
+color = Color(0.639381, 0.633007, 7.70092e-07, 1)
+polygon = PackedVector2Array(128, 384, 128, 512, 256, 512, 256, 384)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Land"]
+position = Vector2(232, 72)
+color = Color(0.639381, 0.633007, 7.70092e-07, 1)
+polygon = PackedVector2Array(128, 384, 128, 512, 256, 512, 256, 384)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Land"]
+position = Vector2(-48, 72)
+color = Color(0.639381, 0.633007, 7.70092e-07, 1)
+polygon = PackedVector2Array(128, 384, 128, 512, 256, 512, 256, 384)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Land"]
+position = Vector2(80, 72)
+scale = Vector2(1.0625, 1)
+color = Color(0.639381, 0.633007, 7.70092e-07, 1)
+polygon = PackedVector2Array(128, 384, 128, 512, 256, 512, 256, 384)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Land"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Land/StaticBody2D"]
+position = Vector2(144, 384)
+shape = SubResource("RectangleShape2D_t8xls")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Land/StaticBody2D"]
+position = Vector2(424, 520)
+shape = SubResource("RectangleShape2D_t8xls")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Land/StaticBody2D"]
+position = Vector2(281.75, 520)
+shape = SubResource("RectangleShape2D_t8xls")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Land/StaticBody2D"]
+position = Vector2(144, 520)
+shape = SubResource("RectangleShape2D_t8xls")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Land/StaticBody2D"]
+position = Vector2(424, 388)
+shape = SubResource("RectangleShape2D_t8xls")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Land/StaticBody2D"]
+position = Vector2(284, 384)
+shape = SubResource("RectangleShape2D_t8xls")
+
+[node name="WorldBoundaries" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries"]
+position = Vector2(-16, 344)
+shape = SubResource("RectangleShape2D_43wym")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBoundaries"]
+position = Vector2(1312, 344)
+shape = SubResource("RectangleShape2D_43wym")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBoundaries"]
+position = Vector2(648, 664)
+rotation = -1.57063
+shape = SubResource("RectangleShape2D_43wym")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBoundaries"]
+position = Vector2(652, -14.0007)
+rotation = -1.57063
+shape = SubResource("RectangleShape2D_43wym")
+
+[connection signal="body_entered" from="Resturant/Area2D" to="Resturant/Area2D" method="_on_body_entered"]
