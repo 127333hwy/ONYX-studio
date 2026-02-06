@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ce4jmslr8mb7v"]
+
+[ext_resource type="Script" uid="uid://b0bsoixkxaj7t" path="res://lettuce.gd" id="1_gcx7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5cmh"]
+size = Vector2(88, 88)
+
+[node name="Lettuce" type="Node2D" unique_id=1296981649]
+script = ExtResource("1_gcx7u")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=543964653]
+color = Color(0.40931126, 0.91208184, 0.41542748, 1)
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 8, 0, 8)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1604959380]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=160757017]
+position = Vector2(20, 12)
+shape = SubResource("RectangleShape2D_d5cmh")
