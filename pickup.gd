@@ -10,7 +10,6 @@ func _ready():
 func _process(_delta):
 	if player_in_range and not held and Input.is_action_just_pressed("interact"):
 		pick_up()
-		
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
@@ -24,7 +23,6 @@ func pick_up():
 	var pickup_point = get_tree().get_first_node_in_group("pickup_point")
 	if pickup_point == null:
 		return
-
 	held = true
 	reparent(pickup_point)
 	position = Vector2.ZERO
