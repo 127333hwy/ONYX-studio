@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://4e7p40l08uch"]
+
+[ext_resource type="Script" path="res://customer.gd" id="1_00dqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttndt"]
+size = Vector2(24, 32)
+
+[node name="Customer" type="CharacterBody2D"]
+position = Vector2(16, -8)
+script = ExtResource("1_00dqi")
+
+[node name="Body" type="Polygon2D" parent="."]
+z_index = 1
+position = Vector2(-400, -152)
+scale = Vector2(1.5, 1)
+color = Color(1, 0.74902, 1, 1)
+polygon = PackedVector2Array(256, 144, 248, 176, 256, 176, 264, 176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 8)
+shape = SubResource("RectangleShape2D_ttndt")
+
+[node name="Bubble" type="Node2D" parent="."]
+position = Vector2(0, -20)
+
+[node name="BubbleLabel" type="Label" parent="Bubble"]
+custom_minimum_size = Vector2(0, -50)
+offset_left = 288.0
+offset_top = 152.0
+offset_right = 328.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(1, 0.780392, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BubbleBG" type="ColorRect" parent="Bubble"]
+offset_left = -16.0
+offset_top = -12.0
+offset_right = 32.0
+offset_bottom = 13.0
