@@ -6,7 +6,6 @@
 size = Vector2(24, 32)
 
 [node name="Customer" type="CharacterBody2D"]
-position = Vector2(16, -8)
 script = ExtResource("1_00dqi")
 
 [node name="Body" type="Polygon2D" parent="."]
@@ -34,9 +33,12 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BubbleBG" type="ColorRect" parent="Bubble"]
-offset_left = -16.0
+offset_left = -8.0
 offset_top = -12.0
-offset_right = 32.0
+offset_right = 40.0
 offset_bottom = 13.0
+size_flags_horizontal = 6
+metadata/_edit_use_anchors_ = true

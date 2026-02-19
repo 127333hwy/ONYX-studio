@@ -18,6 +18,7 @@ var my_table = null
 func _ready() -> void:
 	hide_bubble()
 	
+	
 func set_target(pos:Vector2):
 	target_position = pos
 	arrived = false
@@ -30,10 +31,12 @@ func generate_order():
 func show_bubble():
 	bubble_bg.visible = true
 	bubble_label.visible = true
+	print("bubble")
 
 func hide_bubble():
 	bubble_bg.visible = false
 	bubble_label.visible = false
+	print("nobubble")
 	
 func leave_resturant():
 	leaving = true

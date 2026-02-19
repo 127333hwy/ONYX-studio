@@ -103,16 +103,16 @@ scale = Vector2(0.732857, 1.19799)
 polygon = PackedVector2Array(768, 8, 768, 88, 1081.3, 88, 1408.5, 86.2756, 1406.03, 43.1378, 1408.5, 0, 768, 0)
 
 [node name="Table" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
-position = Vector2(512, 88)
+position = Vector2(896, 232)
 
 [node name="Table2" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
-position = Vector2(736, 88)
+position = Vector2(1136, 232)
 
 [node name="Table3" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
-position = Vector2(512, 320)
+position = Vector2(896, 448)
 
 [node name="Table4" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
-position = Vector2(736, 320)
+position = Vector2(1136, 448)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -192,13 +192,13 @@ polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
 [node name="Polygon2D2" type="Polygon2D" parent="Stoves"]
 position = Vector2(-424, -416)
 scale = Vector2(1, 1.27273)
-color = Color(0.491495, 0.83283, 0.347415, 1)
+color = Color(1, 0.639216, 0.129412, 1)
 polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
 
 [node name="Polygon2D3" type="Polygon2D" parent="Stoves"]
 position = Vector2(-424, -544)
 scale = Vector2(1, 1.27273)
-color = Color(0.491495, 0.83283, 0.347415, 1)
+color = Color(1, 0.639216, 0.129412, 1)
 polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]

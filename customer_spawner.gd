@@ -18,7 +18,7 @@ func spawn_customer():
 	add_child(customer)
 	
 	customer.global_position = get_tree().root.find_child("SpawnPoint", true, false).global_position
-	#customer.exit_position =get_tree().root.find_child("SpawnPoint", true, false).global_position
+	customer.exit_position =get_tree().root.find_child("SpawnPoint", true, false).global_position
 	
 	customer.my_table = target_table
 	target_table.occupied = true
