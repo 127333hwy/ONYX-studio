@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5hpd0qvhxme1"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_vfeku"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqt27"]
+bg_color = Color(0.629409, 0.4925, 0.997713, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlq68"]
+bg_color = Color(0.846555, 0.481373, 0.725023, 0.811765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ik54"]
+bg_color = Color(0.876976, 0.462761, 0.414186, 1)
+
+[sub_resource type="Theme" id="Theme_vw83p"]
+Button/colors/font_color = Color(0.987278, 0.827335, 0.86499, 1)
+Button/font_sizes/font_size = 32
+Button/styles/hover = SubResource("StyleBoxFlat_lqt27")
+Button/styles/normal = SubResource("StyleBoxFlat_nlq68")
+Button/styles/pressed = SubResource("StyleBoxFlat_8ik54")
+Label/colors/font_color = Color(1, 0.780392, 1, 1)
+Label/font_sizes/font_size = 89
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vw83p")
+script = ExtResource("1_vfeku")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Pause
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Resume"
+
+[node name="Button2" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Restart"
+
+[node name="Button3" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

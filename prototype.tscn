@@ -1,12 +1,14 @@
-[gd_scene format=3 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=17 format=3 uid="uid://bowthejlbql7e"]
 
+[ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
 [ext_resource type="PackedScene" uid="uid://dnrdknmq77i7a" path="res://pickup.tscn" id="2_883nb"]
-[ext_resource type="PackedScene" uid="uid://d1axh0eib7r6q" path="res://fish.tscn" id="3_mbk3n"]
-[ext_resource type="Script" uid="uid://du5jvf8lpvbii" path="res://area_2d.gd" id="3_w6r6j"]
-[ext_resource type="PackedScene" uid="uid://ce4jmslr8mb7v" path="res://lettuce.tscn" id="4_1ixuk"]
-[ext_resource type="PackedScene" uid="uid://bn2rlgbt7v75y" path="res://meat.tscn" id="5_8y2k3"]
+[ext_resource type="Script" path="res://customer_spawner.gd" id="3_uu44d"]
+[ext_resource type="Script" path="res://area_2d.gd" id="3_w6r6j"]
+[ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
+[ext_resource type="PackedScene" uid="uid://c5hpd0qvhxme1" path="res://pause_menu.tscn" id="8_hwjwa"]
+[ext_resource type="Script" path="res://open_pause_button.gd" id="8_ji23w"]
 
 [sub_resource type="GDScript" id="GDScript_uxwpr"]
 script/source = "extends Node2D
@@ -26,43 +28,57 @@ func _process(delta: float) -> void:
 size = Vector2(21.9677, 1403.56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3uba"]
-size = Vector2(150.266, 18.8889)
+size = Vector2(150.266, 21.4647)
 
-[node name="prototype" type="Node2D" unique_id=1807531395]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kqq2"]
+bg_color = Color(0.791065, 0.415899, 0.90647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5crrw"]
+bg_color = Color(0.353738, 0.617813, 0.889272, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7xfc"]
+
+[sub_resource type="Theme" id="Theme_17l41"]
+Button/font_sizes/font_size = 32
+Button/styles/hover = SubResource("StyleBoxFlat_0kqq2")
+Button/styles/normal = SubResource("StyleBoxFlat_5crrw")
+Button/styles/pressed = SubResource("StyleBoxFlat_b7xfc")
+
+[node name="prototype" type="Node2D"]
 position = Vector2(1.60001, 0.120216)
 script = SubResource("GDScript_uxwpr")
 
-[node name="kitchen" type="Node" parent="." unique_id=20952715]
+[node name="kitchen" type="Node" parent="."]
 
-[node name="Polygon2D2" type="Polygon2D" parent="kitchen" unique_id=780806659]
+[node name="Polygon2D2" type="Polygon2D" parent="kitchen"]
 position = Vector2(103.188, 0.120209)
 scale = Vector2(0.813258, 1.5)
 color = Color(0.519163, 0.519161, 0.519162, 1)
 polygon = PackedVector2Array(89.5315, -0.0801392, 89.5315, 79.9199, 318.956, 80, 544, 80, 544, 0)
 
-[node name="Polygon2D5" type="Polygon2D" parent="kitchen" unique_id=1187159999]
+[node name="Polygon2D5" type="Polygon2D" parent="kitchen"]
 position = Vector2(25.6, 528.12)
 scale = Vector2(0.954082, 1.5)
 color = Color(0.519163, 0.519161, 0.519162, 1)
 polygon = PackedVector2Array(91.2086, 0, 91.2086, 80, 318.956, 80, 544, 80, 544, 0)
 
-[node name="Polygon2D3" type="Polygon2D" parent="kitchen" unique_id=1123598932]
-position = Vector2(1.3324298, 763.04663)
+[node name="Polygon2D3" type="Polygon2D" parent="kitchen"]
+position = Vector2(1.33314, 762.523)
 rotation = -1.56944
-scale = Vector2(1.239844, 1.40043)
+scale = Vector2(1.2342, 1.40043)
 color = Color(0.519163, 0.519161, 0.519162, 1)
 polygon = PackedVector2Array(92.7871, -1.06287, 92.7739, 38.6346, 92.863, 79.642, 315.794, 78.6026, 544.269, 78.2849, 544.163, -1.69046)
 
-[node name="Polygon2D4" type="Polygon2D" parent="kitchen" unique_id=1425126420]
+[node name="Polygon2D4" type="Polygon2D" parent="kitchen"]
 position = Vector2(673.61, -91.8621)
 rotation = 1.56819
 scale = Vector2(0.9569, 1.60898)
 color = Color(0.519163, 0.519161, 0.519162, 1)
 polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="kitchen" unique_id=20431501]
+[node name="StaticBody2D" type="StaticBody2D" parent="kitchen"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=1308057604]
+[node name="FoodCounter" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true
@@ -70,162 +86,145 @@ position = Vector2(80, 8)
 scale = Vector2(0.913755, 1)
 polygon = PackedVector2Array(105.061, -8, 647.876, -8, 647.876, 424, 507.795, 424, 507.795, 120, 105.061, 120)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=262833739]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
 z_index = 1
 position = Vector2(1.60001, 24.1202)
 polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=698720661]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
 z_index = 1
-position = Vector2(0, -80)
+position = Vector2(4.76837e-07, -77.9259)
 scale = Vector2(1.03571, 1.41074)
-polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.13838, 516.0412, 0, 516.0412)
+polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.138, 514.57, 4.76837e-07, 514.57)
 
-[node name="Tables" type="Node" parent="." unique_id=2122278526]
+[node name="CustomerSpawner" type="Node2D" parent="."]
+position = Vector2(774.4, 71.8798)
+script = ExtResource("3_uu44d")
+customer_scene = ExtResource("4_a2g17")
 
-[node name="Polygon2D5" type="Polygon2D" parent="Tables" unique_id=1657640714]
-position = Vector2(953.312, 209.839)
-rotation = 1.56819
-scale = Vector2(0.247517, 1.60898)
-color = Color(0.917265, 0.685786, 0.741524, 1)
-polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(774.4, 71.8798)
 
-[node name="Polygon2D6" type="Polygon2D" parent="Tables" unique_id=216819062]
-position = Vector2(1161.31, 208.238)
-rotation = 1.56819
-scale = Vector2(0.247517, 1.60898)
-color = Color(0.917647, 0.686275, 0.741176, 1)
-polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+[node name="Tables" type="Node" parent="."]
 
-[node name="Polygon2D7" type="Polygon2D" parent="Tables" unique_id=2084361514]
-position = Vector2(953.312, 385.839)
-rotation = 1.56819
-scale = Vector2(0.247517, 1.60898)
-color = Color(0.917647, 0.686275, 0.741176, 1)
-polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+[node name="Table" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
+position = Vector2(896, 232)
 
-[node name="Polygon2D8" type="Polygon2D" parent="Tables" unique_id=1138159050]
-position = Vector2(1161.31, 384.238)
-rotation = 1.56819
-scale = Vector2(0.247517, 1.60898)
-color = Color(0.917647, 0.686275, 0.741176, 1)
-polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.581, 0.854095)
+[node name="Table2" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
+position = Vector2(1136, 232)
 
-[node name="Polygon2D" type="Polygon2D" parent="Tables" unique_id=1471354097]
-position = Vector2(283.545, 0)
-scale = Vector2(0.797468, 1.18182)
-polygon = PackedVector2Array(768, 8, 768, 88, 1081.3, 88, 1400, 88, 1400, 40, 1400, 0, 768, 0)
+[node name="Table3" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
+position = Vector2(896, 448)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Tables" unique_id=1106021030]
-position = Vector2(1296.5, 1032.23)
-rotation = 4.71239
-scale = Vector2(0.732857, 1.19799)
-polygon = PackedVector2Array(768, 8, 768, 88, 1081.3, 88, 1408.5, 86.2756, 1406.03, 43.1378, 1408.5, 0, 768, 0)
+[node name="Table4" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
+position = Vector2(1136, 448)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Tables" unique_id=13016464]
-position = Vector2(1160, 366.399)
-rotation = 1.56819
-scale = Vector2(0.247517, 1.60898)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=467051899]
-position = Vector2(-134.273, 676.154)
-rotation = -1.55386
-scale = Vector2(0.621599, 4.04011)
-skew = -0.0165401
-polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
+[node name="Worldboundries" parent="." instance=ExtResource("2_8ftn4")]
+position = Vector2(-1.60001, -0.120216)
 
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=1429713770]
-position = Vector2(-132.083, 546.881)
-rotation = -1.55386
-scale = Vector2(0.621599, 4.04011)
-skew = -0.0165401
-polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
-
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=372836034]
-position = Vector2(-845.333, 675.869)
-rotation = -1.55386
-scale = Vector2(0.621599, 4.04011)
-skew = -0.0165401
-polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
-
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=1584196581]
-position = Vector2(-843.143, 546.594)
-rotation = -1.55386
-scale = Vector2(0.621599, 4.04011)
-skew = -0.0165401
-polygon = PackedVector2Array(752, 72, 880, 72, 880, 184, 752, 184)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tables/StaticBody2D" unique_id=1107306218]
-polygon = PackedVector2Array(-1483.07, 163.486, -1062.9, 163.655, -1058.69, -84.9491, 428.071, -84.353, 429.166, -148.99, -1477.77, -149.755)
-
-[node name="Worldboundries" parent="." unique_id=1147252208 instance=ExtResource("2_8ftn4")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundries" unique_id=2010134397]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundries"]
 position = Vector2(-9.60001, 335.88)
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Worldboundries" unique_id=1627572049]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Worldboundries"]
 position = Vector2(1406.4, 311.88)
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Worldboundries" unique_id=924196357]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Worldboundries"]
 position = Vector2(694.404, 656.94)
 rotation = 1.5708
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Worldboundries" unique_id=1974234737]
-position = Vector2(694.4, -8.12022)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Worldboundries"]
+position = Vector2(704, -16)
 rotation = 1.5708
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="Ingredients" type="Node" parent="." unique_id=448506833]
+[node name="Ingredients" type="Node" parent="."]
 
-[node name="Rice" parent="Ingredients" unique_id=17255302 instance=ExtResource("2_883nb")]
-position = Vector2(152, 544)
-
-[node name="Fish" parent="Ingredients" unique_id=58067886 instance=ExtResource("3_mbk3n")]
-position = Vector2(256, 544)
-
-[node name="Lettuce" parent="Ingredients" unique_id=1296981649 instance=ExtResource("4_1ixuk")]
-position = Vector2(360, 544)
-
-[node name="Meat" parent="Ingredients" unique_id=925776338 instance=ExtResource("5_8y2k3")]
-position = Vector2(464, 576)
-
-[node name="Polygon2D" type="Polygon2D" parent="Ingredients" unique_id=1600438260]
+[node name="Polygon2D" type="Polygon2D" parent="Ingredients"]
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Ingredients" unique_id=1943756340]
+[node name="Polygon2D2" type="Polygon2D" parent="Ingredients"]
 position = Vector2(-104, 0)
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
-[node name="Polygon2D3" type="Polygon2D" parent="Ingredients" unique_id=456835133]
+[node name="Polygon2D3" type="Polygon2D" parent="Ingredients"]
 position = Vector2(-208, 0)
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
-[node name="Polygon2D4" type="Polygon2D" parent="Ingredients" unique_id=2122517108]
+[node name="Polygon2D4" type="Polygon2D" parent="Ingredients"]
 position = Vector2(-312, 0)
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=166039370]
+[node name="Pickup" parent="." instance=ExtResource("2_883nb")]
+position = Vector2(478.4, 543.88)
+
+[node name="BACKDoor" type="Area2D" parent="."]
+position = Vector2(86.4, -88.1202)
 script = ExtResource("3_w6r6j")
 
-[node name="Polygon2D" type="Polygon2D" parent="Area2D" unique_id=1087666232]
-position = Vector2(-1.60001, -0.120216)
-scale = Vector2(0.425912, 4.65882)
+[node name="Polygon2D" type="Polygon2D" parent="BACKDoor"]
+position = Vector2(-88, 88.6073)
+scale = Vector2(0.425912, 5.05156)
 polygon = PackedVector2Array(2.04359e-07, 18.8235, 150.857, 18.8235, 150.857, 1.40246e-08, -1.60001, -0.120216)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=264660205]
-position = Vector2(30.4, 43.8798)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BACKDoor"]
+position = Vector2(-56, 130)
 scale = Vector2(0.425912, 4.65882)
 shape = SubResource("RectangleShape2D_f3uba")
 
-[node name="CharacterBody2D" parent="." unique_id=204945726 instance=ExtResource("1_vmgys")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_vmgys")]
 z_index = 10
-position = Vector2(-240, 128)
+position = Vector2(-193.6, 95.8798)
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="Stoves" type="Node" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Stoves"]
+position = Vector2(-424, -288)
+scale = Vector2(1, 1.27273)
+color = Color(1, 0.638627, 0.130735, 1)
+polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Stoves"]
+position = Vector2(-424, -416)
+scale = Vector2(1, 1.27273)
+color = Color(1, 0.639216, 0.129412, 1)
+polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Stoves"]
+position = Vector2(-424, -544)
+scale = Vector2(1, 1.27273)
+color = Color(1, 0.639216, 0.129412, 1)
+polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OpenPauseButton" type="Button" parent="CanvasLayer"]
+process_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -144.0
+offset_top = 16.0
+offset_right = -15.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme = SubResource("Theme_17l41")
+text = "Menu
+"
+script = ExtResource("8_ji23w")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_hwjwa")]
+
+[connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]
+[connection signal="body_entered" from="BACKDoor" to="BACKDoor" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/OpenPauseButton" to="CanvasLayer/OpenPauseButton" method="_on_pressed"]

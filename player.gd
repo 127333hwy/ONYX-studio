@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 
 @export var max_speed:= 600.0
-@export var acceleration:=2000.0
-@export var deceleration := 1080.0
+@export var acceleration:=1500.0
+@export var deceleration := 1200.0
 
 func _physics_process(delta: float) -> void:
 	var direction :=Input.get_vector("move_left","move_right","move_up","move_down")

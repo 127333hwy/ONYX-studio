@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7dpq6e8hyk78"]
+
+[ext_resource type="Script" path="res://table.gd" id="1_ao2ys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdj1t"]
+size = Vector2(130, 128)
+
+[node name="Table" type="StaticBody2D"]
+script = ExtResource("1_ao2ys")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-376, -184)
+color = Color(0.995403, 0.746965, 0.799315, 1)
+polygon = PackedVector2Array(320, 128, 448, 128, 448, 256, 320, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_pdj1t")
+
+[node name="Sitpoint" type="Marker2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="DishSpawnPoint" type="Marker2D" parent="."]
