@@ -52,4 +52,15 @@ func become_burned():
 	state = "burned"
 	if has_node("Polygon2D"):
 		$Polygon2D.modulate = Color(0.1, 0.1, 0.1)
+		
+func place_down():
+	var player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
+	held = false
+	player.holding_item = false
+	reparent(get_tree().current_scene)
+	var offset = Vector2(32 * player.scale.x, 0)
+	global_position = player.global_position + offset
+	$Area2D.monitoring = true
 	

@@ -20,6 +20,13 @@ func _physics_process(delta: float) -> void:
 		if stove:
 			stove.place_item(held_item)
 			holding_item = false
+			
+	if holding_item and Input.is_action_just_pressed("drop_item"):
+		drop_held_item()
+		
+func drop_held_item():
 
 var holding_item := false
 var held_item = null
+
+	
