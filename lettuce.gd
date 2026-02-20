@@ -4,7 +4,7 @@ extends Node2D
 
 var player_in_range := false
 var held := false
-
+var item_name : String
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)

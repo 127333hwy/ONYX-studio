@@ -1,9 +1,23 @@
-[gd_scene format=3 uid="uid://cf1r0pydbne0c"]
+[gd_scene load_steps=3 format=3 uid="uid://cf1r0pydbne0c"]
 
-[node name="Stove" type="Node2D" unique_id=334731300]
+[ext_resource type="Script" path="res://stove.gd" id="1_ugy6n"]
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1390848286]
-position = Vector2(-424, -288)
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8tgy"]
+radius = 96.0
+
+[node name="Stove" type="Area2D"]
+script = ExtResource("1_ugy6n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k8tgy")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-480, -744)
 scale = Vector2(1, 1.27273)
 color = Color(1, 0.638627, 0.130735, 1)
 polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
+
+[node name="CookTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="CookTimer" to="." method="_on_cook_timer_timeout"]
