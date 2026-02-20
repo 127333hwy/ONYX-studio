@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cf1r0pydbne0c"]
+
+[node name="Stove" type="Node2D" unique_id=334731300]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1390848286]
+position = Vector2(-424, -288)
+scale = Vector2(1, 1.27273)
+color = Color(1, 0.638627, 0.130735, 1)
+polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
