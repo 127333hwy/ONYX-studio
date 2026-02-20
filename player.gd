@@ -14,5 +14,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO,deceleration*delta)
 	move_and_slide()
+	
+	if holding_item:
+		var stove = get_tree().get_first_node_in_group("stove")
+		if stove:
+			stove.place_item(held_item)
+			holding_item = false
 
 var holding_item := false
+var held_item = null

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnrdknmq77i7a"]
 
 [ext_resource type="Script" uid="uid://bgs6filmp2yfe" path="res://pickup.gd" id="1_iqk3k"]
+[ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_weqpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weqpt"]
 size = Vector2(88, 88)
@@ -9,7 +10,7 @@ size = Vector2(88, 88)
 script = ExtResource("1_iqk3k")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=995401027]
-color = Color(1, 0.67058825, 0.8117647, 1)
+color = Color(0.7732261, 0.793784, 0.74499196, 1)
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 8, 0, 8)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1801435309]
@@ -17,3 +18,15 @@ polygon = PackedVector2Array(0, 0, 16, 0, 16, 8, 0, 8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1089179451]
 position = Vector2(20, 12)
 shape = SubResource("RectangleShape2D_weqpt")
+
+[node name="Interaction" type="Label" parent="." unique_id=1137569252]
+z_index = 10
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 69.0
+offset_bottom = -16.0
+theme = ExtResource("2_weqpt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Press E to Interact"
+uppercase = true
