@@ -83,12 +83,12 @@ scale = Vector2(1.03571, 1.41074)
 polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.138, 514.57, 4.76837e-07, 514.57)
 
 [node name="CustomerSpawner" type="Node2D" parent="."]
-position = Vector2(774.4, 71.8798)
+position = Vector2(750.4, 31.8798)
 script = ExtResource("3_uu44d")
 customer_scene = ExtResource("4_a2g17")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(774.4, 71.8798)
+position = Vector2(750.4, 31.8798)
 
 [node name="Tables" type="Node" parent="."]
 
@@ -96,13 +96,13 @@ position = Vector2(774.4, 71.8798)
 position = Vector2(896, 232)
 
 [node name="Table2" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
-position = Vector2(1136, 232)
+position = Vector2(1184, 232)
 
 [node name="Table3" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
 position = Vector2(896, 448)
 
 [node name="Table4" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
-position = Vector2(1136, 448)
+position = Vector2(1184, 448)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

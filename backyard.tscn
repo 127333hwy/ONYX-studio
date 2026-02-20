@@ -58,8 +58,15 @@ polygon = PackedVector2Array(56, 15.4286, 56, 115.714, 168, 115.714, 168, 138.85
 script = ExtResource("1_e6qmv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Resturant/BackyardDoor"]
-position = Vector2(230.186, 126.142)
+position = Vector2(232.149, 115.714)
 shape = SubResource("RectangleShape2D_w8oy4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Resturant"]
+position = Vector2(62.0742, 7.71426)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Resturant/StaticBody2D"]
+position = Vector2(-2.86102e-06, 4.59806e-07)
+polygon = PackedVector2Array(-6.07409, -7.71426, 321.927, -7.71426, 321.927, 108, 230.815, 108, 230.815, 108, 103.26, 108, 103.26, 108, -6.07409, 108)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_apbot")]
 z_index = 1
@@ -141,7 +148,7 @@ rotation = -1.57063
 shape = SubResource("RectangleShape2D_43wym")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBoundaries"]
-position = Vector2(652, -14.0007)
+position = Vector2(656, -16)
 rotation = -1.57063
 shape = SubResource("RectangleShape2D_43wym")
 
