@@ -2,16 +2,21 @@ extends Node2D
 
 var ingredients : Array = []
 var cooking : bool = false
+
 @onready var cook_timer = $CookTimer
 
 func place_item(item):
 	if cooking:
 		return
 	ingredients.append(item)
-	item.reparent(self)
+	item.reparent(%PlacePoint)
 	item.position = Vector2.ZERO
 	if ingredients.size() >= 2:
 		start_cooking()
+		
+
+	item.reparent($PlacePoint)
+	item.position = Vector2.ZERO
 
 func start_cooking():
 	cooking = true
