@@ -16,7 +16,7 @@ var my_table = null
 @onready var bubble_bg: ColorRect = $Bubble/BubbleBG
 
 func _ready() -> void:
-	hide_bubble()
+	show_bubble()
 	
 	
 func set_target(pos:Vector2):

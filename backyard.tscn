@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_apbot"]
 [ext_resource type="Script" path="res://BackyardDoor.gd" id="1_e6qmv"]
 [ext_resource type="Script" path="res://button.gd" id="3_b27s0"]
-[ext_resource type="PackedScene" uid="uid://bveq4i1y5dtdf" path="res://pause_menu.tscn" id="4_8geq7"]
+[ext_resource type="PackedScene" uid="uid://cqo5imy6uvlw3" path="res://pause_menu.tscn" id="4_8geq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8oy4"]
 size = Vector2(125.408, 25.4285)

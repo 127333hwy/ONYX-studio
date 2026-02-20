@@ -20,7 +20,16 @@ position = Vector2(-16, 8)
 shape = SubResource("RectangleShape2D_ttndt")
 
 [node name="Bubble" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(0, -20)
+
+[node name="BubbleBG" type="ColorRect" parent="Bubble"]
+offset_left = -8.0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 13.0
+size_flags_horizontal = 6
+metadata/_edit_use_anchors_ = true
 
 [node name="BubbleLabel" type="Label" parent="Bubble"]
 custom_minimum_size = Vector2(0, -50)
@@ -33,12 +42,4 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="BubbleBG" type="ColorRect" parent="Bubble"]
-offset_left = -8.0
-offset_top = -12.0
-offset_right = 40.0
-offset_bottom = 13.0
-size_flags_horizontal = 6
 metadata/_edit_use_anchors_ = true
