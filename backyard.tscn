@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dksw63ymgd5gd"]
+[gd_scene load_steps=12 format=3 uid="uid://dksw63ymgd5gd"]
 
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_apbot"]
-[ext_resource type="Script" path="res://area_2d 2.gd" id="1_e6qmv"]
+[ext_resource type="Script" path="res://BackyardDoor.gd" id="1_e6qmv"]
+[ext_resource type="Script" path="res://button.gd" id="3_b27s0"]
+[ext_resource type="PackedScene" uid="uid://bveq4i1y5dtdf" path="res://pause_menu.tscn" id="4_8geq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8oy4"]
 size = Vector2(125.408, 25.4285)
@@ -11,6 +13,20 @@ size = Vector2(128, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43wym"]
 size = Vector2(28, 1320)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kqq2"]
+bg_color = Color(0.791065, 0.415899, 0.90647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5crrw"]
+bg_color = Color(0.353738, 0.617813, 0.889272, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7xfc"]
+
+[sub_resource type="Theme" id="Theme_17l41"]
+Button/font_sizes/font_size = 32
+Button/styles/hover = SubResource("StyleBoxFlat_0kqq2")
+Button/styles/normal = SubResource("StyleBoxFlat_5crrw")
+Button/styles/pressed = SubResource("StyleBoxFlat_b7xfc")
 
 [node name="Backyard" type="Node2D"]
 
@@ -38,10 +54,10 @@ scale = Vector2(1.31707, 1.03704)
 color = Color(1, 0.854902, 1, 1)
 polygon = PackedVector2Array(56, 15.4286, 56, 115.714, 168, 115.714, 168, 138.857, 292.889, 138.857, 292.889, 115.714, 384, 115.714, 384, 0, 56, 0, 56, 7.71429)
 
-[node name="Area2D" type="Area2D" parent="Resturant"]
+[node name="BackyardDoor" type="Area2D" parent="Resturant"]
 script = ExtResource("1_e6qmv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Resturant/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Resturant/BackyardDoor"]
 position = Vector2(230.186, 126.142)
 shape = SubResource("RectangleShape2D_w8oy4")
 
@@ -129,4 +145,24 @@ position = Vector2(652, -14.0007)
 rotation = -1.57063
 shape = SubResource("RectangleShape2D_43wym")
 
-[connection signal="body_entered" from="Resturant/Area2D" to="Resturant/Area2D" method="_on_body_entered"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+process_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -144.0
+offset_top = 16.0
+offset_right = -15.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme = SubResource("Theme_17l41")
+text = "Menu
+"
+script = ExtResource("3_b27s0")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_8geq7")]
+
+[connection signal="body_entered" from="Resturant/BackyardDoor" to="Resturant/BackyardDoor" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

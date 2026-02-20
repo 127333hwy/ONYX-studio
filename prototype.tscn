@@ -1,28 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=16 format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
 [ext_resource type="PackedScene" uid="uid://dnrdknmq77i7a" path="res://pickup.tscn" id="2_883nb"]
 [ext_resource type="Script" path="res://customer_spawner.gd" id="3_uu44d"]
-[ext_resource type="Script" path="res://area_2d.gd" id="3_w6r6j"]
+[ext_resource type="Script" path="res://KitchenDoor.gd" id="3_w6r6j"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
-[ext_resource type="PackedScene" uid="uid://c5hpd0qvhxme1" path="res://pause_menu.tscn" id="8_hwjwa"]
+[ext_resource type="PackedScene" uid="uid://bveq4i1y5dtdf" path="res://pause_menu.tscn" id="8_hwjwa"]
 [ext_resource type="Script" path="res://open_pause_button.gd" id="8_ji23w"]
-
-[sub_resource type="GDScript" id="GDScript_uxwpr"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udnpg"]
 size = Vector2(21.9677, 1403.56)
@@ -46,7 +32,6 @@ Button/styles/pressed = SubResource("StyleBoxFlat_b7xfc")
 
 [node name="prototype" type="Node2D"]
 position = Vector2(1.60001, 0.120216)
-script = SubResource("GDScript_uxwpr")
 
 [node name="kitchen" type="Node" parent="."]
 
@@ -168,16 +153,16 @@ polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 [node name="Pickup" parent="." instance=ExtResource("2_883nb")]
 position = Vector2(478.4, 543.88)
 
-[node name="BACKDoor" type="Area2D" parent="."]
+[node name="KitchenDoor" type="Area2D" parent="."]
 position = Vector2(86.4, -88.1202)
 script = ExtResource("3_w6r6j")
 
-[node name="Polygon2D" type="Polygon2D" parent="BACKDoor"]
+[node name="Polygon2D" type="Polygon2D" parent="KitchenDoor"]
 position = Vector2(-88, 88.6073)
 scale = Vector2(0.425912, 5.05156)
 polygon = PackedVector2Array(2.04359e-07, 18.8235, 150.857, 18.8235, 150.857, 1.40246e-08, -1.60001, -0.120216)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BACKDoor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
 position = Vector2(-56, 130)
 scale = Vector2(0.425912, 4.65882)
 shape = SubResource("RectangleShape2D_f3uba")
@@ -226,5 +211,5 @@ script = ExtResource("8_ji23w")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_hwjwa")]
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]
-[connection signal="body_entered" from="BACKDoor" to="BACKDoor" method="_on_body_entered"]
+[connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/OpenPauseButton" to="CanvasLayer/OpenPauseButton" method="_on_pressed"]
