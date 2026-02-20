@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bn2rlgbt7v75y"]
 
 [ext_resource type="Script" uid="uid://cogaiiaikvski" path="res://meat.gd" id="1_2fc84"]
+[ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_0wnju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wnju"]
 size = Vector2(120, 120)
@@ -17,3 +18,15 @@ polygon = PackedVector2Array(0, 0, 16, 0, 16, 8, 0, 8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1629671156]
 position = Vector2(36, -4)
 shape = SubResource("RectangleShape2D_0wnju")
+
+[node name="Interaction" type="Label" parent="." unique_id=567724839]
+z_index = 10
+offset_left = -24.0
+offset_top = -64.0
+offset_right = 69.0
+offset_bottom = -48.0
+theme = ExtResource("2_0wnju")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Press E to Interact"
+uppercase = true

@@ -138,6 +138,18 @@ shape = SubResource("RectangleShape2D_udnpg")
 
 [node name="Ingredients" type="Node" parent="." unique_id=1954472456]
 
+[node name="Rice" parent="Ingredients" unique_id=1737419949 instance=ExtResource("2_883nb")]
+position = Vector2(152, 544)
+
+[node name="Lettuce" parent="Ingredients" unique_id=1296981649 instance=ExtResource("6_vm637")]
+position = Vector2(256, 544)
+
+[node name="Fish" parent="Ingredients" unique_id=58067886 instance=ExtResource("7_h681u")]
+position = Vector2(360, 544)
+
+[node name="Meat" parent="Ingredients" unique_id=925776338 instance=ExtResource("8_67dyb")]
+position = Vector2(463.99997, 576)
+
 [node name="Polygon2D" type="Polygon2D" parent="Ingredients" unique_id=1634673628]
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 
@@ -152,18 +164,6 @@ polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
 [node name="Polygon2D4" type="Polygon2D" parent="Ingredients" unique_id=256359670]
 position = Vector2(-312, 0)
 polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
-
-[node name="Rice" parent="." unique_id=1737419949 instance=ExtResource("2_883nb")]
-position = Vector2(150.4, 543.87976)
-
-[node name="Lettuce" parent="." unique_id=1296981649 instance=ExtResource("6_vm637")]
-position = Vector2(254.4, 543.87976)
-
-[node name="Fish" parent="." unique_id=58067886 instance=ExtResource("7_h681u")]
-position = Vector2(358.4, 543.87976)
-
-[node name="Meat" parent="." unique_id=925776338 instance=ExtResource("8_67dyb")]
-position = Vector2(462.39996, 575.87976)
 
 [node name="KitchenDoor" type="Area2D" parent="." unique_id=359344627]
 position = Vector2(86.4, -88.1202)
