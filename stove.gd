@@ -26,7 +26,7 @@ func check_recipe():
 		names.append(item.item_name)
 	names.sort()
 	var recipes = {
-	["Meat","Rice"]: "RiceBowl"
+	["Meat","Rice"]: "RiceBowl",
 	["Meat","Lettuce"]: "Burger"
 		}
 	if recipes.has(names):
@@ -46,5 +46,5 @@ func burn_all():
 	for item in ingredients:
 		item.become_burned()
 	ingredients.clear()
-	
+	cooking = false
 	
