@@ -50,7 +50,7 @@ func burn_all():
 		if item.has_method("become_burned"):
 			item.become_burned()
 		else:
-			item.modulate = Color(0.1, 0.1, 0.1) #
+			item.modulate = Color(0.1, 0.1, 0.1)
 	ingredients.clear()
 	cooking = false
 	

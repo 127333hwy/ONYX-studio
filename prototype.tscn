@@ -199,20 +199,19 @@ position = Vector2(56, 192)
 scale = Vector2(1, 1.27273)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="OpenPauseButton" type="Button" parent="CanvasLayer"]
 process_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -144.0
+offset_left = -128.0
 offset_top = 16.0
 offset_right = -15.0
 offset_bottom = 88.0
 grow_horizontal = 0
 theme = SubResource("Theme_17l41")
-text = "Menu
+text = "I I
 "
 script = ExtResource("8_ji23w")
 
