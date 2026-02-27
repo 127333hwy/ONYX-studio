@@ -51,7 +51,8 @@ func pick_up(item):
 	
 	item.reparent(self)
 	item.position = Vector2(0, -40)
-
+	
+	item.set_physics_process(false)
 	print("Picked up:", item.name)
 
 func try_place():
@@ -94,6 +95,11 @@ func drop_on_floor():
 	if held_item == null:
 		return
 	
+	if "held" in held_item:
+		held_item.held = false
+	if held_item.has_node("Area2D"):
+		held_item.get_node("Area2D").monitoring = true
+		
 	var level = get_tree().current_scene
 	held_item.reparent(level)
 	held_item.global_position = global_position + Vector2(0, 80)

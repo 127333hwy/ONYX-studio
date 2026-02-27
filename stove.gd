@@ -8,8 +8,8 @@ var cooking : bool = false
 func place_item(item):
 	if cooking:
 		return
-	ingredients.append(item.item_name)
-	item.reparent(item.item_name)
+	ingredients.append(item)
+	item.reparent(self)
 	item.position = Vector2.ZERO
 	if ingredients.size() >= 2:
 		start_cooking()
@@ -33,7 +33,7 @@ func check_recipe():
 		"Lettuce,Meat": "Burger"
 	}
 	if recipes.has(key):
-		make_dish(recipes[names])
+		make_dish(recipes[key])
 	else:
 		burn_all()
 

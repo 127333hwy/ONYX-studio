@@ -1,25 +1,25 @@
-[gd_scene format=3 uid="uid://dnrdknmq77i7a"]
+[gd_scene load_steps=4 format=3 uid="uid://dnrdknmq77i7a"]
 
-[ext_resource type="Script" uid="uid://bgs6filmp2yfe" path="res://pickup.gd" id="1_iqk3k"]
+[ext_resource type="Script" path="res://rice.gd" id="1_iqk3k"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_weqpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weqpt"]
 size = Vector2(88, 88)
 
-[node name="Rice" type="Node2D" unique_id=20684267]
+[node name="Rice" type="Node2D"]
 script = ExtResource("1_iqk3k")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=995401027]
-color = Color(0.7732261, 0.793784, 0.74499196, 1)
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.773226, 0.793784, 0.744992, 1)
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 8, 0, 8)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1801435309]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1089179451]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(20, 12)
 shape = SubResource("RectangleShape2D_weqpt")
 
-[node name="Interaction" type="Label" parent="." unique_id=1137569252]
+[node name="Interaction" type="Label" parent="."]
 z_index = 10
 offset_left = -24.0
 offset_top = -32.0
