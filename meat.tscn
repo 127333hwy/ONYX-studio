@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bn2rlgbt7v75y"]
 
-[ext_resource type="Script" path="res://meat.gd" id="1_2fc84"]
+[ext_resource type="Script" uid="uid://cogaiiaikvski" path="res://meat.gd" id="1_2fc84"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_0wnju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wnju"]

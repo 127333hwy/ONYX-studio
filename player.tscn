@@ -1,26 +1,83 @@
-[gd_scene load_steps=3 format=3 uid="uid://qex813hye4h5"]
+[gd_scene load_steps=11 format=3 uid="uid://qex813hye4h5"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_rdf1g"]
+[ext_resource type="Script" uid="uid://ban3g5oc2c738" path="res://player.gd" id="1_rdf1g"]
+[ext_resource type="Texture2D" uid="uid://c8fceqedak4is" path="res://Sprite-monkey-Sheet.png" id="2_onrkg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("2_onrkg")
+region = Rect2(120, 0, 60, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("2_onrkg")
+region = Rect2(240, 0, 60, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("2_onrkg")
+region = Rect2(0, 40, 60, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("2_onrkg")
+region = Rect2(180, 0, 60, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("2_onrkg")
+region = Rect2(300, 0, 60, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
+atlas = ExtResource("2_onrkg")
+region = Rect2(60, 40, 60, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4flbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}],
+"loop": true,
+"name": &"back_view_monkey_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw050")
+}],
+"loop": true,
+"name": &"front_view_monkey_walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl31m"]
-size = Vector2(93.0909, 60.8004)
+size = Vector2(255.99998, 106.39997)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_rdf1g")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(547, 277.894)
-scale = Vector2(0.125, 0.210528)
-color = Color(0.333333, 1, 1, 1)
-polygon = PackedVector2Array(552, 200, 808, 200, 808, 352, 552, 352, 552, 208)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(632, 336)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_4flbx")
+animation = &"front_view_monkey_walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(632, 336)
+position = Vector2(628, 340)
 scale = Vector2(0.34375, 0.526316)
 shape = SubResource("RectangleShape2D_bl31m")
 
 [node name="PickupPoint" type="Node2D" parent="." groups=["pickup_point"]]
-position = Vector2(608, 336)
+position = Vector2(592, 352)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(632, 336)
