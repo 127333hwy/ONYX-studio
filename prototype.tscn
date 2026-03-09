@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=21 format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cqo5imy6uvlw3" path="res://pause_menu.tscn" id="8_hwjwa"]
 [ext_resource type="Script" path="res://open_pause_button.gd" id="8_ji23w"]
 [ext_resource type="PackedScene" uid="uid://cf1r0pydbne0c" path="res://stove.tscn" id="11_sws78"]
+[ext_resource type="PackedScene" uid="uid://b71af1g6kro6m" path="res://Fish_Pickup.tscn" id="14_b8c0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udnpg"]
 size = Vector2(21.9677, 1403.56)
@@ -73,7 +74,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(80, 8)
 scale = Vector2(0.913755, 1)
-polygon = PackedVector2Array(105.061, -8, 647.876, -8, 647.876, 424, 507.795, 424, 507.795, 120, 105.061, 120)
+polygon = PackedVector2Array(105.061, -8, 647.876, -8, 647.876, 424, 507.795, 424, 507.795, 112, 105.061, 112)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
 visible = false
@@ -189,13 +190,13 @@ position = Vector2(-193.6, 95.8798)
 [node name="Stoves" type="Node" parent="."]
 
 [node name="stove" parent="Stoves" groups=["stove"] instance=ExtResource("11_sws78")]
-position = Vector2(56, 464)
+position = Vector2(64, 448)
 
 [node name="stove2" parent="Stoves" groups=["stove"] instance=ExtResource("11_sws78")]
-position = Vector2(56, 336)
+position = Vector2(64, 320)
 
 [node name="stove3" parent="Stoves" groups=["stove"] instance=ExtResource("11_sws78")]
-position = Vector2(56, 192)
+position = Vector2(64, 176)
 scale = Vector2(1, 1.27273)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -216,7 +217,11 @@ text = "I I
 script = ExtResource("8_ji23w")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_hwjwa")]
+visible = false
+
+[node name="Fish_Pickup" parent="." instance=ExtResource("14_b8c0f")]
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]
+[connection signal="body_entered" from="Stoves/stove" to="Stoves/stove" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/OpenPauseButton" to="CanvasLayer/OpenPauseButton" method="_on_pressed"]

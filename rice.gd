@@ -5,6 +5,7 @@ extends Node2D
 var player_in_range := false
 var held := false
 @export var item_name : String = "Rice"
+var scene_instance = preload("res://rice.tscn")
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
@@ -31,7 +32,9 @@ func pick_up():
 	if pickup_point == null:
 		return
 	held = true
-	reparent(pickup_point)
+	#reparent(pickup_point)
+	var new_item = scene_instance.instantiate()
+	new_item.reparent(pickup_point)
 	position = Vector2.ZERO
 	$Area2D.monitoring = false
 	

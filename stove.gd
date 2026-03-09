@@ -58,3 +58,6 @@ func burn_all():
 
 func _on_cook_timer_timeout() -> void:
 	check_recipe()
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

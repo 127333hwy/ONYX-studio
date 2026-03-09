@@ -103,7 +103,7 @@ func drop_on_floor():
 	var level = get_tree().current_scene
 	held_item.reparent(level)
 	held_item.global_position = global_position + Vector2(0, 80)
-	
+
 	holding_item = false
 	held_item = null
 	

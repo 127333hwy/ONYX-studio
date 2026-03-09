@@ -4,6 +4,8 @@ extends Node2D
 @export var item_name : String = "Lettuce"
 var player_in_range := false
 var held := false
+var scene_instance = preload("res://lettuce.tscn").instantiate
+
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
