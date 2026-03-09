@@ -1,19 +1,18 @@
 extends Node2D
+class_name item_pickup
+
+@export var item_scene : PackedScene
 
 @onready var prompt = $Interaction
 
 var player_in_range := false
-var held := false
-@export var item_name : String = "Fish"
-var scene_instance = preload("res://fish.tscn").instantiate
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
-	prompt.visible = false
 
 func _process(_delta):
-	if player_in_range and not held and Input.is_action_just_pressed("interact"):
+	if player_in_range and Input.is_action_just_pressed("interact"):
 		pick_up()
 
 func _on_body_entered(body):
@@ -31,15 +30,15 @@ func pick_up():
 	var pickup_point = get_tree().get_first_node_in_group("pickup_point")
 	if pickup_point == null:
 		return
-	held = true
-	reparent(pickup_point)
-	position = Vector2.ZERO
-	$Area2D.monitoring = false
-	
 	var player = get_tree().get_first_node_in_group("player")
 	if player.holding_item:
 		return
+		
+	var new_item = item_scene.instantiate()
+	new_item.reparent(pickup_point)
+	new_item.position = Vector2.ZERO
+
 	player.holding_item = true
-	player.held_item = self
+	player.held_item = new_item
 
 	prompt.visible = false

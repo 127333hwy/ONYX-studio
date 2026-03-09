@@ -8,8 +8,8 @@ var cooking : bool = false
 func place_item(item):
 	if cooking:
 		return
-	ingredients.append(item.item_name)
-	item.reparent(item.item_name)
+	ingredients.append(item)
+	item.reparent(self)
 	item.position = Vector2.ZERO
 	if ingredients.size() >= 2:
 		start_cooking()
@@ -33,7 +33,7 @@ func check_recipe():
 		"Lettuce,Meat": "Burger"
 	}
 	if recipes.has(key):
-		make_dish(recipes[names])
+		make_dish(recipes[key])
 	else:
 		burn_all()
 
@@ -50,7 +50,7 @@ func burn_all():
 		if item.has_method("become_burned"):
 			item.become_burned()
 		else:
-			item.modulate = Color(0.1, 0.1, 0.1) #
+			item.modulate = Color(0.1, 0.1, 0.1)
 	ingredients.clear()
 	cooking = false
 	
@@ -58,3 +58,6 @@ func burn_all():
 
 func _on_cook_timer_timeout() -> void:
 	check_recipe()
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
