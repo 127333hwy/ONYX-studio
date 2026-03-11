@@ -1,7 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn2rlgbt7v75y"]
+[gd_scene load_steps=7 format=3 uid="uid://bn2rlgbt7v75y"]
 
 [ext_resource type="Script" uid="uid://cogaiiaikvski" path="res://meat.gd" id="1_2fc84"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_0wnju"]
+[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_ur8ib"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73nce"]
+atlas = ExtResource("2_ur8ib")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr2vu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73nce")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wnju"]
 size = Vector2(120, 120)
@@ -9,9 +25,11 @@ size = Vector2(120, 120)
 [node name="Meat" type="Node2D"]
 script = ExtResource("1_2fc84")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(1, 0.261104, 0.305714, 1)
-polygon = PackedVector2Array(0, 0, 16, 0, 16, 8, 0, 8)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 3)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_fr2vu")
 
 [node name="Area2D" type="Area2D" parent="."]
 

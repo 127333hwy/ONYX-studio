@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var acceleration:=1500.0
 @export var deceleration := 1200.0
 @export var interact_range := 200.0
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var holding_item: bool = false
 var held_item: Node2D = null
@@ -13,7 +14,17 @@ func _physics_process(delta: float) -> void:
 	if holding_item and held_item == null:
 		print("Held item lost. Resetting.")
 		holding_item = false
-	var direction :=Input.get_vector("move_left","move_right","move_up","move_down")
+	var direction := Input.get_vector("move_left","move_right","move_up","move_down")
+	if direction.y > 0:
+		animated_sprite.flip_v = false
+		animated_sprite.play("front_view_monkey_walk")
+	elif direction.y < 0:
+		animated_sprite.play("back_view_monkey_walk")
+		
+	if direction.y == 0:
+		animated_sprite.play("idle")
+			
+	
 	var has_input_direction := direction.length()>0.0	
 	if has_input_direction:
 		var desired_velocity:= direction * max_speed

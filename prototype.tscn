@@ -1,22 +1,83 @@
-[gd_scene load_steps=21 format=3 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=30 format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
 [ext_resource type="PackedScene" uid="uid://dnrdknmq77i7a" path="res://rice.tscn" id="2_883nb"]
-[ext_resource type="Script" path="res://customer_spawner.gd" id="3_uu44d"]
-[ext_resource type="Script" path="res://KitchenDoor.gd" id="3_w6r6j"]
+[ext_resource type="Script" uid="uid://b51woqxxuo3me" path="res://customer_spawner.gd" id="3_uu44d"]
+[ext_resource type="Script" uid="uid://7g3guyxbku3i" path="res://KitchenDoor.gd" id="3_w6r6j"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
 [ext_resource type="PackedScene" uid="uid://ce4jmslr8mb7v" path="res://lettuce.tscn" id="6_vm637"]
 [ext_resource type="PackedScene" uid="uid://d1axh0eib7r6q" path="res://fish.tscn" id="7_h681u"]
 [ext_resource type="PackedScene" uid="uid://bn2rlgbt7v75y" path="res://meat.tscn" id="8_67dyb"]
 [ext_resource type="PackedScene" uid="uid://cqo5imy6uvlw3" path="res://pause_menu.tscn" id="8_hwjwa"]
-[ext_resource type="Script" path="res://open_pause_button.gd" id="8_ji23w"]
+[ext_resource type="Script" uid="uid://c5jbkvsoy8upj" path="res://open_pause_button.gd" id="8_ji23w"]
+[ext_resource type="Texture2D" uid="uid://bylhgkui7le5q" path="res://crates-Sheet.png" id="9_e13xq"]
 [ext_resource type="PackedScene" uid="uid://cf1r0pydbne0c" path="res://stove.tscn" id="11_sws78"]
 [ext_resource type="PackedScene" uid="uid://b71af1g6kro6m" path="res://Fish_Pickup.tscn" id="14_b8c0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udnpg"]
 size = Vector2(21.9677, 1403.56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c7e4"]
+atlas = ExtResource("9_e13xq")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3c612"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c7e4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tprrn"]
+atlas = ExtResource("9_e13xq")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oy8qm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tprrn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80ko1"]
+atlas = ExtResource("9_e13xq")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sw1xi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80ko1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e13xq"]
+atlas = ExtResource("9_e13xq")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0c7e4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e13xq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3uba"]
 size = Vector2(150.266, 21.4647)
@@ -143,31 +204,36 @@ shape = SubResource("RectangleShape2D_udnpg")
 [node name="Ingredients" type="Node" parent="."]
 
 [node name="Rice" parent="Ingredients" groups=["ingredient"] instance=ExtResource("2_883nb")]
-position = Vector2(152, 544)
+position = Vector2(173, 556)
 
 [node name="Lettuce" parent="Ingredients" groups=["ingredient"] instance=ExtResource("6_vm637")]
-position = Vector2(256, 544)
+position = Vector2(256, 560)
 
 [node name="Fish" parent="Ingredients" groups=["ingredient"] instance=ExtResource("7_h681u")]
-position = Vector2(360, 544)
+position = Vector2(360, 560)
 
 [node name="Meat" parent="Ingredients" groups=["ingredient"] instance=ExtResource("8_67dyb")]
 position = Vector2(464, 576)
 
-[node name="Polygon2D" type="Polygon2D" parent="Ingredients"]
-polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ingredients"]
+position = Vector2(280, 582)
+scale = Vector2(0.42, 0.42)
+sprite_frames = SubResource("SpriteFrames_3c612")
 
-[node name="Polygon2D2" type="Polygon2D" parent="Ingredients"]
-position = Vector2(-104, 0)
-polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Ingredients"]
+position = Vector2(379, 582)
+scale = Vector2(0.42, 0.42)
+sprite_frames = SubResource("SpriteFrames_oy8qm")
 
-[node name="Polygon2D3" type="Polygon2D" parent="Ingredients"]
-position = Vector2(-208, 0)
-polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Ingredients"]
+position = Vector2(483, 582)
+scale = Vector2(0.42, 0.42)
+sprite_frames = SubResource("SpriteFrames_sw1xi")
 
-[node name="Polygon2D4" type="Polygon2D" parent="Ingredients"]
-position = Vector2(-312, 0)
-polygon = PackedVector2Array(528, 544, 440, 544, 440, 632, 528, 632)
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Ingredients"]
+position = Vector2(172.22, 582)
+scale = Vector2(0.42, 0.42)
+sprite_frames = SubResource("SpriteFrames_0c7e4")
 
 [node name="KitchenDoor" type="Area2D" parent="."]
 position = Vector2(86.4, -88.1202)

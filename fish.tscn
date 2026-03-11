@@ -1,7 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1axh0eib7r6q"]
+[gd_scene load_steps=7 format=3 uid="uid://d1axh0eib7r6q"]
 
-[ext_resource type="Script" path="res://fish.gd" id="1_xu20i"]
+[ext_resource type="Script" uid="uid://cogmgyu8lf3xg" path="res://fish.gd" id="1_xu20i"]
+[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_6ik3a"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_hgn23"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oovoc"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vtik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oovoc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgn23"]
 size = Vector2(88, 88)
@@ -9,22 +25,23 @@ size = Vector2(88, 88)
 [node name="Fish" type="Node2D"]
 script = ExtResource("1_xu20i")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.929715, 0.746615, 0.569758, 1)
-polygon = PackedVector2Array(0, 0, 16, 0, 16, 8, 0, 8)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.98, 0.98)
+sprite_frames = SubResource("SpriteFrames_8vtik")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(20, 12)
+position = Vector2(20, -4)
 shape = SubResource("RectangleShape2D_hgn23")
 
 [node name="Interaction" type="Label" parent="."]
 z_index = 10
 offset_left = -24.0
-offset_top = -32.0
+offset_top = -48.0
 offset_right = 69.0
-offset_bottom = -16.0
+offset_bottom = -32.0
 theme = ExtResource("2_hgn23")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 9
