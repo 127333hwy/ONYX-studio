@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bylhgkui7le5q"
-path="res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"
+uid="uid://50bnmj304trj"
+path="res://.godot/imported/kitchen.png-f77adb2989db9031a8d024fe8f66ffb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crates-Sheet.png"
-dest_files=["res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"]
+source_file="res://kitchen.png"
+dest_files=["res://.godot/imported/kitchen.png-f77adb2989db9031a8d024fe8f66ffb7.ctex"]
 
 [params]
 

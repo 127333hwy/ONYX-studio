@@ -1,17 +1,18 @@
-[gd_scene load_steps=30 format=3 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=31 format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
+[ext_resource type="Texture2D" uid="uid://50bnmj304trj" path="res://kitchen.png" id="1_t4m42"]
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
 [ext_resource type="PackedScene" uid="uid://dnrdknmq77i7a" path="res://rice.tscn" id="2_883nb"]
-[ext_resource type="Script" uid="uid://b51woqxxuo3me" path="res://customer_spawner.gd" id="3_uu44d"]
-[ext_resource type="Script" uid="uid://7g3guyxbku3i" path="res://KitchenDoor.gd" id="3_w6r6j"]
+[ext_resource type="Script" path="res://customer_spawner.gd" id="3_uu44d"]
+[ext_resource type="Script" path="res://KitchenDoor.gd" id="3_w6r6j"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
 [ext_resource type="PackedScene" uid="uid://ce4jmslr8mb7v" path="res://lettuce.tscn" id="6_vm637"]
 [ext_resource type="PackedScene" uid="uid://d1axh0eib7r6q" path="res://fish.tscn" id="7_h681u"]
 [ext_resource type="PackedScene" uid="uid://bn2rlgbt7v75y" path="res://meat.tscn" id="8_67dyb"]
 [ext_resource type="PackedScene" uid="uid://cqo5imy6uvlw3" path="res://pause_menu.tscn" id="8_hwjwa"]
-[ext_resource type="Script" uid="uid://c5jbkvsoy8upj" path="res://open_pause_button.gd" id="8_ji23w"]
+[ext_resource type="Script" path="res://open_pause_button.gd" id="8_ji23w"]
 [ext_resource type="Texture2D" uid="uid://bylhgkui7le5q" path="res://crates-Sheet.png" id="9_e13xq"]
 [ext_resource type="PackedScene" uid="uid://cf1r0pydbne0c" path="res://stove.tscn" id="11_sws78"]
 [ext_resource type="PackedScene" uid="uid://b71af1g6kro6m" path="res://Fish_Pickup.tscn" id="14_b8c0f"]
@@ -101,11 +102,10 @@ position = Vector2(1.60001, 0.120216)
 
 [node name="kitchen" type="Node" parent="."]
 
-[node name="Polygon2D2" type="Polygon2D" parent="kitchen"]
-position = Vector2(103.188, 0.120209)
-scale = Vector2(0.813258, 1.5)
-color = Color(0.519163, 0.519161, 0.519162, 1)
-polygon = PackedVector2Array(89.5315, -0.0801392, 89.5315, 79.9199, 318.956, 80, 544, 80, 544, 0)
+[node name="sprite" type="Sprite2D" parent="kitchen"]
+position = Vector2(400, 101)
+scale = Vector2(0.337158, 0.326719)
+texture = ExtResource("1_t4m42")
 
 [node name="Polygon2D5" type="Polygon2D" parent="kitchen"]
 position = Vector2(25.6, 528.12)
@@ -135,7 +135,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(80, 8)
 scale = Vector2(0.913755, 1)
-polygon = PackedVector2Array(105.061, -8, 647.876, -8, 647.876, 424, 507.795, 424, 507.795, 112, 105.061, 112)
+polygon = PackedVector2Array(135.704, -11, 647.876, -8, 647.876, 424, 507.795, 424, 507.795, 112, 132.421, 114)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
 visible = false
@@ -210,29 +210,31 @@ position = Vector2(173, 556)
 position = Vector2(256, 560)
 
 [node name="Fish" parent="Ingredients" groups=["ingredient"] instance=ExtResource("7_h681u")]
-position = Vector2(360, 560)
+visible = false
+position = Vector2(363, 563)
 
 [node name="Meat" parent="Ingredients" groups=["ingredient"] instance=ExtResource("8_67dyb")]
 position = Vector2(464, 576)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ingredients"]
-position = Vector2(280, 582)
-scale = Vector2(0.42, 0.42)
+position = Vector2(280, 574)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_3c612")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Ingredients"]
-position = Vector2(379, 582)
-scale = Vector2(0.42, 0.42)
+z_index = 1
+position = Vector2(376, 573)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_oy8qm")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Ingredients"]
-position = Vector2(483, 582)
-scale = Vector2(0.42, 0.42)
+position = Vector2(486, 574)
+scale = Vector2(0.303, 0.3)
 sprite_frames = SubResource("SpriteFrames_sw1xi")
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Ingredients"]
-position = Vector2(172.22, 582)
-scale = Vector2(0.42, 0.42)
+position = Vector2(172, 574)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_0c7e4")
 
 [node name="KitchenDoor" type="Area2D" parent="."]
@@ -286,6 +288,8 @@ script = ExtResource("8_ji23w")
 visible = false
 
 [node name="Fish_Pickup" parent="." instance=ExtResource("14_b8c0f")]
+position = Vector2(360.4, 564.88)
+item_scene = ExtResource("14_b8c0f")
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]

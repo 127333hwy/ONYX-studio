@@ -1,24 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://b71af1g6kro6m"]
+[gd_scene load_steps=6 format=3 uid="uid://b71af1g6kro6m"]
 
 [ext_resource type="Script" path="res://item_pickup.gd" id="1_lwv6f"]
 [ext_resource type="PackedScene" uid="uid://xadp1rxh7dig" path="res://fish_item.tscn" id="2_2u8w1"]
+[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="3_xxjxy"]
+[ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="4_b2xl0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs75v"]
-size = Vector2(42, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgn23"]
+size = Vector2(96, 96)
 
 [node name="Fish_Pickup" type="Node2D"]
 script = ExtResource("1_lwv6f")
 item_scene = ExtResource("2_2u8w1")
 
+[node name="fish" type="Sprite2D" parent="."]
+position = Vector2(11.25, 3.25)
+scale = Vector2(0.728571, 0.775862)
+texture = ExtResource("3_xxjxy")
+region_enabled = true
+region_rect = Rect2(-0.5, 31.25, 35, 29.5)
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(11, 4)
-shape = SubResource("RectangleShape2D_rs75v")
+process_mode = 3
+z_index = 1
+position = Vector2(16, -8)
+shape = SubResource("RectangleShape2D_hgn23")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(0, -8)
-polygon = PackedVector2Array(16, 8, 40, 8, 40, 16, 16, 16)
+[node name="Interaction" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 10
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 88.0
+offset_bottom = -40.0
+theme = ExtResource("4_b2xl0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Press E to Interact"
+uppercase = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
