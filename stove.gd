@@ -1,7 +1,9 @@
 extends Area2D
 
-@export var burger_scene : PackedScene
+@export var sushi_scene : PackedScene
 @export var ricebowl_scene : PackedScene
+@export var salad_scene : PackedScene
+@export var onigiri_scene : PackedScene
 
 var ingredients : Array = []
 var cooking : bool = false
@@ -42,7 +44,9 @@ func check_recipe():
 	
 	var recipes = {
 		"Meat,Rice": ricebowl_scene,
-		"Lettuce,Meat": burger_scene
+		"Rice, Fish": sushi_scene,
+		"Lettuce": salad_scene,
+		"Rice": onigiri_scene
 	}
 	if recipes.has(key):
 		make_dish(recipes[key])

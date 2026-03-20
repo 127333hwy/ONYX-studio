@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf1r0pydbne0c"]
+[gd_scene load_steps=7 format=3 uid="uid://cf1r0pydbne0c"]
 
-[ext_resource type="Script" path="res://stove.gd" id="1_ugy6n"]
-[ext_resource type="PackedScene" uid="uid://cboeifha21nvn" path="res://burger.tscn" id="2_a3bkh"]
-[ext_resource type="PackedScene" uid="uid://dpgck31arjkj3" path="res://rice_bowl.tscn" id="3_eim6s"]
+[ext_resource type="Script" uid="uid://cxfgwsvp7hgf5" path="res://stove.gd" id="1_ugy6n"]
+[ext_resource type="PackedScene" uid="uid://dt15obsj7t83i" path="res://sushi.tscn" id="2_eim6s"]
+[ext_resource type="PackedScene" uid="uid://dpgck31arjkj3" path="res://fried_rice.tscn" id="3_eim6s"]
+[ext_resource type="PackedScene" uid="uid://c1miqb0iwikql" path="res://salad.tscn" id="4_v45k4"]
+[ext_resource type="PackedScene" uid="uid://ba8ryw1h1yhit" path="res://onigiri.tscn" id="5_v45k4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elmm"]
 size = Vector2(136, 114.5)
 
 [node name="Stove" type="Area2D"]
 script = ExtResource("1_ugy6n")
-burger_scene = ExtResource("2_a3bkh")
+sushi_scene = ExtResource("2_eim6s")
 ricebowl_scene = ExtResource("3_eim6s")
+salad_scene = ExtResource("4_v45k4")
+onigiri_scene = ExtResource("5_v45k4")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(-480, -744)
