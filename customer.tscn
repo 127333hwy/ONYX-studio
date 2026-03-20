@@ -31,15 +31,23 @@ offset_bottom = 13.0
 size_flags_horizontal = 6
 metadata/_edit_use_anchors_ = true
 
-[node name="BubbleLabel" type="Label" parent="Bubble"]
+[node name="BubbleLabel" type="Label" parent="Bubble/BubbleBG"]
 custom_minimum_size = Vector2(0, -50)
-offset_left = 288.0
-offset_top = 152.0
-offset_right = 328.0
-offset_bottom = 175.0
-theme_override_colors/font_color = Color(1, 0.780392, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.700507, 0.000499693, 0.727587, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
+text = "Order
+
+"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
