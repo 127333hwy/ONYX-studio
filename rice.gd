@@ -2,10 +2,10 @@ extends Node2D
 
 @onready var prompt = $Interaction
 
-@export var item_scene : PackedScene
-@export var item_name : String = "Ingredient"
-
 var player_in_range := false
+@export var item_name : String = "Rice"
+@export var item_scene : PackedScene = preload("res://rice.tscn")
+
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
@@ -15,6 +15,7 @@ func _ready():
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		var player = get_tree().get_first_node_in_group("player")
+		
 		if player and not player.holding_item:
 			pick_up(player)
 
