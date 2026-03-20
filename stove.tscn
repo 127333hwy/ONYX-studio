@@ -1,23 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf1r0pydbne0c"]
-
-[ext_resource type="Script" path="res://stove.gd" id="1_ugy6n"]
+[gd_scene format=3 uid="uid://cf1r0pydbne0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elmm"]
 size = Vector2(136, 114.5)
 
-[node name="Stove" type="Area2D"]
-script = ExtResource("1_ugy6n")
+[node name="Stove" type="Area2D" unique_id=916911720]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1047580610]
 position = Vector2(-480, -744)
 scale = Vector2(1, 1.27273)
 color = Color(1, 0.638627, 0.130735, 1)
 polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
 
-[node name="CookTimer" type="Timer" parent="."]
+[node name="CookTimer" type="Timer" parent="." unique_id=1429817447]
 one_shot = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2098388317]
 position = Vector2(20, 6.75)
 shape = SubResource("RectangleShape2D_5elmm")
 

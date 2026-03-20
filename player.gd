@@ -48,24 +48,27 @@ func _physics_process(delta: float) -> void:
 func try_pickup():
 	var nearby = get_tree().get_nodes_in_group("ingredient")
 	
-	for item in nearby:
-		if global_position.distance_to(item.global_position) < interact_range:
-			pick_up(item)
+	for target in nearby:
+		if global_position.distance_to(target.global_position) < interact_range:
+			if target.has_method("spawn_item"):
+				var new_rice = target.spawn_item()
+				pick_up(new_rice)
+			else:
+				pick_up(target)
 			return
 
-func pick_up(item):
-	if item == null:
-		return
+func pick_up(target):
+	if target == null: return
 	
-	held_item = item
+	held_item = target
 	holding_item = true
 	
-	item.reparent(self)
-	item.position = Vector2(0, -40)
+	if target.get_parent() == null:
+		get_tree().current_scene.add_child(target)
+	target.reparent.call_deferred(self)
+	target.position = Vector2(0, -40)
+	target.z_index = 1
 	
-	item.set_physics_process(false)
-	print("Picked up:", item.name)
-
 func try_place():
 	print("TRY PLACE CALLED")
 

@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://7g3guyxbku3i" path="res://KitchenDoor.gd" id="3_w6r6j"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
 [ext_resource type="PackedScene" uid="uid://ce4jmslr8mb7v" path="res://lettuce.tscn" id="6_vm637"]
+[ext_resource type="Script" uid="uid://cwugidfdenkn" path="res://item_pickup.gd" id="7_3c612"]
 [ext_resource type="PackedScene" uid="uid://d1axh0eib7r6q" path="res://fish.tscn" id="7_h681u"]
 [ext_resource type="PackedScene" uid="uid://bn2rlgbt7v75y" path="res://meat.tscn" id="8_67dyb"]
 [ext_resource type="PackedScene" uid="uid://cqo5imy6uvlw3" path="res://pause_menu.tscn" id="8_hwjwa"]
@@ -206,16 +207,24 @@ shape = SubResource("RectangleShape2D_udnpg")
 
 [node name="Rice" parent="Ingredients" unique_id=1581143490 groups=["ingredient"] instance=ExtResource("2_883nb")]
 position = Vector2(173, 556)
+item_scene = ExtResource("2_883nb")
 
 [node name="Lettuce" parent="Ingredients" unique_id=1990871468 groups=["ingredient"] instance=ExtResource("6_vm637")]
 position = Vector2(256, 560)
+script = ExtResource("7_3c612")
+item_scene = ExtResource("6_vm637")
+item_name = "Ingredient"
 
 [node name="Fish" parent="Ingredients" unique_id=1924514524 groups=["ingredient"] instance=ExtResource("7_h681u")]
 visible = false
 position = Vector2(363, 563)
+script = ExtResource("7_3c612")
+item_scene = ExtResource("7_h681u")
 
 [node name="Meat" parent="Ingredients" unique_id=764689816 groups=["ingredient"] instance=ExtResource("8_67dyb")]
 position = Vector2(464, 576)
+script = ExtResource("7_3c612")
+item_name = "Ingredient"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ingredients" unique_id=1749812447]
 z_index = 12
@@ -293,7 +302,7 @@ visible = false
 
 [node name="Fish_Pickup" parent="." unique_id=1538048956 instance=ExtResource("14_b8c0f")]
 position = Vector2(358.4, 567.87976)
-item_scene = ExtResource("14_b8c0f")
+item_scene = null
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]
