@@ -17,12 +17,12 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("move_left","move_right","move_up","move_down")
 	if direction.y > 0:
 		animated_sprite.flip_v = false
-		animated_sprite.play("front_view_monkey_walk")
+		animated_sprite.play("full_front_walk")
 	elif direction.y < 0:
-		animated_sprite.play("back_view_monkey_walk")
+		animated_sprite.play("full_back_walk")
 		
 	if direction.y == 0:
-		animated_sprite.play("idle")
+		animated_sprite.play("full_idle")
 			
 	
 	var has_input_direction := direction.length()>0.0	
