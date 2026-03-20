@@ -76,28 +76,26 @@ func try_place():
 		print("Held item is null")
 		return
 
-	var stove = get_tree().get_first_node_in_group("stove")
-	print("Stove found:", stove)
-
-	if stove:
+	var all_stoves = get_tree().get_nodes_in_group("stove")
+	var closest_stove = null
+	var min_dist = interact_range
+	
+	for stove in all_stoves:
 		var dist = global_position.distance_to(stove.global_position)
-		print("Distance to stove:", dist)
+		if dist < min_dist:
+			min_dist = dist
+			closest_stove = stove
 
-		if dist < interact_range:
+	if closest_stove:
 			print("Close enough → putting in stove")
-			put_in_stove(stove)
-		else:
+			put_in_stove(closest_stove)
+	else:
 			print("Too far → dropping")
 			drop_on_floor()
-	else:
-		print("No stove found → dropping")
-		drop_on_floor()
 		
 func put_in_stove(stove_node):
 	if held_item == null:
 		return
-	
-	print("Putting item in stove")
 	
 	if stove_node.has_method("place_item"):
 		stove_node.place_item(held_item)
@@ -105,6 +103,8 @@ func put_in_stove(stove_node):
 	holding_item = false
 	held_item = null
 
+	print("Player's item has been placed")
+	
 func drop_on_floor():
 	if held_item == null:
 		return

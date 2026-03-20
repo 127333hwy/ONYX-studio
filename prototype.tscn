@@ -135,8 +135,8 @@ polygon = PackedVector2Array(96, 0, 96, 80, 318.956, 80, 547.233, 80.4076, 547.5
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(80, 8)
-scale = Vector2(0.913755, 1)
+position = Vector2(178.68832, 7.9999847)
+scale = Vector2(0.7904277, 0.99999994)
 polygon = PackedVector2Array(140.08133, -8, 647.876, -8, 647.876, 424, 507.795, 424, 499.0397, 104, 140.08133, 104)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=382957101]
@@ -207,19 +207,16 @@ shape = SubResource("RectangleShape2D_udnpg")
 
 [node name="Rice" parent="Ingredients" unique_id=1581143490 groups=["ingredient"] instance=ExtResource("2_883nb")]
 position = Vector2(173, 556)
-item_scene = ExtResource("2_883nb")
 
 [node name="Lettuce" parent="Ingredients" unique_id=1990871468 groups=["ingredient"] instance=ExtResource("6_vm637")]
 position = Vector2(256, 560)
 script = ExtResource("7_3c612")
-item_scene = ExtResource("6_vm637")
 item_name = "Ingredient"
 
 [node name="Fish" parent="Ingredients" unique_id=1924514524 groups=["ingredient"] instance=ExtResource("7_h681u")]
 visible = false
 position = Vector2(363, 563)
 script = ExtResource("7_3c612")
-item_scene = ExtResource("7_h681u")
 
 [node name="Meat" parent="Ingredients" unique_id=764689816 groups=["ingredient"] instance=ExtResource("8_67dyb")]
 position = Vector2(464, 576)
@@ -271,14 +268,14 @@ position = Vector2(-193.6, 95.8798)
 [node name="Stoves" type="Node" parent="." unique_id=1481941916]
 
 [node name="stove" parent="Stoves" unique_id=571863013 groups=["stove"] instance=ExtResource("11_sws78")]
-position = Vector2(64, 448)
+position = Vector2(64, 414)
 
 [node name="stove2" parent="Stoves" unique_id=1920640423 groups=["stove"] instance=ExtResource("11_sws78")]
-position = Vector2(64, 320)
+position = Vector2(64, 291)
 
 [node name="stove3" parent="Stoves" unique_id=1269600267 groups=["stove"] instance=ExtResource("11_sws78")]
-position = Vector2(64, 176)
-scale = Vector2(1, 1.27273)
+position = Vector2(67, 159)
+scale = Vector2(0.933, 1.188)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2086889747]
 
@@ -306,5 +303,4 @@ item_scene = null
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]
-[connection signal="body_entered" from="Stoves/stove" to="Stoves/stove" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/OpenPauseButton" to="CanvasLayer/OpenPauseButton" method="_on_pressed"]
