@@ -27,22 +27,20 @@ script = ExtResource("1_gcx7u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1489717396]
 texture_filter = 1
-position = Vector2(3, 0)
 scale = Vector2(0.65, 0.65)
 sprite_frames = SubResource("SpriteFrames_psrhl")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=713520]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=181180673]
-position = Vector2(20, -4)
 shape = SubResource("RectangleShape2D_d5cmh")
 
 [node name="Interaction" type="Label" parent="." unique_id=752616152]
 z_index = 10
-offset_left = -24.0
-offset_top = -48.0
-offset_right = 69.0
-offset_bottom = -32.0
+offset_left = -45.0
+offset_top = -44.0
+offset_right = 48.0
+offset_bottom = -28.0
 theme = ExtResource("2_05s54")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 9

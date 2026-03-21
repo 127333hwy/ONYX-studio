@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var max_speed:= 600.0
 @export var acceleration:=1500.0
 @export var deceleration := 1200.0
-@export var interact_range := 200.0
+@export var interact_range := 150.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var holding_item: bool = false
@@ -46,16 +46,29 @@ func _physics_process(delta: float) -> void:
 		try_place()
 				
 func try_pickup():
+	print("trying to pickup")
 	var nearby = get_tree().get_nodes_in_group("ingredient")
 	
+	var closest_target = null
+	var shortest_distance = interact_range
+	
 	for target in nearby:
-		if global_position.distance_to(target.global_position) < interact_range:
-			if target.has_method("spawn_item"):
-				var new_rice = target.spawn_item()
-				pick_up(new_rice)
-			else:
-				pick_up(target)
-			return
+		var dist = global_position.distance_to(target.global_position)
+		print("Target: ", target.name, " | Dist: ", dist, " | Range: ", interact_range)
+		
+		if dist < shortest_distance:
+			shortest_distance = dist
+			closest_target = target
+			print("SUCCESS: Picking up ", target.name)
+			
+	if closest_target:
+		print("SUCCESS: Picking up the closest item: ", closest_target.name)
+		if closest_target.has_method("spawn_item"):
+			pick_up(closest_target.spawn_item())
+		else:
+			pick_up(closest_target)
+	else:
+		print("nothing nearby")
 
 func pick_up(target):
 	if target == null: return
@@ -65,33 +78,38 @@ func pick_up(target):
 	
 	if target.get_parent() == null:
 		get_tree().current_scene.add_child(target)
-	target.reparent.call_deferred(self)
+	target.reparent(self)
 	target.position = Vector2(0, -40)
-	target.z_index = 1
+	target.z_index = 10
+	print("item in player's hand")
 	
 func try_place():
-	print("TRY PLACE CALLED")
+	print("attempted to place")
 
 	if held_item == null:
-		print("Held item is null")
+		print("Error: Held item is null")
 		return
 
 	var all_stoves = get_tree().get_nodes_in_group("stove")
+	
+	print("Stoves detected: ", all_stoves.size())
+	
 	var closest_stove = null
 	var min_dist = interact_range
 	
 	for stove in all_stoves:
 		var dist = global_position.distance_to(stove.global_position)
+		
+		print("Checking ", stove.name, " | Dist: ", dist, " | Max Range: ", interact_range)
 		if dist < min_dist:
 			min_dist = dist
 			closest_stove = stove
 
 	if closest_stove:
-			print("Close enough → putting in stove")
+			print("SUCCESS: Found stove ", closest_stove.name)
 			put_in_stove(closest_stove)
 	else:
-			print("Too far → dropping")
-			drop_on_floor()
+			print("FAIL: No stove found within range.")
 		
 func put_in_stove(stove_node):
 	if held_item == null:
