@@ -142,29 +142,15 @@ script = ExtResource("1_rdf1g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=496514351]
 texture_filter = 1
-position = Vector2(632, 336)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_4flbx")
 animation = &"full_idle"
 autoplay = "full_front_walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=818491832]
-position = Vector2(628, 340)
+visible = false
 scale = Vector2(0.34375, 0.526316)
 shape = SubResource("RectangleShape2D_bl31m")
 
 [node name="PickupPoint" type="Node2D" parent="." unique_id=75979857 groups=["pickup_point"]]
-position = Vector2(598, 345)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=248215843]
-position = Vector2(632, 336)
-zoom = Vector2(3, 3)
-limit_left = 0
-limit_top = 0
-limit_right = 1400
-limit_bottom = 650
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 10.0
+position = Vector2(-33, 8)

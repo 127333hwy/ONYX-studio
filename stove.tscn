@@ -1,32 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf1r0pydbne0c"]
+[gd_scene format=3 uid="uid://cf1r0pydbne0c"]
 
 [ext_resource type="Script" uid="uid://cxfgwsvp7hgf5" path="res://stove.gd" id="1_ugy6n"]
 [ext_resource type="PackedScene" uid="uid://dt15obsj7t83i" path="res://sushi.tscn" id="2_eim6s"]
 [ext_resource type="PackedScene" uid="uid://dpgck31arjkj3" path="res://fried_rice.tscn" id="3_eim6s"]
 [ext_resource type="PackedScene" uid="uid://c1miqb0iwikql" path="res://salad.tscn" id="4_v45k4"]
 [ext_resource type="PackedScene" uid="uid://ba8ryw1h1yhit" path="res://onigiri.tscn" id="5_v45k4"]
+[ext_resource type="PackedScene" uid="uid://c76b6lbdu7tfk" path="res://burnt_sushi.tscn" id="6_hbb0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elmm"]
-size = Vector2(136, 114.5)
+size = Vector2(132, 114.5)
 
-[node name="Stove" type="Area2D"]
+[node name="Stove" type="Area2D" unique_id=1380632403 groups=["stove"]]
 script = ExtResource("1_ugy6n")
 sushi_scene = ExtResource("2_eim6s")
-ricebowl_scene = ExtResource("3_eim6s")
+fried_rice_scene = ExtResource("3_eim6s")
 salad_scene = ExtResource("4_v45k4")
 onigiri_scene = ExtResource("5_v45k4")
+burnt_sushi_scene = ExtResource("6_hbb0h")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-480, -744)
-scale = Vector2(1, 1.27273)
-color = Color(1, 0.638627, 0.130735, 1)
-polygon = PackedVector2Array(528, 544, 432, 544, 432, 632, 528, 632)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=640306647]
 
-[node name="CookTimer" type="Timer" parent="."]
+[node name="CookTimer" type="Timer" parent="." unique_id=812602856]
 one_shot = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(20, 6.75)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1961278006]
 shape = SubResource("RectangleShape2D_5elmm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
