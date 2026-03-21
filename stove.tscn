@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c76b6lbdu7tfk" path="res://burnt_sushi.tscn" id="6_hbb0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elmm"]
-size = Vector2(132, 114.5)
+size = Vector2(128, 112)
 
 [node name="Stove" type="Area2D" unique_id=1380632403 groups=["stove"]]
 script = ExtResource("1_ugy6n")
@@ -18,13 +18,14 @@ salad_scene = ExtResource("4_v45k4")
 onigiri_scene = ExtResource("5_v45k4")
 burnt_sushi_scene = ExtResource("6_hbb0h")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=640306647]
-
 [node name="CookTimer" type="Timer" parent="." unique_id=812602856]
 one_shot = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1961278006]
 shape = SubResource("RectangleShape2D_5elmm")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=510353728]
+polygon = PackedVector2Array(-48, -48, 43, -48, 43, 48, -48, 48)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
