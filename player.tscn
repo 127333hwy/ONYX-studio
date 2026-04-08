@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://qex813hye4h5"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_rdf1g"]
+[ext_resource type="Script" uid="uid://ban3g5oc2c738" path="res://player.gd" id="1_rdf1g"]
 [ext_resource type="Texture2D" uid="uid://c8fceqedak4is" path="res://Sprite-monkey-Sheet.png" id="2_onrkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
@@ -132,6 +132,11 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl31m"]
@@ -144,7 +149,7 @@ script = ExtResource("1_rdf1g")
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_4flbx")
-animation = &"full_idle"
+animation = &"new_animation"
 autoplay = "full_front_walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

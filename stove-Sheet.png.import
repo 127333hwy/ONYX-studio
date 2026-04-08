@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bylhgkui7le5q"
-path="res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"
+uid="uid://ba0hnb6shvxkd"
+path="res://.godot/imported/stove-Sheet.png-7e5852f00e4dcd3065c98ab72fd77379.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crates-Sheet.png"
-dest_files=["res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"]
+source_file="res://stove-Sheet.png"
+dest_files=["res://.godot/imported/stove-Sheet.png-7e5852f00e4dcd3065c98ab72fd77379.ctex"]
 
 [params]
 

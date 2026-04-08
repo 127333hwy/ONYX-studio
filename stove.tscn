@@ -1,14 +1,169 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf1r0pydbne0c"]
+[gd_scene load_steps=31 format=3 uid="uid://cf1r0pydbne0c"]
 
-[ext_resource type="Script" path="res://stove.gd" id="1_ugy6n"]
+[ext_resource type="Script" uid="uid://cxfgwsvp7hgf5" path="res://stove.gd" id="1_ugy6n"]
 [ext_resource type="PackedScene" uid="uid://dt15obsj7t83i" path="res://sushi.tscn" id="2_eim6s"]
 [ext_resource type="PackedScene" uid="uid://dpgck31arjkj3" path="res://fried_rice.tscn" id="3_eim6s"]
 [ext_resource type="PackedScene" uid="uid://c1miqb0iwikql" path="res://salad.tscn" id="4_v45k4"]
 [ext_resource type="PackedScene" uid="uid://ba8ryw1h1yhit" path="res://onigiri.tscn" id="5_v45k4"]
-[ext_resource type="PackedScene" path="res://burnt_sushi.tscn" id="6_hbb0h"]
+[ext_resource type="PackedScene" uid="uid://c76b6lbdu7tfk" path="res://burnt_sushi.tscn" id="6_hbb0h"]
+[ext_resource type="Texture2D" uid="uid://cikbmiiwiadb3" path="res://cooking animation-Sheet.png" id="7_ipmka"]
+[ext_resource type="Texture2D" uid="uid://b6jljjgb1sf1s" path="res://cooking animation-Sheet (1).png" id="8_ipmka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elmm"]
-size = Vector2(128, 112)
+size = Vector2(129, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwgq7"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(0, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd8id"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(1280, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u13fy"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(2560, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sccm7"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(3840, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cs0s"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(5120, 0, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mon0b"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(0, 1280, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp51y"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(1280, 1280, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8flr"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(2560, 1280, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdsjd"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(3840, 1280, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikas4"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(5120, 1280, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ncn0"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(0, 2560, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_say4u"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(1280, 2560, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mht6"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(2560, 2560, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgm7x"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(3840, 2560, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nobh"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(5120, 2560, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnibe"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(0, 3840, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuygb"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(1280, 3840, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nmet"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(2560, 3840, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1258t"]
+atlas = ExtResource("7_ipmka")
+region = Rect2(3840, 3840, 1280, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmcdm"]
+atlas = ExtResource("8_ipmka")
+region = Rect2(3840, 3840, 1280, 1280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwgq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwgq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd8id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u13fy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sccm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cs0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mon0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp51y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8flr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdsjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikas4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ncn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_say4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mht6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgm7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nobh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnibe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuygb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nmet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1258t")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmcdm")
+}],
+"loop": true,
+"name": &"stove",
+"speed": 5.0
+}]
 
 [node name="Stove" type="Area2D" groups=["stove"]]
 script = ExtResource("1_ugy6n")
@@ -22,10 +177,14 @@ burnt_sushi_scene = ExtResource("6_hbb0h")
 one_shot = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 0)
 shape = SubResource("RectangleShape2D_5elmm")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-48, -48, 43, -48, 43, 48, -48, 48)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.0000002, 9)
+scale = Vector2(0.17, 0.17)
+sprite_frames = SubResource("SpriteFrames_wwgq7")
+animation = &"new_animation"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

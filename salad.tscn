@@ -21,6 +21,7 @@ animations = [{
 radius = 15.0
 
 [node name="Salad" type="Node2D"]
+scale = Vector2(1.4, 1.4)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bylhgkui7le5q"
-path="res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"
+uid="uid://c6eai6lcvxpy6"
+path="res://.godot/imported/Sprite-monkey-Sheet (1).png-549396488bc21b429c9bc9f4c3e22ac1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crates-Sheet.png"
-dest_files=["res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"]
+source_file="res://Sprite-monkey-Sheet (1).png"
+dest_files=["res://.godot/imported/Sprite-monkey-Sheet (1).png-549396488bc21b429c9bc9f4c3e22ac1.ctex"]
 
 [params]
 

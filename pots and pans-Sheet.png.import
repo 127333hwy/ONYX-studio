@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bylhgkui7le5q"
-path="res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"
+uid="uid://cxsmoye6egbnw"
+path="res://.godot/imported/pots and pans-Sheet.png-b722be5870fdd1b1dfaaf9e93a30bc72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crates-Sheet.png"
-dest_files=["res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"]
+source_file="res://pots and pans-Sheet.png"
+dest_files=["res://.godot/imported/pots and pans-Sheet.png-b722be5870fdd1b1dfaaf9e93a30bc72.ctex"]
 
 [params]
 

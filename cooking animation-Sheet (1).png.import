@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bylhgkui7le5q"
-path="res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"
+uid="uid://b6jljjgb1sf1s"
+path="res://.godot/imported/cooking animation-Sheet (1).png-2b0f416346c9696b2c596780d090b4f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crates-Sheet.png"
-dest_files=["res://.godot/imported/crates-Sheet.png-dfc02a17b79e6a4aae7614a2536a66cd.ctex"]
+source_file="res://cooking animation-Sheet (1).png"
+dest_files=["res://.godot/imported/cooking animation-Sheet (1).png-2b0f416346c9696b2c596780d090b4f2.ctex"]
 
 [params]
 
