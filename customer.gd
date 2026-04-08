@@ -3,6 +3,12 @@ extends CharacterBody2D
 @export var speed:float = 120
 @export var possible_orders: Array[String] = ["Fried Rice","Salad","Sushi","Onigiri"]
 
+@export var order_images: Dictionary = {
+	"Fried Rice": preload("res://Fried_rice.tres"),
+	"Onigiri": preload("res://Onigiri.tres"),
+	"Sushi": preload("res://Sushi.tres"),
+	"Salad": preload ("res://Salad.tres") }
+	
 var target_position: Vector2 = Vector2(-9999, 9999)
 var exit_position: Vector2= Vector2.ZERO
 
@@ -12,8 +18,8 @@ var leaving :bool = false
 
 var my_table = null
 
-@onready var bubble_label: Label = $Bubble/BubbleBG/BubbleLabel
-@onready var bubble_bg: ColorRect = $Bubble/BubbleBG
+@onready var bubble_bg: TextureRect = $Bubble/BubbleBG
+@onready var food_icon: TextureRect=$"Bubble/BubbleBG/Food Icon"
 
 func _ready() -> void:
 	handle_arrival()
@@ -26,16 +32,14 @@ func set_target(pos:Vector2):
 func generate_order():
 	order_name = possible_orders.pick_random()
 	print(order_name)
-	bubble_label.text = order_name
 	show_bubble()
 
 func show_bubble():
-	bubble_bg.visible = true
-	bubble_label.visible = true
-	
-
-
-	
+	if order_images.has(order_name):
+		food_icon.texture = order_images[order_name]
+		bubble_bg.visible = true
+	else:
+		print("Error: No image found for ", order_name)
 func leave_resturant():
 	leaving = true
 	arrived = false

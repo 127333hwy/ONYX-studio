@@ -1,16 +1,16 @@
-[gd_scene format=3 uid="uid://cf1r0pydbne0c"]
+[gd_scene load_steps=8 format=3 uid="uid://cf1r0pydbne0c"]
 
-[ext_resource type="Script" uid="uid://cxfgwsvp7hgf5" path="res://stove.gd" id="1_ugy6n"]
+[ext_resource type="Script" path="res://stove.gd" id="1_ugy6n"]
 [ext_resource type="PackedScene" uid="uid://dt15obsj7t83i" path="res://sushi.tscn" id="2_eim6s"]
 [ext_resource type="PackedScene" uid="uid://dpgck31arjkj3" path="res://fried_rice.tscn" id="3_eim6s"]
 [ext_resource type="PackedScene" uid="uid://c1miqb0iwikql" path="res://salad.tscn" id="4_v45k4"]
 [ext_resource type="PackedScene" uid="uid://ba8ryw1h1yhit" path="res://onigiri.tscn" id="5_v45k4"]
-[ext_resource type="PackedScene" uid="uid://c76b6lbdu7tfk" path="res://burnt_sushi.tscn" id="6_hbb0h"]
+[ext_resource type="PackedScene" path="res://burnt_sushi.tscn" id="6_hbb0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elmm"]
 size = Vector2(128, 112)
 
-[node name="Stove" type="Area2D" unique_id=1380632403 groups=["stove"]]
+[node name="Stove" type="Area2D" groups=["stove"]]
 script = ExtResource("1_ugy6n")
 sushi_scene = ExtResource("2_eim6s")
 fried_rice_scene = ExtResource("3_eim6s")
@@ -18,13 +18,13 @@ salad_scene = ExtResource("4_v45k4")
 onigiri_scene = ExtResource("5_v45k4")
 burnt_sushi_scene = ExtResource("6_hbb0h")
 
-[node name="CookTimer" type="Timer" parent="." unique_id=812602856]
+[node name="CookTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1961278006]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5elmm")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=510353728]
+[node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-48, -48, 43, -48, 43, 48, -48, 48)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

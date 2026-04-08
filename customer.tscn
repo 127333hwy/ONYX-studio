@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://qsr0kovdhi5u"]
+[gd_scene load_steps=5 format=3 uid="uid://qsr0kovdhi5u"]
 
 [ext_resource type="Script" path="res://customer.gd" id="1_00dqi"]
+[ext_resource type="Texture2D" uid="uid://dj6ig0hycqb5i" path="res://speeching bubble.png" id="2_dumot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttndt"]
 size = Vector2(24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unyuo"]
 
 [node name="Customer" type="CharacterBody2D"]
 script = ExtResource("1_00dqi")
@@ -23,31 +26,29 @@ shape = SubResource("RectangleShape2D_ttndt")
 z_index = 1
 position = Vector2(0, -20)
 
-[node name="BubbleBG" type="ColorRect" parent="Bubble"]
-offset_left = -8.0
-offset_top = -12.0
-offset_right = 40.0
-offset_bottom = 13.0
-size_flags_horizontal = 6
-metadata/_edit_use_anchors_ = true
+[node name="BubbleBG" type="TextureRect" parent="Bubble"]
+offset_left = -10.0
+offset_top = -55.0
+offset_right = 502.0
+offset_bottom = 457.0
+scale = Vector2(0.15, 0.15)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_dumot")
 
-[node name="BubbleLabel" type="Label" parent="Bubble/BubbleBG"]
-custom_minimum_size = Vector2(0, -50)
+[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = -1.0
-offset_right = 3.0
-offset_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -642.667
+offset_top = -322.667
+offset_right = -482.667
+offset_bottom = -242.667
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.700507, 0.000499693, 0.727587, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
-text = "Order
-
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+scale = Vector2(8, 8)
+texture = SubResource("AtlasTexture_unyuo")
+stretch_mode = 3
