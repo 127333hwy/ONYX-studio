@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ndk6wvw2do5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(0.8235294, 0.6, 0.75686276, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.6097898, 0.1911096, 0.42338395, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.47624594, 0.60362554, 0.81754446, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.5
+offset_top = -46.25
+offset_right = 163.5
+offset_bottom = 46.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.84386694, 0.9828233, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06t4h")
+text = "Start Game"
