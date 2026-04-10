@@ -135,8 +135,8 @@ region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
 
 [node name="ServeCounter" type="Sprite2D" parent="kitchen"]
-position = Vector2(617, 244)
-scale = Vector2(0.367347, 0.516753)
+position = Vector2(614, 256)
+scale = Vector2(0.357143, 0.516753)
 texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
