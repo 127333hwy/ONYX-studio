@@ -1,11 +1,11 @@
 [gd_scene load_steps=31 format=3 uid="uid://cf1r0pydbne0c"]
 
-[ext_resource type="Script" uid="uid://cxfgwsvp7hgf5" path="res://stove.gd" id="1_ugy6n"]
+[ext_resource type="Script" path="res://stove.gd" id="1_ugy6n"]
 [ext_resource type="PackedScene" uid="uid://dt15obsj7t83i" path="res://sushi.tscn" id="2_eim6s"]
 [ext_resource type="PackedScene" uid="uid://dpgck31arjkj3" path="res://fried_rice.tscn" id="3_eim6s"]
 [ext_resource type="PackedScene" uid="uid://c1miqb0iwikql" path="res://salad.tscn" id="4_v45k4"]
 [ext_resource type="PackedScene" uid="uid://ba8ryw1h1yhit" path="res://onigiri.tscn" id="5_v45k4"]
-[ext_resource type="PackedScene" uid="uid://c76b6lbdu7tfk" path="res://burnt_sushi.tscn" id="6_hbb0h"]
+[ext_resource type="PackedScene" path="res://burnt_sushi.tscn" id="6_hbb0h"]
 [ext_resource type="Texture2D" uid="uid://cikbmiiwiadb3" path="res://cooking animation-Sheet.png" id="7_ipmka"]
 [ext_resource type="Texture2D" uid="uid://b6jljjgb1sf1s" path="res://cooking animation-Sheet (1).png" id="8_ipmka"]
 
@@ -153,7 +153,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_1258t")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"cooking",
 "speed": 10.0
 }, {
 "frames": [{
@@ -161,7 +161,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_fmcdm")
 }],
 "loop": true,
-"name": &"stove",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -181,10 +181,10 @@ position = Vector2(8.5, 0)
 shape = SubResource("RectangleShape2D_5elmm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.0000002, 9)
+position = Vector2(2, 9)
 scale = Vector2(0.17, 0.17)
 sprite_frames = SubResource("SpriteFrames_wwgq7")
-animation = &"new_animation"
+animation = &"cooking"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

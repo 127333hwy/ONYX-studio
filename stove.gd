@@ -5,6 +5,7 @@ extends Area2D
 @export var salad_scene : PackedScene
 @export var onigiri_scene : PackedScene
 @export var burnt_sushi_scene : PackedScene
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var ingredients : Array = []
 var cooking : bool = false
@@ -12,7 +13,9 @@ var player_in_range : bool = false
 
 @onready var cook_timer: Timer = $CookTimer
 
-
+func _ready():
+	animated_sprite.play("idle")
+	
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		var player = get_tree().get_first_node_in_group("player")
@@ -37,6 +40,7 @@ func start_cooking():
 	cooking = true
 	print("Cooking started...")
 	cook_timer.start(5.0)
+	
 	
 
 func check_recipe():
@@ -66,6 +70,14 @@ func check_recipe():
 		burn_all()
 
 func make_dish(dish_scene):
+	cooking = true
+	animated_sprite.play("cooking")
+	cook_timer.start(5.0)
+	await cook_timer.timeout
+	
+	make_dish(dish_scene)
+	animated_sprite.play("idle")
+	cooking = false
 	
 	var finished_dish = dish_scene.instantiate()
 	add_child(finished_dish)
