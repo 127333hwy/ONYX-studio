@@ -54,7 +54,7 @@ func place_item(item_to_add):
 func start_cooking():
 	cooking = true
 	print("Cooking started...")
-	cook_timer.start(5.0)
+	cook_timer.start(3.0)
 	
 	
 
