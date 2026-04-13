@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
-[ext_resource type="Texture2D" uid="uid://50bnmj304trj" path="res://kitchen.png" id="1_t4m42"]
+[ext_resource type="Texture2D" uid="uid://dtcp8s2il7741" path="res://newwwwwwww-export.png" id="1_pgs4n"]
 [ext_resource type="Texture2D" uid="uid://ba0hnb6shvxkd" path="res://stove-Sheet.png" id="1_tprrn"]
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
@@ -105,18 +105,18 @@ position = Vector2(1, 0)
 [node name="kitchen" type="Node" parent="."]
 
 [node name="Sink" type="Sprite2D" parent="kitchen"]
-position = Vector2(248, 101)
-scale = Vector2(0.339286, 0.334375)
-texture = ExtResource("1_t4m42")
+position = Vector2(324.5, 77.05)
+scale = Vector2(0.355655, 0.347991)
+texture = ExtResource("1_pgs4n")
 region_enabled = true
-region_rect = Rect2(416, 832, 280, 320)
+region_rect = Rect2(416, 704, 672, 448)
 
 [node name="Shelf" type="Sprite2D" parent="kitchen"]
-position = Vector2(420, 77)
-scale = Vector2(0.337158, 0.326719)
-texture = ExtResource("1_t4m42")
+position = Vector2(490, 79)
+scale = Vector2(0.374612, 0.367559)
+texture = ExtResource("1_pgs4n")
 region_enabled = true
-region_rect = Rect2(712, 672, 736, 480)
+region_rect = Rect2(1096, 720, 248, 432)
 
 [node name="VerticalCounter" type="Sprite2D" parent="kitchen"]
 position = Vector2(60, 510)
@@ -135,8 +135,8 @@ region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
 
 [node name="ServeCounter" type="Sprite2D" parent="kitchen"]
-position = Vector2(614, 256)
-scale = Vector2(0.357143, 0.516753)
+position = Vector2(605, 257)
+scale = Vector2(0.339286, 0.42848)
 texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
@@ -151,10 +151,9 @@ region_rect = Rect2(40, 120, 392, 776)
 [node name="StaticBody2D" type="StaticBody2D" parent="kitchen"]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
-visible = false
 z_index = 1
-position = Vector2(0.3125, -134.588)
-scale = Vector2(1.05768, 1.59767)
+position = Vector2(0.3125, -97.8935)
+scale = Vector2(1.05768, 1.43279)
 polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.138, 514.57, 4.76837e-07, 514.57)
 
 [node name="FoodCounter" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
@@ -164,10 +163,9 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(176, 8)
 scale = Vector2(0.790428, 1)
-polygon = PackedVector2Array(30.3633, -8, 647.876, -8, 644.35, 424, 462.17, 424, 462.17, 104, 30.3633, 104)
+polygon = PackedVector2Array(45.545, -8, 647.876, -8, 644.35, 424, 462.17, 424, 462.17, 104, 46.8101, 106)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
-visible = false
 z_index = 1
 position = Vector2(1.60001, 149.993)
 scale = Vector2(1, 0.790876)
