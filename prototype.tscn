@@ -100,7 +100,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_5crrw")
 Button/styles/pressed = SubResource("StyleBoxFlat_b7xfc")
 
 [node name="prototype" type="Node2D"]
-position = Vector2(1, 0)
+position = Vector2(1, -1)
 
 [node name="kitchen" type="Node" parent="."]
 
