@@ -1,4 +1,4 @@
-[gd_resource type="AtlasTexture" format=3 uid="uid://dsj8rv5o3jy4h"]
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dsj8rv5o3jy4h"]
 
 [ext_resource type="Texture2D" uid="uid://d2vpmnol4evdm" path="res://dishes-Sheet.png" id="1_usr31"]
 
