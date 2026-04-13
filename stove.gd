@@ -54,7 +54,7 @@ func place_item(item_to_add):
 func start_cooking():
 	cooking = true
 	print("Cooking started...")
-	cook_timer.start(3.0)
+	cook_timer.start(2.5)
 	
 	
 
@@ -92,7 +92,7 @@ func start_cooking_timer(dish_scene):
 		item.queue_free()
 	ingredients.clear()
 	
-	cook_timer.start(5.0)
+	cook_timer.start(2.5)
 	await cook_timer.timeout
 	
 	cooking = false
