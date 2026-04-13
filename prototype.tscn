@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bowthejlbql7e"]
+[gd_scene format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
 [ext_resource type="Texture2D" uid="uid://dtcp8s2il7741" path="res://newwwwwwww-export.png" id="1_pgs4n"]
@@ -6,15 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
 [ext_resource type="PackedScene" uid="uid://dnrdknmq77i7a" path="res://rice.tscn" id="2_883nb"]
-[ext_resource type="Script" path="res://customer_spawner.gd" id="3_uu44d"]
-[ext_resource type="Script" path="res://KitchenDoor.gd" id="3_w6r6j"]
+[ext_resource type="Script" uid="uid://b51woqxxuo3me" path="res://customer_spawner.gd" id="3_uu44d"]
+[ext_resource type="Script" uid="uid://7g3guyxbku3i" path="res://KitchenDoor.gd" id="3_w6r6j"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
 [ext_resource type="PackedScene" uid="uid://ce4jmslr8mb7v" path="res://lettuce.tscn" id="6_vm637"]
-[ext_resource type="Script" path="res://item_pickup.gd" id="7_3c612"]
+[ext_resource type="Script" uid="uid://cwugidfdenkn" path="res://item_pickup.gd" id="7_3c612"]
 [ext_resource type="PackedScene" uid="uid://d1axh0eib7r6q" path="res://fish.tscn" id="7_h681u"]
 [ext_resource type="PackedScene" uid="uid://bn2rlgbt7v75y" path="res://meat.tscn" id="8_67dyb"]
 [ext_resource type="PackedScene" uid="uid://cqo5imy6uvlw3" path="res://pause_menu.tscn" id="8_hwjwa"]
-[ext_resource type="Script" path="res://open_pause_button.gd" id="8_ji23w"]
+[ext_resource type="Script" uid="uid://c5jbkvsoy8upj" path="res://open_pause_button.gd" id="8_ji23w"]
 [ext_resource type="Texture2D" uid="uid://bylhgkui7le5q" path="res://crates-Sheet.png" id="9_e13xq"]
 [ext_resource type="PackedScene" uid="uid://cf1r0pydbne0c" path="res://stove.tscn" id="11_sws78"]
 [ext_resource type="PackedScene" uid="uid://b71af1g6kro6m" path="res://Fish_Pickup.tscn" id="14_b8c0f"]
@@ -99,33 +99,33 @@ Button/styles/hover = SubResource("StyleBoxFlat_0kqq2")
 Button/styles/normal = SubResource("StyleBoxFlat_5crrw")
 Button/styles/pressed = SubResource("StyleBoxFlat_b7xfc")
 
-[node name="prototype" type="Node2D"]
+[node name="prototype" type="Node2D" unique_id=819808246]
 position = Vector2(1, 0)
 
-[node name="kitchen" type="Node" parent="."]
+[node name="kitchen" type="Node" parent="." unique_id=1601370657]
 
-[node name="Sink" type="Sprite2D" parent="kitchen"]
+[node name="Sink" type="Sprite2D" parent="kitchen" unique_id=801647283]
 position = Vector2(324.5, 77.05)
 scale = Vector2(0.355655, 0.347991)
 texture = ExtResource("1_pgs4n")
 region_enabled = true
 region_rect = Rect2(416, 704, 672, 448)
 
-[node name="Shelf" type="Sprite2D" parent="kitchen"]
+[node name="Shelf" type="Sprite2D" parent="kitchen" unique_id=1176534863]
 position = Vector2(490, 79)
 scale = Vector2(0.374612, 0.367559)
 texture = ExtResource("1_pgs4n")
 region_enabled = true
 region_rect = Rect2(1096, 720, 248, 432)
 
-[node name="VerticalCounter" type="Sprite2D" parent="kitchen"]
+[node name="VerticalCounter" type="Sprite2D" parent="kitchen" unique_id=686827591]
 position = Vector2(60, 510)
 scale = Vector2(0.321429, 0.359536)
 texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
 
-[node name="IngredientsCounter" type="Sprite2D" parent="kitchen"]
+[node name="IngredientsCounter" type="Sprite2D" parent="kitchen" unique_id=893568288]
 z_index = 11
 position = Vector2(333.833, 590.325)
 rotation = 1.5708
@@ -134,29 +134,29 @@ texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
 
-[node name="ServeCounter" type="Sprite2D" parent="kitchen"]
+[node name="ServeCounter" type="Sprite2D" parent="kitchen" unique_id=1980982168]
 position = Vector2(605, 257)
 scale = Vector2(0.339286, 0.42848)
 texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
 
-[node name="Stove" type="Sprite2D" parent="kitchen"]
+[node name="Stove" type="Sprite2D" parent="kitchen" unique_id=36393159]
 position = Vector2(60.368, 304.916)
 scale = Vector2(0.319551, 0.523412)
 texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(40, 120, 392, 776)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="kitchen"]
+[node name="StaticBody2D" type="StaticBody2D" parent="kitchen" unique_id=131215213]
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=988292879]
 z_index = 1
 position = Vector2(0.3125, -97.8935)
 scale = Vector2(1.05768, 1.43279)
 polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.138, 514.57, 4.76837e-07, 514.57)
 
-[node name="FoodCounter" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
+[node name="FoodCounter" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=1724320689]
 visible = false
 z_index = 1
 z_as_relative = false
@@ -165,130 +165,130 @@ position = Vector2(176, 8)
 scale = Vector2(0.790428, 1)
 polygon = PackedVector2Array(45.545, -8, 647.876, -8, 644.35, 424, 462.17, 424, 462.17, 104, 46.8101, 106)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=2000991346]
 z_index = 1
 position = Vector2(1.60001, 149.993)
 scale = Vector2(1, 0.790876)
 polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
 
-[node name="CustomerSpawner" type="Node2D" parent="."]
+[node name="CustomerSpawner" type="Node2D" parent="." unique_id=2032709747]
 position = Vector2(750.4, 31.8798)
 script = ExtResource("3_uu44d")
 customer_scene = ExtResource("4_a2g17")
 
-[node name="SpawnPoint" type="Marker2D" parent="."]
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=997773250]
 position = Vector2(750.4, 31.8798)
 
-[node name="Tables" type="Node" parent="."]
+[node name="Tables" type="Node" parent="." unique_id=975578522]
 
-[node name="Table" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
+[node name="Table" parent="Tables" unique_id=148867991 groups=["tables"] instance=ExtResource("1_72gul")]
 position = Vector2(896, 232)
 
-[node name="Table2" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
+[node name="Table2" parent="Tables" unique_id=1697698339 groups=["tables"] instance=ExtResource("1_72gul")]
 position = Vector2(1184, 232)
 
-[node name="Table3" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
+[node name="Table3" parent="Tables" unique_id=1416317241 groups=["tables"] instance=ExtResource("1_72gul")]
 position = Vector2(896, 448)
 
-[node name="Table4" parent="Tables" groups=["tables"] instance=ExtResource("1_72gul")]
+[node name="Table4" parent="Tables" unique_id=1905816516 groups=["tables"] instance=ExtResource("1_72gul")]
 position = Vector2(1184, 448)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1993315438]
 wait_time = 5.0
 autostart = true
 
-[node name="Worldboundries" parent="." instance=ExtResource("2_8ftn4")]
+[node name="Worldboundries" parent="." unique_id=1051896561 instance=ExtResource("2_8ftn4")]
 position = Vector2(-1.60001, -0.120216)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundries"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundries" unique_id=1515632097]
 position = Vector2(-9.60001, 335.88)
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Worldboundries"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Worldboundries" unique_id=1978521533]
 position = Vector2(1406.4, 311.88)
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Worldboundries"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Worldboundries" unique_id=1463246344]
 position = Vector2(694.404, 656.94)
 rotation = 1.5708
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Worldboundries"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Worldboundries" unique_id=1554987742]
 position = Vector2(704, -16)
 rotation = 1.5708
 scale = Vector2(0.728342, 1.00315)
 shape = SubResource("RectangleShape2D_udnpg")
 
-[node name="Ingredients" type="Node" parent="."]
+[node name="Ingredients" type="Node" parent="." unique_id=1404929901]
 
-[node name="Rice" parent="Ingredients" instance=ExtResource("2_883nb")]
+[node name="Rice" parent="Ingredients" unique_id=828022360 instance=ExtResource("2_883nb")]
 z_index = 10
 position = Vector2(173, 556)
 
-[node name="Lettuce" parent="Ingredients" instance=ExtResource("6_vm637")]
+[node name="Lettuce" parent="Ingredients" unique_id=1491292820 instance=ExtResource("6_vm637")]
 z_index = 10
 position = Vector2(272, 556)
 script = ExtResource("7_3c612")
 item_name = "Ingredient"
 
-[node name="Fish" parent="Ingredients" instance=ExtResource("7_h681u")]
+[node name="Fish" parent="Ingredients" unique_id=739468259 instance=ExtResource("7_h681u")]
 visible = false
 z_index = 10
 position = Vector2(363, 563)
 script = ExtResource("7_3c612")
 
-[node name="Meat" parent="Ingredients" instance=ExtResource("8_67dyb")]
+[node name="Meat" parent="Ingredients" unique_id=295131416 instance=ExtResource("8_67dyb")]
 z_index = 10
 position = Vector2(500, 572)
 script = ExtResource("7_3c612")
 item_name = "Ingredient"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ingredients"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ingredients" unique_id=2134318942]
 z_index = 12
 position = Vector2(280, 574)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_3c612")
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Ingredients"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Ingredients" unique_id=938845890]
 z_index = 12
 position = Vector2(376, 573)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_oy8qm")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Ingredients"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Ingredients" unique_id=1819222275]
 z_index = 12
 position = Vector2(486, 574)
 scale = Vector2(0.303, 0.3)
 sprite_frames = SubResource("SpriteFrames_sw1xi")
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Ingredients"]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Ingredients" unique_id=532868107]
 z_index = 12
 position = Vector2(172, 574)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_0c7e4")
 
-[node name="KitchenDoor" type="Area2D" parent="."]
+[node name="KitchenDoor" type="Area2D" parent="." unique_id=2140275632]
 position = Vector2(86.4, -88.1202)
 script = ExtResource("3_w6r6j")
 
-[node name="Polygon2D" type="Polygon2D" parent="KitchenDoor"]
+[node name="Polygon2D" type="Polygon2D" parent="KitchenDoor" unique_id=1415568044]
 position = Vector2(-88, 88.6608)
 scale = Vector2(0.425912, 5.49629)
 polygon = PackedVector2Array(1.40874, 18.8235, 150.857, 18.8235, 150.857, 1.40246e-08, -1.60001, -0.120216)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor" unique_id=787295856]
 position = Vector2(-55.4, 136.12)
 scale = Vector2(0.425912, 4.65882)
 shape = SubResource("RectangleShape2D_f3uba")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_vmgys")]
+[node name="CharacterBody2D" parent="." unique_id=535476558 instance=ExtResource("1_vmgys")]
 z_index = 10
 position = Vector2(335.4, 328.88)
 
-[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=157171252]
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
@@ -300,20 +300,20 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 
-[node name="Stoves" type="Node" parent="."]
+[node name="Stoves" type="Node" parent="." unique_id=1655426385]
 
-[node name="stove" parent="Stoves" instance=ExtResource("11_sws78")]
+[node name="stove" parent="Stoves" unique_id=1381269704 instance=ExtResource("11_sws78")]
 position = Vector2(62, 427)
 
-[node name="stove2" parent="Stoves" instance=ExtResource("11_sws78")]
+[node name="stove2" parent="Stoves" unique_id=676551922 instance=ExtResource("11_sws78")]
 position = Vector2(62, 302)
 
-[node name="stove3" parent="Stoves" instance=ExtResource("11_sws78")]
+[node name="stove3" parent="Stoves" unique_id=406888861 instance=ExtResource("11_sws78")]
 position = Vector2(62, 173)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1430129798]
 
-[node name="OpenPauseButton" type="Button" parent="CanvasLayer"]
+[node name="OpenPauseButton" type="Button" parent="CanvasLayer" unique_id=2138850113]
 process_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -328,10 +328,10 @@ text = "I I
 "
 script = ExtResource("8_ji23w")
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_hwjwa")]
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1145840687 instance=ExtResource("8_hwjwa")]
 visible = false
 
-[node name="Fish_Pickup" parent="." instance=ExtResource("14_b8c0f")]
+[node name="Fish_Pickup" parent="." unique_id=577823054 instance=ExtResource("14_b8c0f")]
 position = Vector2(357.4, 567.88)
 item_scene = null
 

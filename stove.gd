@@ -19,8 +19,23 @@ func _ready():
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		var player = get_tree().get_first_node_in_group("player")
-		if player and player.holding_item:
-			place_item(player.held_item)
+		if not player: return
+		
+		var stove_has_dish = false
+		for child in get_children():
+			if child.is_in_group("dish"):
+				stove_has_dish = true
+				break
+		var player_holding_finished_dish = false
+		if player.holding_item and player.held_item and player.held_item.is_in_group("dish"):
+			player_holding_finished_dish = true
+			
+		if stove_has_dish or player_holding_finished_dish:
+			return
+			
+		if player and player.holding_item and !cooking:
+			if ingredients.size() < 2:
+				place_item(player.held_item)
 
 func place_item(item_to_add):
 	if cooking:
@@ -46,7 +61,8 @@ func start_cooking():
 func check_recipe():
 	var names = []
 	for item in ingredients:
-		names.append(item.item_name)
+		if "item_name" in item:
+			names.append(item.item_name)
 	names.sort()
 	var key = ",".join(names)
 	
@@ -63,30 +79,41 @@ func check_recipe():
 		"Lettuce,Rice": onigiri_scene
 	}
 	if recipes.has(key):
-		make_dish(recipes[key])
+		start_cooking_timer(recipes[key])
 		print("fail: recipe found")
 	else:
 		print("failed")
 		burn_all()
 
-func make_dish(dish_scene):
+func start_cooking_timer(dish_scene):
 	cooking = true
 	animated_sprite.play("cooking")
+	for item in ingredients:
+		item.queue_free()
+	ingredients.clear()
+	
 	cook_timer.start(5.0)
 	await cook_timer.timeout
 	
-	make_dish(dish_scene)
-	animated_sprite.play("idle")
 	cooking = false
+	animated_sprite.play("idle")
+	spawn_finished_dish(dish_scene)
 	
+func spawn_finished_dish(dish_scene):
+	if dish_scene == null: 
+		return
 	var finished_dish = dish_scene.instantiate()
 	add_child(finished_dish)
 	finished_dish.position = Vector2.ZERO
 	
-	finished_dish.add_to_group("ingredient")
+	finished_dish.visible = true
+	finished_dish.z_index = 5
+	finished_dish.add_to_group("dish")
+
 	print("Created dish! Ready for pickup.")
+	
 	if !"item_name" in finished_dish:
-		finished_dish.set("item_name", "RiceBowl")
+		finished_dish.set("item_name", "FinishedDish")
 	
 func burn_all():
 	print("Ingredients burned!")
@@ -98,7 +125,7 @@ func burn_all():
 	add_child(trash)
 	trash.position = Vector2.ZERO
 	
-	trash.add_to_group("ingredient")
+	trash.add_to_group("dish")
 	if "item_name" in trash:
 		trash.item_name = "BurntFood"
 	

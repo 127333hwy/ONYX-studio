@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://qsr0kovdhi5u"]
+[gd_scene format=3 uid="uid://qsr0kovdhi5u"]
 
-[ext_resource type="Script" path="res://customer.gd" id="1_00dqi"]
+[ext_resource type="Script" uid="uid://dydin1hmfg6ca" path="res://customer.gd" id="1_00dqi"]
 [ext_resource type="Texture2D" uid="uid://dj6ig0hycqb5i" path="res://speeching bubble.png" id="2_dumot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttndt"]
@@ -8,25 +8,25 @@ size = Vector2(24, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unyuo"]
 
-[node name="Customer" type="CharacterBody2D"]
+[node name="Customer" type="CharacterBody2D" unique_id=966532427]
 script = ExtResource("1_00dqi")
 
-[node name="Body" type="Polygon2D" parent="."]
+[node name="Body" type="Polygon2D" parent="." unique_id=1606219605]
 z_index = 1
 position = Vector2(-400, -152)
 scale = Vector2(1.5, 1)
 color = Color(1, 0.74902, 1, 1)
 polygon = PackedVector2Array(256, 144, 248, 176, 256, 176, 264, 176)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1226104827]
 position = Vector2(-16, 8)
 shape = SubResource("RectangleShape2D_ttndt")
 
-[node name="Bubble" type="Node2D" parent="."]
+[node name="Bubble" type="Node2D" parent="." unique_id=5005703]
 z_index = 1
 position = Vector2(0, -20)
 
-[node name="BubbleBG" type="TextureRect" parent="Bubble"]
+[node name="BubbleBG" type="TextureRect" parent="Bubble" unique_id=830136665]
 offset_left = -10.0
 offset_top = -55.0
 offset_right = 502.0
@@ -36,17 +36,18 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("2_dumot")
 
-[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG"]
+[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG" unique_id=460487416]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -642.667
-offset_top = -322.667
-offset_right = -482.667
-offset_bottom = -242.667
+anchors_preset = -1
+anchor_left = 0.49500003
+anchor_top = 0.51100004
+anchor_right = 0.49500003
+anchor_bottom = 0.51100004
+offset_left = -640.107
+offset_top = -328.299
+offset_right = -480.107
+offset_bottom = -248.29903
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(8, 8)
