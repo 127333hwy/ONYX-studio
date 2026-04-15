@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dnrdknmq77i7a"]
 
-[ext_resource type="Script" path="res://rice.gd" id="1_iqk3k"]
-[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://assets/food/ingredients-Sheet.png" id="2_3a3mk"]
+[ext_resource type="Script" path="res://Script/rice.gd" id="1_iqk3k"]
+[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_3a3mk"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_weqpt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dedsb"]

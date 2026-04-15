@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=32 format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
 [ext_resource type="Texture2D" uid="uid://dtcp8s2il7741" path="res://newwwwwwww-export.png" id="1_pgs4n"]
@@ -6,21 +6,65 @@
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
 [ext_resource type="PackedScene" uid="uid://dnrdknmq77i7a" path="res://rice.tscn" id="2_883nb"]
-[ext_resource type="Script" path="res://customer_spawner.gd" id="3_uu44d"]
+[ext_resource type="Script" path="res://Script/customer_spawner.gd" id="3_uu44d"]
 [ext_resource type="Script" path="res://KitchenDoor.gd" id="3_w6r6j"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
 [ext_resource type="PackedScene" uid="uid://ce4jmslr8mb7v" path="res://lettuce.tscn" id="6_vm637"]
-[ext_resource type="Script" path="res://item_pickup.gd" id="7_3c612"]
 [ext_resource type="PackedScene" uid="uid://d1axh0eib7r6q" path="res://fish.tscn" id="7_h681u"]
 [ext_resource type="PackedScene" uid="uid://bn2rlgbt7v75y" path="res://meat.tscn" id="8_67dyb"]
 [ext_resource type="PackedScene" uid="uid://cqo5imy6uvlw3" path="res://pause_menu.tscn" id="8_hwjwa"]
 [ext_resource type="Script" path="res://open_pause_button.gd" id="8_ji23w"]
 [ext_resource type="Texture2D" uid="uid://bylhgkui7le5q" path="res://crates-Sheet.png" id="9_e13xq"]
 [ext_resource type="PackedScene" uid="uid://cf1r0pydbne0c" path="res://stove.tscn" id="11_sws78"]
-[ext_resource type="PackedScene" uid="uid://b71af1g6kro6m" path="res://Fish_Pickup.tscn" id="14_b8c0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udnpg"]
 size = Vector2(21.9677, 1403.56)
+
+[sub_resource type="GDScript" id="GDScript_sbopd"]
+script/source = "extends Node2D
+
+@onready var prompt = $Interaction
+
+@export var item_scene : PackedScene
+@export var item_name : String = \"Ingredient\"
+
+var player_in_range := false
+
+func _ready():
+	$Area2D.body_entered.connect(_on_body_entered)
+	$Area2D.body_exited.connect(_on_body_exited)
+	prompt.visible = false
+
+func _process(_delta):
+	if player_in_range and Input.is_action_just_pressed(\"interact\"):
+		var player = get_tree().get_first_node_in_group(\"player\")
+		if player and not player.holding_item:
+			pick_up(player)
+
+func _on_body_entered(body):
+	if body is CharacterBody2D and body.is_in_group(\"player\"):
+		player_in_range = true
+		if not body.holding_item: 
+			prompt.visible = true
+
+func _on_body_exited(body):
+	if body is CharacterBody2D and body.is_in_group(\"player\"):
+		player_in_range = false
+		prompt.visible = false
+
+func pick_up(player):
+	var pickup_point = get_tree().get_first_node_in_group(\"pickup_point\")
+	if pickup_point == null:
+		return
+	var new_item = item_scene.instantiate()
+	pickup_point.add_child(new_item)
+	new_item.position = Vector2.ZERO
+
+	player.holding_item = true
+	player.held_item = new_item
+
+	prompt.visible = false
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0c7e4"]
 atlas = ExtResource("9_e13xq")
@@ -231,19 +275,18 @@ position = Vector2(173, 556)
 [node name="Lettuce" parent="Ingredients" instance=ExtResource("6_vm637")]
 z_index = 10
 position = Vector2(272, 556)
-script = ExtResource("7_3c612")
+script = SubResource("GDScript_sbopd")
 item_name = "Ingredient"
 
 [node name="Fish" parent="Ingredients" instance=ExtResource("7_h681u")]
-visible = false
 z_index = 10
-position = Vector2(363, 563)
-script = ExtResource("7_3c612")
+position = Vector2(377, 560)
+script = SubResource("GDScript_sbopd")
 
 [node name="Meat" parent="Ingredients" instance=ExtResource("8_67dyb")]
 z_index = 10
 position = Vector2(500, 572)
-script = ExtResource("7_3c612")
+script = SubResource("GDScript_sbopd")
 item_name = "Ingredient"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ingredients"]
@@ -287,6 +330,7 @@ shape = SubResource("RectangleShape2D_f3uba")
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_vmgys")]
 z_index = 10
 position = Vector2(335.4, 328.88)
+script = null
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3, 3)
@@ -330,10 +374,6 @@ script = ExtResource("8_ji23w")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_hwjwa")]
 visible = false
-
-[node name="Fish_Pickup" parent="." instance=ExtResource("14_b8c0f")]
-position = Vector2(357.4, 567.88)
-item_scene = null
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]

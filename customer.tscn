@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://qsr0kovdhi5u"]
 
-[ext_resource type="Script" path="res://customer.gd" id="1_00dqi"]
+[ext_resource type="Script" path="res://Script/customer.gd" id="1_00dqi"]
 [ext_resource type="Texture2D" uid="uid://dj6ig0hycqb5i" path="res://speeching bubble.png" id="2_dumot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttndt"]

@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" path="res://lettuce.gd" id="1_gcx7u"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_05s54"]
-[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://assets/food/ingredients-Sheet.png" id="2_vulvv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ajybx"]
+load_path = "res://.godot/imported/ingredients-Sheet.png-10d0f2de4ca541a81d5298727b0b7a92.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_82cq8"]
-atlas = ExtResource("2_vulvv")
+atlas = SubResource("CompressedTexture2D_ajybx")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_psrhl"]

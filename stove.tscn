@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://cf1r0pydbne0c"]
 
-[ext_resource type="Script" path="res://stove.gd" id="1_ugy6n"]
+[ext_resource type="Script" path="res://Script/stove.gd" id="1_ugy6n"]
 [ext_resource type="PackedScene" uid="uid://dt15obsj7t83i" path="res://sushi.tscn" id="2_eim6s"]
 [ext_resource type="PackedScene" uid="uid://dpgck31arjkj3" path="res://fried_rice.tscn" id="3_eim6s"]
 [ext_resource type="PackedScene" uid="uid://c1miqb0iwikql" path="res://salad.tscn" id="4_v45k4"]
