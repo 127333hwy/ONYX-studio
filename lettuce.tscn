@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://lettuce.gd" id="1_gcx7u"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_05s54"]
-[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_vulvv"]
+[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://assets/food/ingredients-Sheet.png" id="2_vulvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_82cq8"]
 atlas = ExtResource("2_vulvv")

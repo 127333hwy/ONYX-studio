@@ -37,16 +37,17 @@ size_flags_vertical = 0
 texture = ExtResource("2_dumot")
 
 [node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG"]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -642.667
-offset_top = -322.667
-offset_right = -482.667
-offset_bottom = -242.667
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.511
+anchor_right = 0.495
+anchor_bottom = 0.511
+offset_left = -640.107
+offset_top = -328.299
+offset_right = -480.107
+offset_bottom = -248.299
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(8, 8)

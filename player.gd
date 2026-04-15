@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 var holding_item: bool = false
 var held_item: Node2D = null
+@onready var pickup_point = $PickupPoint
 
 func _physics_process(delta: float) -> void:
 	if holding_item and held_item == null:
@@ -47,7 +48,7 @@ func _physics_process(delta: float) -> void:
 				
 func try_pickup():
 	print("trying to pickup")
-	var nearby = get_tree().get_nodes_in_group("ingredient")
+	var nearby = get_tree().get_nodes_in_group("ingredient") + get_tree().get_nodes_in_group("dish")
 	
 	var closest_target = null
 	var shortest_distance = interact_range
@@ -69,19 +70,23 @@ func try_pickup():
 			pick_up(closest_target)
 	else:
 		print("nothing nearby")
-
+	
 func pick_up(target):
 	if target == null: return
 	
 	held_item = target
 	holding_item = true
 	
-	if target.get_parent() == null:
-		get_tree().current_scene.add_child(target)
 	target.reparent(self)
-	target.position = Vector2(0, -40)
-	target.z_index = 10
-	print("item in player's hand")
+	
+	target.position = pickup_point.position
+	
+	target.visible = true
+	target.z_index = 30
+	print("item visible at", target.global_position)
+	
+	if target.has_node("CollisionShape2D"):
+		target.get_node("CollisionShape2D").disabled = true
 	
 func try_place():
 	print("attempted to place")

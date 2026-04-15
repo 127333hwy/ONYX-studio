@@ -149,11 +149,12 @@ script = ExtResource("1_rdf1g")
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_4flbx")
-animation = &"new_animation"
+animation = &"full_front_walk"
 autoplay = "full_front_walk"
+frame = 1
+frame_progress = 0.477445
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 scale = Vector2(0.34375, 0.526316)
 shape = SubResource("RectangleShape2D_bl31m")
 
