@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dpgck31arjkj3"]
+[gd_scene load_steps=0 format=3 uid="uid://dpgck31arjkj3"]
 
-[ext_resource type="Script" uid="uid://bd6v4tjcw6h4c" path="res://dish_item.gd" id="1_18gxs"]
-[ext_resource type="Texture2D" uid="uid://d2vpmnol4evdm" path="res://dishes-Sheet.png" id="1_airfu"]
+[ext_resource type="Script" path="res://dish_item.gd" id="1_18gxs"]
+[ext_resource type="Texture2D" uid="uid://d2vpmnol4evdm" path="res://assets/food/dishes-Sheet.png" id="1_airfu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18gxs"]
 atlas = ExtResource("1_airfu")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bawmwoaqhpno6"
-path="res://.godot/imported/ingredients-Sheet.png-10d0f2de4ca541a81d5298727b0b7a92.ctex"
+uid="uid://dfbkxq0ldnj18"
+path="res://.godot/imported/fried_rice.png-eae0bc7a1ba594d95f045a41a8930b48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food/ingredients-Sheet.png"
-dest_files=["res://.godot/imported/ingredients-Sheet.png-10d0f2de4ca541a81d5298727b0b7a92.ctex"]
+source_file="res://assets/food/fried_rice.png"
+dest_files=["res://.godot/imported/fried_rice.png-eae0bc7a1ba594d95f045a41a8930b48.ctex"]
 
 [params]
 
