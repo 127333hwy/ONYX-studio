@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://xadp1rxh7dig"]
 
 [ext_resource type="Script" path="res://item.gd" id="1_45uc2"]
-[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_taj31"]
+[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://assets/food/ingredients-Sheet.png" id="2_taj31"]
 
 [node name="FishItem" type="Node2D"]
 script = ExtResource("1_45uc2")
