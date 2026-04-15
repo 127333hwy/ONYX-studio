@@ -1,31 +1,7 @@
-[gd_scene format=3 uid="uid://qex813hye4h5"]
+[gd_scene load_steps=12 format=3 uid="uid://qex813hye4h5"]
 
 [ext_resource type="Script" uid="uid://ban3g5oc2c738" path="res://player.gd" id="1_rdf1g"]
 [ext_resource type="Texture2D" uid="uid://c8fceqedak4is" path="res://Sprite-monkey-Sheet.png" id="2_onrkg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(240, 0, 60, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(0, 40, 60, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(120, 0, 60, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(300, 0, 60, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(60, 40, 60, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(180, 0, 60, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
 atlas = ExtResource("2_onrkg")
@@ -55,40 +31,8 @@ region = Rect2(180, 40, 60, 40)
 atlas = ExtResource("2_onrkg")
 region = Rect2(180, 40, 60, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(180, 0, 60, 40)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_4flbx"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hqtel")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sweqy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i3pqv")
-}],
-"loop": true,
-"name": &"back_view_monkey_walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1jxqw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dw050")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2hs0m")
-}],
-"loop": true,
-"name": &"front_view_monkey_walk",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b26j0")
@@ -124,37 +68,24 @@ animations = [{
 "loop": true,
 "name": &"full_idle",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_onrkg")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl31m"]
 size = Vector2(256, 106.4)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1640536549 groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_rdf1g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=346758124]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_4flbx")
-animation = &"full_front_walk"
-autoplay = "full_front_walk"
+animation = &"full_back_walk"
+autoplay = "full_idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1364376966]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.34375, 0.526316)
 shape = SubResource("RectangleShape2D_bl31m")
 
-[node name="PickupPoint" type="Node2D" parent="." unique_id=200247419 groups=["pickup_point"]]
+[node name="PickupPoint" type="Node2D" parent="." groups=["pickup_point"]]
 position = Vector2(-33, 8)
