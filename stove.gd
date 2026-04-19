@@ -43,7 +43,8 @@ func place_item(item_to_add):
 	ingredients.append(item_to_add)
 	item_to_add.reparent(self)
 	item_to_add.position = Vector2.ZERO
-	item_to_add.visible = false
+	item_to_add.visible = true
+	item_to_add.z_index = 1
 	
 	print("Stove added: ", item_to_add.item_name)
 		
@@ -89,6 +90,7 @@ func start_cooking_timer(dish_scene):
 	cooking = true
 	animated_sprite.play("cooking")
 	for item in ingredients:
+		item.visible = false
 		item.queue_free()
 	ingredients.clear()
 	

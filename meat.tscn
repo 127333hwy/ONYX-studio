@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn2rlgbt7v75y"]
+[gd_scene format=3 uid="uid://bn2rlgbt7v75y"]
 
-[ext_resource type="Script" path="res://meat.gd" id="1_2fc84"]
+[ext_resource type="Script" uid="uid://cogaiiaikvski" path="res://meat.gd" id="1_2fc84"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_0wnju"]
-[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://assets/food/ingredients-Sheet.png" id="2_ur8ib"]
+[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_ur8ib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73nce"]
 atlas = ExtResource("2_ur8ib")
@@ -19,30 +19,32 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wnju"]
-size = Vector2(120, 120)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weqpt"]
+size = Vector2(88, 88)
 
-[node name="Meat" type="Node2D"]
+[node name="Meat" type="Node2D" unique_id=1101983680]
+z_index = 1
 script = ExtResource("1_2fc84")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1564564006]
 texture_filter = 1
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_fr2vu")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=712218898]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_0wnju")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=406413925]
+shape = SubResource("RectangleShape2D_weqpt")
 
-[node name="Interaction" type="Label" parent="."]
+[node name="Interaction" type="Label" parent="." unique_id=99157337]
 z_index = 10
-offset_left = -56.0
-offset_top = -60.0
-offset_right = 37.0
-offset_bottom = -44.0
+offset_left = -44.0
+offset_top = -44.0
+offset_right = 49.0
+offset_bottom = -28.0
 theme = ExtResource("2_0wnju")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 9
 text = "Press E to Interact"
 uppercase = true
+metadata/_edit_use_anchors_ = true
