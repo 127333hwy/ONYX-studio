@@ -84,7 +84,8 @@ animation = &"full_back_walk"
 autoplay = "full_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1467231033]
-scale = Vector2(0.34375, 0.526316)
+position = Vector2(3, -1)
+scale = Vector2(0.284, 0.434)
 shape = SubResource("RectangleShape2D_bl31m")
 
 [node name="PickupPoint" type="Node2D" parent="." unique_id=753666758 groups=["pickup_point"]]

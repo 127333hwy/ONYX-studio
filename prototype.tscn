@@ -117,13 +117,6 @@ texture = ExtResource("1_pgs4n")
 region_enabled = true
 region_rect = Rect2(1096, 720, 248, 432)
 
-[node name="VerticalCounter" type="Sprite2D" parent="kitchen" unique_id=1094499964]
-position = Vector2(60, 510)
-scale = Vector2(0.321429, 0.359536)
-texture = ExtResource("1_tprrn")
-region_enabled = true
-region_rect = Rect2(504, 120, 392, 776)
-
 [node name="IngredientsCounter" type="Sprite2D" parent="kitchen" unique_id=1861254161]
 z_index = 11
 position = Vector2(333.833, 590.325)
@@ -140,9 +133,16 @@ texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
 
-[node name="Stove" type="Sprite2D" parent="kitchen" unique_id=90356239]
-position = Vector2(60.368, 304.916)
-scale = Vector2(0.319551, 0.523412)
+[node name="VerticalCounter" type="Sprite2D" parent="kitchen" unique_id=1094499964]
+position = Vector2(60, 510)
+scale = Vector2(0.321429, 0.359536)
+texture = ExtResource("1_tprrn")
+region_enabled = true
+region_rect = Rect2(504, 120, 392, 776)
+
+[node name="StoveCounter" type="Sprite2D" parent="kitchen" unique_id=90356239]
+position = Vector2(60.368, 281.91605)
+scale = Vector2(0.319551, 0.46413383)
 texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(40, 120, 392, 776)
@@ -153,10 +153,9 @@ region_rect = Rect2(40, 120, 392, 776)
 z_index = 1
 position = Vector2(0.3125, -97.8935)
 scale = Vector2(1.05768, 1.43279)
-polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 108.138, 514.57, 4.76837e-07, 514.57)
+polygon = PackedVector2Array(-2.19534e-13, 117.616, 108.138, 117.616, 105.59669, 442.419, 113.160416, 442.419, 113.160416, 520.58813, -0.295458, 520.58813)
 
 [node name="FoodCounter" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=324704733]
-visible = false
 z_index = 1
 z_as_relative = false
 y_sort_enabled = true
@@ -166,8 +165,8 @@ polygon = PackedVector2Array(45.545, -8, 647.876, -8, 644.35, 424, 462.17, 424, 
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=1086753157]
 z_index = 1
-position = Vector2(1.60001, 149.993)
-scale = Vector2(1, 0.790876)
+position = Vector2(1.60001, 122.52035)
+scale = Vector2(1, 0.832499)
 polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
 
 [node name="CustomerSpawner" type="Node2D" parent="." unique_id=344020732]
@@ -224,22 +223,22 @@ shape = SubResource("RectangleShape2D_udnpg")
 [node name="Ingredients" type="Node" parent="." unique_id=1594149426]
 
 [node name="Rice" parent="Ingredients" unique_id=1656381901 instance=ExtResource("2_883nb")]
-z_index = 10
+z_index = 11
 position = Vector2(173, 556)
 script = ExtResource("7_3c612")
 
 [node name="Lettuce" parent="Ingredients" unique_id=790425220 instance=ExtResource("6_vm637")]
-z_index = 10
+z_index = 11
 position = Vector2(279, 556)
 script = ExtResource("7_3c612")
 
 [node name="Fish" parent="Ingredients" unique_id=463570216 instance=ExtResource("7_h681u")]
-z_index = 10
+z_index = 11
 position = Vector2(384, 560)
 script = ExtResource("7_3c612")
 
 [node name="Meat" parent="Ingredients" unique_id=1482494068 instance=ExtResource("8_67dyb")]
-z_index = 10
+z_index = 11
 position = Vector2(488, 556)
 script = ExtResource("7_3c612")
 
@@ -300,13 +299,13 @@ rotation_smoothing_speed = 10.0
 [node name="Stoves" type="Node" parent="." unique_id=876106496]
 
 [node name="stove" parent="Stoves" unique_id=1586911793 instance=ExtResource("11_sws78")]
-position = Vector2(62, 427)
+position = Vector2(62, 392)
 
 [node name="stove2" parent="Stoves" unique_id=1776422868 instance=ExtResource("11_sws78")]
-position = Vector2(62, 302)
+position = Vector2(62, 280)
 
 [node name="stove3" parent="Stoves" unique_id=2094681903 instance=ExtResource("11_sws78")]
-position = Vector2(62, 173)
+position = Vector2(62, 165)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1637367261]
 
