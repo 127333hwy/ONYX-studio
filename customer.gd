@@ -70,3 +70,12 @@ func handle_arrival():
 		if my_table != null:
 			my_table.customer_ref = self
 		generate_order()
+		
+func receive_dish(dish_node):
+	$Bubble.visible = false
+	await get_tree().create_timer(3.0).timeout
+	
+	if dish_node != null:
+		dish_node.queue_free()
+		
+	leave_resturant()

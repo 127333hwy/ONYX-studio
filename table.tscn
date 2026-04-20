@@ -1,23 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7dpq6e8hyk78"]
+[gd_scene format=3 uid="uid://c7dpq6e8hyk78"]
 
-[ext_resource type="Script" path="res://table.gd" id="1_ao2ys"]
+[ext_resource type="Script" uid="uid://bw0ghln4tfeap" path="res://table.gd" id="1_ao2ys"]
+[ext_resource type="Texture2D" uid="uid://cafpp6bm7hge2" path="res://furnitures-Sheet.png" id="2_v5i0k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdj1t"]
-size = Vector2(130, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5i0k"]
+size = Vector2(128, 88)
 
-[node name="Table" type="StaticBody2D"]
+[node name="Table" type="StaticBody2D" unique_id=566754967]
 script = ExtResource("1_ao2ys")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-376, -184)
-color = Color(0.995403, 0.746965, 0.799315, 1)
-polygon = PackedVector2Array(320, 128, 448, 128, 448, 256, 320, 256)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=946551338]
+texture_filter = 1
+position = Vector2(0, 3.94)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("2_v5i0k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_pdj1t")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=629411079]
+polygon = PackedVector2Array(-48, -56, 56, -56, 64, -40, 64, 0, 56, 16, 48, 24, 16, 32, 16, 64, 16, 80, 0, 88, -16, 80, -16, 64, -16, 32, -48, 24, -56, 16, -64, -8, -64, -40)
 
-[node name="Sitpoint" type="Marker2D" parent="."]
+[node name="Sitpoint" type="Marker2D" parent="." unique_id=617282351]
 position = Vector2(-1, 0)
 
-[node name="DishSpawnPoint" type="Marker2D" parent="."]
+[node name="DishSpawnPoint" type="Marker2D" parent="." unique_id=158618482]
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1515325697]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=926973297]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_v5i0k")

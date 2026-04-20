@@ -170,6 +170,7 @@ scale = Vector2(1, 0.832499)
 polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
 
 [node name="CustomerSpawner" type="Node2D" parent="." unique_id=344020732]
+z_index = 12
 position = Vector2(750.4, 31.8798)
 script = ExtResource("3_uu44d")
 customer_scene = ExtResource("4_a2g17")
@@ -180,15 +181,19 @@ position = Vector2(750.4, 31.8798)
 [node name="Tables" type="Node" parent="." unique_id=1485259596]
 
 [node name="Table" parent="Tables" unique_id=870217366 groups=["tables"] instance=ExtResource("1_72gul")]
+z_index = 11
 position = Vector2(896, 232)
 
 [node name="Table2" parent="Tables" unique_id=1722837128 groups=["tables"] instance=ExtResource("1_72gul")]
+z_index = 11
 position = Vector2(1184, 232)
 
 [node name="Table3" parent="Tables" unique_id=905682331 groups=["tables"] instance=ExtResource("1_72gul")]
+z_index = 11
 position = Vector2(896, 448)
 
 [node name="Table4" parent="Tables" unique_id=1325547742 groups=["tables"] instance=ExtResource("1_72gul")]
+z_index = 11
 position = Vector2(1184, 448)
 
 [node name="Timer" type="Timer" parent="." unique_id=1548242730]

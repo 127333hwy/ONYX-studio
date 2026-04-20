@@ -21,22 +21,30 @@ func _process(_delta):
 		var player = get_tree().get_first_node_in_group("player")
 		if not player: return
 		
-		var stove_has_dish = false
-		for child in get_children():
-			if child.is_in_group("dish"):
-				stove_has_dish = true
-				break
-		var player_holding_finished_dish = false
-		if player.holding_item and player.held_item and player.held_item.is_in_group("dish"):
-			player_holding_finished_dish = true
-			
-		if stove_has_dish or player_holding_finished_dish:
-			return
-			
-		if player and player.holding_item and !cooking:
-			if ingredients.size() < 2:
-				place_item(player.held_item)
+		if Input.is_action_just_pressed("pickup"):
+			var finished_dish = null
+			for child in get_children():
+				if child.is_in_group("dish"):
+					finished_dish = child
+					break
+				
+			if finished_dish != null and not player.holding_item:
+				pick_up_dish(player, finished_dish)
+		elif Input.is_action_just_pressed("drop_item"):
+			if player.held_item and player.holding_item and !cooking:
+				if !player.held_item.is_in_group("dish"):
+					if ingredients.size() < 2:
+						place_item(player.held_item)
 
+func pick_up_dish(player, dish):
+	var pickup_point = player.get_node("PickupPoint")
+	if pickup_point:
+		dish.reparent(pickup_point)
+		dish.position = Vector2.ZERO
+		
+		player.holding_item = true
+		player.held_item = dish
+		
 func place_item(item_to_add):
 	if cooking:
 		return
@@ -56,8 +64,6 @@ func start_cooking():
 	cooking = true
 	print("Cooking started...")
 	cook_timer.start(2.5)
-	
-	
 
 func check_recipe():
 	var names = []
@@ -107,15 +113,19 @@ func spawn_finished_dish(dish_scene):
 	var finished_dish = dish_scene.instantiate()
 	add_child(finished_dish)
 	finished_dish.position = Vector2.ZERO
-	
-	finished_dish.visible = true
-	finished_dish.z_index = 5
 	finished_dish.add_to_group("dish")
-
-	print("Created dish! Ready for pickup.")
 	
-	if !"item_name" in finished_dish:
-		finished_dish.set("item_name", "FinishedDish")
+	if dish_scene == fried_rice_scene:
+		finished_dish.item_name = "FriedRice"
+	elif dish_scene == sushi_scene:
+		finished_dish.item_name = "Sushi"
+	elif dish_scene == salad_scene:
+		finished_dish.item_name = "Salad"
+	elif dish_scene == onigiri_scene:
+		finished_dish.item_name = "Onigiri"
+		
+	print("Created dish! Ready for pickup.")
+
 	
 func burn_all():
 	print("Ingredients burned!")
