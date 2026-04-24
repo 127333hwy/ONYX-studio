@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://qsr0kovdhi5u"]
+[gd_scene load_steps=5 format=3 uid="uid://qsr0kovdhi5u"]
 
 [ext_resource type="Script" uid="uid://dydin1hmfg6ca" path="res://customer.gd" id="1_00dqi"]
 [ext_resource type="Texture2D" uid="uid://dj6ig0hycqb5i" path="res://speeching bubble.png" id="2_dumot"]
@@ -8,25 +8,28 @@ size = Vector2(24, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unyuo"]
 
-[node name="Customer" type="CharacterBody2D" unique_id=141920388]
+[node name="Customer" type="CharacterBody2D"]
+position = Vector2(16, -8)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_00dqi")
 
-[node name="Body" type="Polygon2D" parent="." unique_id=362725995]
+[node name="Body" type="Polygon2D" parent="."]
 z_index = 1
 position = Vector2(-400, -152)
 scale = Vector2(1.5, 1)
 color = Color(1, 0.74902, 1, 1)
 polygon = PackedVector2Array(256, 144, 248, 176, 256, 176, 264, 176)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=127271944]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-16, 8)
 shape = SubResource("RectangleShape2D_ttndt")
 
-[node name="Bubble" type="Node2D" parent="." unique_id=1301282109]
+[node name="Bubble" type="Node2D" parent="."]
 z_index = 1
 position = Vector2(0, -20)
 
-[node name="BubbleBG" type="TextureRect" parent="Bubble" unique_id=500847486]
+[node name="BubbleBG" type="TextureRect" parent="Bubble"]
 offset_left = -10.0
 offset_top = -55.0
 offset_right = 502.0
@@ -35,8 +38,9 @@ scale = Vector2(0.15, 0.15)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("2_dumot")
+metadata/_edit_use_anchors_ = true
 
-[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG" unique_id=730410999]
+[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -53,3 +57,4 @@ grow_vertical = 2
 scale = Vector2(8, 8)
 texture = SubResource("AtlasTexture_unyuo")
 stretch_mode = 3
+metadata/_edit_use_anchors_ = true

@@ -5,7 +5,7 @@ class_name Table
 var occupied:bool = false
 var customer_ref = null
 var player_in_range: bool = false
-
+@export var chair:Node2D;
 @onready var serve_point = $ServePoint 
 
 func _ready():
