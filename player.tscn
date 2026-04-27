@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://qex813hye4h5"]
+[gd_scene load_steps=12 format=3 uid="uid://qex813hye4h5"]
 
-[ext_resource type="Script" uid="uid://ban3g5oc2c738" path="res://player.gd" id="1_rdf1g"]
+[ext_resource type="Script" path="res://player.gd" id="1_rdf1g"]
 [ext_resource type="Texture2D" uid="uid://c8fceqedak4is" path="res://Sprite-monkey-Sheet.png" id="2_onrkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
@@ -73,20 +73,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl31m"]
 size = Vector2(256, 106.4)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1447273553 groups=["player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_rdf1g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=950640455]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_4flbx")
 animation = &"full_back_walk"
 autoplay = "full_idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1467231033]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -1)
 scale = Vector2(0.284, 0.434)
 shape = SubResource("RectangleShape2D_bl31m")
 
-[node name="PickupPoint" type="Node2D" parent="." unique_id=753666758 groups=["pickup_point"]]
+[node name="PickupPoint" type="Node2D" parent="." groups=["pickup_point"]]
 position = Vector2(-33, 8)

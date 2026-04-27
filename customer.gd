@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @export var speed:float = 120
 @export var possible_orders: Array[String] = ["Fried Rice","Salad","Sushi","Onigiri"]
 
