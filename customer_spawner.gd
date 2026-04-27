@@ -23,7 +23,7 @@ func spawn_customer():
 	customer.my_table = target_table
 	target_table.occupied = true
 	
-	customer.set_target(target_table.global_position)	
+	customer.set_target(target_table.chair.global_position)	
 func get_nearest_empty_table():
 	var all_tables = get_tree().get_nodes_in_group("tables")
 	

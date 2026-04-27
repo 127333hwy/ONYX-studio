@@ -11,16 +11,16 @@ extends CharacterBody2D
 	"Salad": preload ("res://Salad.tres") }
 	
 var target_position: Vector2 = Vector2(-9999, 9999)
-var exit_position: Vector2= Vector2.ZERO
+var exit_position: Vector2 = Vector2.ZERO
 
-var order_name: String =""
+var order_name: String = ""
 var arrived: bool = false
-var leaving :bool = false
+var leaving: bool = false
 
 var my_table = null
 
 @onready var bubble_bg: TextureRect = $Bubble/BubbleBG
-@onready var food_icon: TextureRect=$"Bubble/BubbleBG/Food Icon"
+@onready var food_icon: TextureRect = $"Bubble/BubbleBG/Food Icon"
 
 func _ready() -> void:
 	handle_arrival()
@@ -51,7 +51,7 @@ func leave_resturant():
 		
 	set_target(exit_position)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if arrived:
 		return
 	if target_position == Vector2.ZERO:
@@ -59,8 +59,9 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = target_position - global_position
 		
-	velocity = direction.normalized() * speed
-	move_and_slide()
+	if direction.length() > 1:
+		velocity = direction.normalized() * speed
+		move_and_slide()
 
 func handle_arrival(): 
 	arrived = true
