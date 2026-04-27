@@ -1,11 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=34 format=3 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
+[ext_resource type="Script" path="res://prototype.gd" id="1_lmi4q"]
 [ext_resource type="Texture2D" uid="uid://dtcp8s2il7741" path="res://newwwwwwww-export.png" id="1_pgs4n"]
 [ext_resource type="Texture2D" uid="uid://ba0hnb6shvxkd" path="res://stove-Sheet.png" id="1_tprrn"]
 [ext_resource type="PackedScene" uid="uid://qex813hye4h5" path="res://player.tscn" id="1_vmgys"]
 [ext_resource type="PackedScene" uid="uid://cgtwv07q80ihg" path="res://worldboundries.tscn" id="2_8ftn4"]
 [ext_resource type="PackedScene" uid="uid://dnrdknmq77i7a" path="res://rice.tscn" id="2_883nb"]
+[ext_resource type="PackedScene" uid="uid://wedxf8l54qhy" path="res://ticket_board.tscn" id="2_rvmve"]
 [ext_resource type="Script" path="res://customer_spawner.gd" id="3_uu44d"]
 [ext_resource type="Script" path="res://KitchenDoor.gd" id="3_w6r6j"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
@@ -100,18 +102,20 @@ Button/styles/pressed = SubResource("StyleBoxFlat_b7xfc")
 
 [node name="prototype" type="Node2D"]
 position = Vector2(1, 0)
+script = ExtResource("1_lmi4q")
+ticket_scene = ExtResource("2_rvmve")
 
 [node name="kitchen" type="Node" parent="."]
 
 [node name="Sink" type="Sprite2D" parent="kitchen"]
-position = Vector2(324.5, 77.05)
+position = Vector2(281, 83)
 scale = Vector2(0.355655, 0.347991)
 texture = ExtResource("1_pgs4n")
 region_enabled = true
 region_rect = Rect2(416, 704, 672, 448)
 
 [node name="Shelf" type="Sprite2D" parent="kitchen"]
-position = Vector2(490, 79)
+position = Vector2(447, 82)
 scale = Vector2(0.374612, 0.367559)
 texture = ExtResource("1_pgs4n")
 region_enabled = true
@@ -127,7 +131,7 @@ region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
 
 [node name="ServeCounter" type="Sprite2D" parent="kitchen"]
-position = Vector2(605, 257)
+position = Vector2(621, 276)
 scale = Vector2(0.339286, 0.42848)
 texture = ExtResource("1_tprrn")
 region_enabled = true
@@ -150,6 +154,7 @@ region_rect = Rect2(40, 120, 392, 776)
 [node name="StaticBody2D" type="StaticBody2D" parent="kitchen"]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
+visible = false
 z_index = 1
 position = Vector2(0.3125, -97.8935)
 scale = Vector2(1.05768, 1.43279)
@@ -161,9 +166,10 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(176, 8)
 scale = Vector2(0.790428, 1)
-polygon = PackedVector2Array(45.545, -8, 647.876, -8, 644.35, 424, 462.17, 424, 462.17, 104, 46.8101, 106)
+polygon = PackedVector2Array(-18.9771, -10, 647.876, -8, 644.35, 424, 497.199, 422, 500.994, 112, -18.9771, 107)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D"]
+visible = false
 z_index = 1
 position = Vector2(1.60001, 122.52)
 scale = Vector2(1, 0.832499)
