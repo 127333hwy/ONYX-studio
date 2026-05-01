@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://dpgck31arjkj3"]
+[gd_scene load_steps=6 format=3 uid="uid://dpgck31arjkj3"]
 
 [ext_resource type="Script" path="res://dish_item.gd" id="1_18gxs"]
 [ext_resource type="Texture2D" uid="uid://d2vpmnol4evdm" path="res://assets/food/dishes-Sheet.png" id="1_airfu"]
@@ -21,16 +21,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_airfu"]
 radius = 16.0
 
-[node name="FriedRice" type="Node2D" unique_id=1221894609 groups=["ingredient"]]
+[node name="FriedRice" type="Node2D" groups=["ingredient", "trash"]]
 scale = Vector2(1.1, 1.1)
 script = ExtResource("1_18gxs")
 item_name = "FriedRice"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2085244436]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_nd5sa")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1374664522]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1100038456]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_airfu")

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d1axh0eib7r6q"]
+[gd_scene load_steps=7 format=3 uid="uid://d1axh0eib7r6q"]
 
 [ext_resource type="Script" uid="uid://cogmgyu8lf3xg" path="res://fish.gd" id="1_xu20i"]
 [ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_6ik3a"]
@@ -22,20 +22,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgn23"]
 size = Vector2(96, 96)
 
-[node name="Fish" type="Node2D" unique_id=657064241]
+[node name="Fish" type="Node2D" groups=["trash"]]
 script = ExtResource("1_xu20i")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=10172226]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.98, 0.98)
 sprite_frames = SubResource("SpriteFrames_8vtik")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2062438516]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1906638642]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_hgn23")
 
-[node name="Interaction" type="Label" parent="." unique_id=1239038012]
+[node name="Interaction" type="Label" parent="."]
 z_index = 10
 offset_left = -48.0
 offset_top = -48.0

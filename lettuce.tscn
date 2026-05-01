@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ce4jmslr8mb7v"]
 
-[ext_resource type="Script" path="res://lettuce.gd" id="1_gcx7u"]
+[ext_resource type="Script" uid="uid://b0bsoixkxaj7t" path="res://lettuce.gd" id="1_gcx7u"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_05s54"]
 [ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_vulvv"]
 
@@ -22,7 +22,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5cmh"]
 size = Vector2(88, 88)
 
-[node name="Lettuce" type="Node2D"]
+[node name="Lettuce" type="Node2D" groups=["trash"]]
 script = ExtResource("1_gcx7u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
