@@ -62,6 +62,9 @@ func _physics_process(_delta: float) -> void:
 	if direction.length() > 1:
 		velocity = direction.normalized() * speed
 		move_and_slide()
+	
+	if leaving and global_position.distance_to(target_position) < 5.0:
+		handle_arrival()
 
 func handle_arrival(): 
 	arrived = true
@@ -74,10 +77,15 @@ func handle_arrival():
 		generate_order()
 		
 func receive_dish(dish_node):
-	$Bubble.visible = false
-	await get_tree().create_timer(3.0).timeout
-	
-	if dish_node != null:
+	var dish_name = dish_node.name
+	if dish_name == order_name:
+		print("Correct dish!")
+		$Bubble.visible = false
+		dish_node.z_index = 1
+		await get_tree().create_timer(4.0).timeout
+		if dish_node != null:
+			dish_node.queue_free()
+		leave_resturant()
+	else:
+		print("Wrong dish!")
 		dish_node.queue_free()
-		
-	leave_resturant()

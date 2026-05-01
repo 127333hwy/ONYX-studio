@@ -2278,6 +2278,9 @@ texture = ExtResource("1_sw1xi")
 [sub_resource type="TileSet" id="TileSet_28e6d"]
 sources/0 = SubResource("TileSetAtlasSource_kea01")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw1xi"]
+size = Vector2(194, 130)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udnpg"]
 size = Vector2(21.9677, 1403.56)
 
@@ -2433,6 +2436,10 @@ z_index = 1
 position = Vector2(1.60001, 122.52)
 scale = Vector2(1, 0.832499)
 polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kitchen/StaticBody2D" unique_id=1140765194]
+position = Vector2(639, 71)
+shape = SubResource("RectangleShape2D_sw1xi")
 
 [node name="CustomerSpawner" type="Node2D" parent="." unique_id=23231211]
 z_index = 12

@@ -95,26 +95,24 @@ func try_place():
 		print("Error: Held item is null")
 		return
 
-	var all_stoves = get_tree().get_nodes_in_group("stove")
+	var is_dish = held_item.is_in_group("dish")
+	print("Is dish: ", is_dish, " | Item name: ", held_item.name)
 	
-	print("Stoves detected: ", all_stoves.size())
+	if is_dish:
+		var closest_customer = _find_closest_in_group("customer")
+		if closest_customer:
+				print("SUCCESS: Delivering dish to customer ", closest_customer.name)
+				deliver_to_customer(closest_customer)
+				return
 	
-	var closest_stove = null
-	var min_dist = interact_range
-	
-	for stove in all_stoves:
-		var dist = global_position.distance_to(stove.global_position)
-		
-		print("Checking ", stove.name, " | Dist: ", dist, " | Max Range: ", interact_range)
-		if dist < min_dist:
-			min_dist = dist
-			closest_stove = stove
-
+	var closest_stove = _find_closest_in_group("stove")
 	if closest_stove:
-			print("SUCCESS: Found stove ", closest_stove.name)
-			put_in_stove(closest_stove)
+		print("SUCCESS: Found stove ", closest_stove.name)
+		put_in_stove(closest_stove)
 	else:
-			print("FAIL: No stove found within range.")
+		print("FAIL: Nothing in range to place item on.")
+		
+	
 		
 func put_in_stove(stove_node):
 	if held_item == null:
@@ -127,22 +125,32 @@ func put_in_stove(stove_node):
 	held_item = null
 
 	print("Player's item has been placed")
-	
-func drop_on_floor():
+
+func _find_closest_in_group(group_name: String) -> Node2D:
+	var nodes = get_tree().get_nodes_in_group(group_name)
+	print("Searching group: ", group_name, " | Found: ", nodes.size())
+	var closest = null
+	var min_dist = interact_range
+	for node in nodes:
+		var dist = global_position.distance_to(node.global_position)
+		print("  - ", node.name, " dist: ", dist, " | range: ", interact_range)
+		if dist < min_dist:
+			min_dist = dist
+			closest = node
+	return closest
+
+func deliver_to_customer(customer_node: Node2D):
 	if held_item == null:
 		return
-	
-	if "held" in held_item:
-		held_item.held = false
-	if held_item.has_node("Area2D"):
-		held_item.get_node("Area2D").monitoring = true
-		
-	var level = get_tree().current_scene
-	held_item.reparent(level)
-	held_item.global_position = global_position + Vector2(0, 80)
-
+	var dish = held_item
 	holding_item = false
 	held_item = null
-	
-	print("Dropped item")
-		
+	dish.reparent(customer_node)
+	dish.position = Vector2.ZERO
+	dish.z_index = 0
+	if dish.has_node("CollisionShape2D"):
+		dish.get_node("CollisionShape2D").disabled = false
+	if customer_node.has_method("receive_dish"):
+		customer_node.receive_dish(dish)
+	else:
+		push_warning("Customer node has no receive_dish() method!")
