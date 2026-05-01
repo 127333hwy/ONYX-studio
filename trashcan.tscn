@@ -1,22 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbksfvajwdvrx"]
+[gd_scene format=3 uid="uid://bbksfvajwdvrx"]
 
 [ext_resource type="Script" uid="uid://bxe4sfpfok4qc" path="res://trashcan.gd" id="1_3aa6p"]
-[ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_mlex6"]
+[ext_resource type="Texture2D" uid="uid://c318k2msjsar7" path="res://trash.png" id="2_mlex6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlex6"]
-size = Vector2(28, 21)
+size = Vector2(32, 21)
 
-[node name="Trashcan" type="Area2D"]
+[node name="Trashcan" type="Area2D" unique_id=549770595]
 script = ExtResource("1_3aa6p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=760635669]
 texture_filter = 1
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_mlex6")
 region_enabled = true
-region_rect = Rect2(5, 71, 19, 21)
+region_rect = Rect2(320, 160, 320, 320)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -0.5)
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=899583236]
+visible = false
+texture_filter = 1
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_mlex6")
+region_enabled = true
+region_rect = Rect2(320, 550, 320, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816508122]
+position = Vector2(-6, -0.5)
 shape = SubResource("RectangleShape2D_mlex6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
