@@ -2612,7 +2612,7 @@ z_index = 10
 position = Vector2(335.4, 328.88)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=403120436]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
 limit_right = 1400
