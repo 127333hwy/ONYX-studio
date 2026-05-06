@@ -4468,7 +4468,7 @@ tile_set = SubResource("TileSet_uqens")
 [node name="kitchen" type="Node" parent="." unique_id=250570787]
 
 [node name="Sink" type="Sprite2D" parent="kitchen" unique_id=811100591]
-position = Vector2(504, 69)
+position = Vector2(503.99997, 48)
 scale = Vector2(0.275, 0.275)
 texture = ExtResource("2_kea01")
 region_enabled = true
@@ -4528,7 +4528,7 @@ scale = Vector2(1, 0.832499)
 polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kitchen/StaticBody2D" unique_id=2064456850]
-position = Vector2(222, 46)
+position = Vector2(224, 32)
 shape = SubResource("RectangleShape2D_sw1xi")
 
 [node name="CustomerSpawner" type="Node2D" parent="." unique_id=789139989]
@@ -4747,7 +4747,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="TicketBoard" parent="." unique_id=453766342 instance=ExtResource("21_k11fe")]
-position = Vector2(221, 38)
+position = Vector2(217, 24)
 
 [node name="Trashcan" parent="." unique_id=1870444832 instance=ExtResource("22_kea01")]
 z_index = 9

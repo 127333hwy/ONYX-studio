@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://7jcwow6ftlwx"]
+
+[ext_resource type="Texture2D" uid="uid://dc650kgbuufah" path="res://Background.PNG" id="1_0rbdb"]
+[ext_resource type="Script" uid="uid://cxi4euhiy6c0r" path="res://starting_page.gd" id="1_k6yol"]
+[ext_resource type="Texture2D" uid="uid://h4ktvjfy57bb" path="res://assets/startingbuttons.png" id="2_clima"]
+[ext_resource type="FontFile" uid="uid://bkx762o0tya34" path="res://Jersey10-Regular.ttf" id="4_mef6g"]
+[ext_resource type="Texture2D" uid="uid://cwshna438vevq" path="res://button2.png" id="4_t732h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh6my"]
+atlas = ExtResource("2_clima")
+region = Rect2(40, 50, 730, 330)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6yol"]
+atlas = ExtResource("2_clima")
+region = Rect2(50, 390, 730, 330)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqpo0"]
+atlas = ExtResource("4_t732h")
+region = Rect2(60, 80, 850, 290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1f7y"]
+atlas = ExtResource("4_t732h")
+region = Rect2(70, 450, 850, 290)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6yol"]
+bg_color = Color(0.9999997, 0.8630305, 0.28397307, 1)
+
+[sub_resource type="Theme" id="Theme_t732h"]
+Button/styles/disabled = SubResource("StyleBoxFlat_k6yol")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mef6g"]
+bg_color = Color(0.9275724, 0.45542008, 0.8275924, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=667189828]
+script = ExtResource("1_k6yol")
+
+[node name="MainMenu" type="Control" parent="." unique_id=651926664]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=394149467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0rbdb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu" unique_id=106756756]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -628.0
+offset_right = 850.0
+grow_vertical = 0
+
+[node name="StartButton" type="TextureButton" parent="MainMenu/VBoxContainer" unique_id=717839727]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_nh6my")
+texture_pressed = SubResource("AtlasTexture_k6yol")
+
+[node name="SettingsButton" type="TextureButton" parent="MainMenu/VBoxContainer" unique_id=958400260]
+layout_mode = 2
+
+[node name="TutorialButton" type="TextureButton" parent="MainMenu/VBoxContainer" unique_id=439968279]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_xqpo0")
+texture_pressed = SubResource("AtlasTexture_d1f7y")
+
+[node name="ControlsMenu" type="Panel" parent="." unique_id=2135749496]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tittle" type="Label" parent="ControlsMenu" unique_id=916045633]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -645.0
+offset_right = 645.0
+offset_bottom = 300.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_mef6g")
+theme_override_font_sizes/font_size = 280
+text = "Control Menu"
+
+[node name="Label" type="Label" parent="ControlsMenu" unique_id=1483991719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -280.5
+offset_right = 459.0
+offset_bottom = 280.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_t732h")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_mef6g")
+theme_override_font_sizes/font_size = 165
+text = "W/A/S/D [Movement]
+E [Pick-up]
+R [Drop-off]
+"
+
+[node name="BackButton" type="Button" parent="ControlsMenu" unique_id=1461236374]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = -320.0
+offset_right = 188.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_mef6g")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_mef6g")
+text = "Back"
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="ControlsMenu/BackButton" to="." method="_on_back_button_pressed"]

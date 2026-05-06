@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="ONYX Project"
-run/main_scene="res://prototype.tscn"
+run/main_scene="uid://7jcwow6ftlwx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

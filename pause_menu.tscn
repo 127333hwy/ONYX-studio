@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqo5imy6uvlw3"]
+[gd_scene format=3 uid="uid://cqo5imy6uvlw3"]
 
-[ext_resource type="Script" path="res://pause_menu.gd" id="1_vfeku"]
+[ext_resource type="Script" uid="uid://c6b2tyr6201h" path="res://pause_menu.gd" id="1_vfeku"]
+[ext_resource type="Texture2D" uid="uid://cw3nx26sgavsy" path="res://pausescreen (1) (1).png" id="2_05uyy"]
+[ext_resource type="FontFile" uid="uid://bkx762o0tya34" path="res://Jersey10-Regular.ttf" id="3_p81d2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqt27"]
 bg_color = Color(0.629409, 0.4925, 0.997713, 1)
@@ -18,9 +20,25 @@ Button/styles/hover = SubResource("StyleBoxFlat_lqt27")
 Button/styles/normal = SubResource("StyleBoxFlat_nlq68")
 Button/styles/pressed = SubResource("StyleBoxFlat_8ik54")
 Label/colors/font_color = Color(1, 0.780392, 1, 1)
-Label/font_sizes/font_size = 89
+Label/font_sizes/font_size = 93
 
-[node name="PauseMenu" type="Control"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nc7s"]
+atlas = ExtResource("2_05uyy")
+region = Rect2(150, 130, 550, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3xb4"]
+atlas = ExtResource("2_05uyy")
+region = Rect2(970, 420, 290, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05uyy"]
+atlas = ExtResource("2_05uyy")
+region = Rect2(970, 420, 290, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p81d2"]
+atlas = ExtResource("2_05uyy")
+region = Rect2(970, 420, 290, 100)
+
+[node name="PauseMenu" type="Control" unique_id=515952394]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -31,67 +49,114 @@ grow_vertical = 2
 theme = SubResource("Theme_vw83p")
 script = ExtResource("1_vfeku")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1709105757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5294118)
+
+[node name="Background" type="TextureRect" parent="." unique_id=1657941069]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -382.0
+offset_right = 420.0
+offset_bottom = 382.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+texture = SubResource("AtlasTexture_2nc7s")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -250.0
-offset_right = 250.0
-offset_bottom = 250.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background" unique_id=530125227]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 32.0
+offset_right = 684.0
+offset_bottom = 532.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
+[node name="Label" type="Label" parent="Background/VBoxContainer2" unique_id=1474942443]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2"]
-layout_mode = 2
+theme_override_colors/font_color = Color(0.7154872, 0.89569813, 0.9976273, 1)
+theme_override_fonts/font = ExtResource("3_p81d2")
+theme_override_font_sizes/font_size = 168
 text = "Pause
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer"]
-layout_mode = 2
+[node name="CenterContainer" type="CenterContainer" parent="Background" unique_id=344159438]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -188.0
+offset_right = 208.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CenterContainer" unique_id=1192717077]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
+[node name="Resume" type="TextureButton" parent="Background/CenterContainer/VBoxContainer" unique_id=661693861]
 process_mode = 3
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_d3xb4")
+
+[node name="Label" type="Label" parent="Background/CenterContainer/VBoxContainer/Resume" unique_id=2022668716]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 6.0
+offset_right = 311.0
+offset_bottom = 129.0
+theme_override_fonts/font = ExtResource("3_p81d2")
+theme_override_font_sizes/font_size = 60
 text = "Resume"
 
-[node name="Button2" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
+[node name="Restart" type="TextureButton" parent="Background/CenterContainer/VBoxContainer" unique_id=787750061]
 process_mode = 3
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+texture_normal = SubResource("AtlasTexture_05uyy")
+
+[node name="Label" type="Label" parent="Background/CenterContainer/VBoxContainer/Restart" unique_id=2120706374]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 5.0
+offset_right = 313.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("3_p81d2")
+theme_override_font_sizes/font_size = 60
 text = "Restart"
 
-[node name="Button3" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="Background/CenterContainer/VBoxContainer" unique_id=1346484444]
 process_mode = 3
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Quit"
+texture_normal = SubResource("AtlasTexture_p81d2")
 
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[node name="Label" type="Label" parent="Background/CenterContainer/VBoxContainer/Quit" unique_id=1163160829]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 313.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("3_p81d2")
+theme_override_font_sizes/font_size = 60
+text = "   Quit"
+
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Resume" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Restart" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/Quit" to="." method="_on_button_3_pressed"]

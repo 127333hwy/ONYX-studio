@@ -11,8 +11,6 @@ func _ready():
 	hide()
 
 
-func _on_quit_button_pressed():
-	get_tree().quit()
 
 
 func _on_button_pressed() -> void:
@@ -24,4 +22,5 @@ func _on_button_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://prototype.tscn")
 
 func _on_button_3_pressed() -> void:
-	is_paused = false
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://starting page.tscn")
