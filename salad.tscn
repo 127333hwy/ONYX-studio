@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1miqb0iwikql"]
+[gd_scene format=3 uid="uid://c1miqb0iwikql"]
 
-[ext_resource type="Script" path="res://dish_item.gd" id="1_c6bdp"]
+[ext_resource type="Script" uid="uid://bd6v4tjcw6h4c" path="res://dish_item.gd" id="1_c6bdp"]
 [ext_resource type="Texture2D" uid="uid://d2vpmnol4evdm" path="res://assets/food/dishes-Sheet.png" id="1_ovumy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6bdp"]
@@ -21,17 +21,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_rbadt"]
 radius = 15.0
 
-[node name="Salad" type="Node2D" groups=["trash"]]
+[node name="Salad" type="Node2D" unique_id=1284238888]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_c6bdp")
 item_name = "Salad"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1495368624]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2sdvj")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=792861022]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1975249863]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_rbadt")

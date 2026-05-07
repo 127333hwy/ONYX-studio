@@ -70,7 +70,11 @@ func try_pickup():
 			pick_up(closest_target)
 	else:
 		print("nothing nearby")
-	
+		
+	for target in nearby:
+		if "on_stove" in target and target.on_stove:
+			continue
+		var dist = global_position.distance_to(target.global_position)
 func pick_up(target):
 	if target == null: return
 	
@@ -88,6 +92,10 @@ func pick_up(target):
 	if target.has_node("CollisionShape2D"):
 		target.get_node("CollisionShape2D").disabled = true
 	
+	var closest_stove = _find_closest_in_group("stove")
+	if closest_stove and closest_stove.has_method("on_dish_picked_up"):
+		closest_stove.on_dish_picked_up()
+	
 func try_place():
 	print("attempted to place")
 
@@ -104,7 +112,14 @@ func try_place():
 				print("SUCCESS: Delivering dish to customer ", closest_customer.name)
 				deliver_to_customer(closest_customer)
 				return
-	
+	var closest_trash = _find_closest_in_group("trash")
+	if closest_trash:
+		print("Trashing item: ", held_item.name)
+		closest_trash.trash_item(held_item)
+		held_item = null
+		holding_item = false
+		return
+		
 	var closest_stove = _find_closest_in_group("stove")
 	if closest_stove:
 		print("SUCCESS: Found stove ", closest_stove.name)

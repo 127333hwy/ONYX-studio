@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba8ryw1h1yhit"]
+[gd_scene format=3 uid="uid://ba8ryw1h1yhit"]
 
 [ext_resource type="Texture2D" uid="uid://d2vpmnol4evdm" path="res://assets/food/dishes-Sheet.png" id="1_6ui2g"]
-[ext_resource type="Script" path="res://dish_item.gd" id="1_60he1"]
+[ext_resource type="Script" uid="uid://bd6v4tjcw6h4c" path="res://dish_item.gd" id="1_60he1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60he1"]
 atlas = ExtResource("1_6ui2g")
@@ -21,17 +21,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ui2g"]
 radius = 13.0
 
-[node name="Onigiri" type="Node2D" groups=["dish", "trash"]]
+[node name="Onigiri" type="Node2D" unique_id=1298601598 groups=["dish"]]
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_60he1")
 item_name = "Onigiri"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1858084982]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dkg87")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1025069954]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2094573667]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_6ui2g")

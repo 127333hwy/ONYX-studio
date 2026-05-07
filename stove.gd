@@ -6,15 +6,20 @@ extends Area2D
 @export var onigiri_scene : PackedScene
 @export var burnt_sushi_scene : PackedScene
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var burn_animated_sprite: AnimatedSprite2D = $AnimatedSprite2D2
+@onready var burn_timer: Timer = $BurnTimer
+@onready var cook_timer: Timer = $CookTimer
 
+var dish_picked_up: bool = false
 var ingredients : Array = []
 var cooking : bool = false
 var player_in_range : bool = false
 
-@onready var cook_timer: Timer = $CookTimer
+
 
 func _ready():
 	animated_sprite.play("idle")
+	burn_animated_sprite.visible = false
 	
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
@@ -39,11 +44,16 @@ func _process(_delta):
 func pick_up_dish(player, dish):
 	var pickup_point = player.get_node("PickupPoint")
 	if pickup_point:
-		dish.reparent(pickup_point)
-		dish.position = Vector2.ZERO
+		burn_timer.stop()
+		burn_animated_sprite.stop()
+		burn_animated_sprite.visible = false
+		dish_picked_up = true
+		dish.reparent(player)
+		dish.position = pickup_point.position
 		
 		player.holding_item = true
 		player.held_item = dish
+		
 		
 func place_item(item_to_add):
 	if cooking:
@@ -90,7 +100,6 @@ func check_recipe():
 		print("fail: recipe found")
 	else:
 		print("failed")
-		burn_all()
 
 func start_cooking_timer(dish_scene):
 	cooking = true
@@ -125,23 +134,49 @@ func spawn_finished_dish(dish_scene):
 		finished_dish.item_name = "Onigiri"
 		
 	print("Created dish! Ready for pickup.")
+	dish_picked_up = false
+	burn_animated_sprite.visible = true
+	burn_animated_sprite.play("burn_timer_animation")
+	burn_timer.start(5.0)
 
+func _on_burn_timer_timeout():
+	if dish_picked_up:
+		burn_animated_sprite.visible = false
+		return
+	print("timer done")
+	if dish_picked_up:
+		burn_animated_sprite.visible = false
+		return
 	
-func burn_all():
-	print("Ingredients burned!")
-	for item in ingredients:
-			item.queue_free()
-	ingredients.clear()
+	for child in get_children():
+		if child.is_in_group("dish"):
+			child.queue_free()
+			break
+	await get_tree().process_frame
+	print("calling burn_all_finished")
+	burn_all_finished()
+
+func burn_all_finished():
+	for child in get_children():
+		if child.is_in_group("dish"):
+			return
+	var burnt = burnt_sushi_scene.instantiate()
+	add_child(burnt)
+	burnt.position = Vector2.ZERO
+	burnt.add_to_group("dish")
+	burnt.on_stove = true
+	if "item_name" in burnt:
+		burnt.item_name = "BurntFood"
+	print("Dish has burned")
 	
-	var trash = burnt_sushi_scene.instantiate()
-	add_child(trash)
-	trash.position = Vector2.ZERO
-	
-	trash.add_to_group("dish")
-	if "item_name" in trash:
-		trash.item_name = "BurntFood"
-	
-	cooking = false
+func on_dish_picked_up():
+	burn_timer.stop()
+	burn_animated_sprite.stop()
+	burn_animated_sprite.visible = false
+	dish_picked_up = true
+	for child in get_children():
+		if child.is_in_group("dish") and "on_stove" in child:
+			child.on_stove = false
 	
 func _on_body_entered(body):
 	if body.is_in_group("player"):
@@ -150,4 +185,3 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
-		

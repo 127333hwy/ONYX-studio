@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://c76b6lbdu7tfk"]
 
-[node name="BurntSushi" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dc20hypc22pxq" path="res://dishes-Sheet.png" id="1_ipkjo"]
+[ext_resource type="Script" uid="uid://d03gy85budgqn" path="res://burnt_food.gd" id="1_rwp8q"]
+
+[node name="BurntSushi" type="Node2D" unique_id=586318231]
+script = ExtResource("1_rwp8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=319419064]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("1_ipkjo")
+region_enabled = true
+region_rect = Rect2(40, 80, 250, 180)

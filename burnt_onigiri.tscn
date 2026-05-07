@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://4kvea537us35"]
+
+[ext_resource type="Script" uid="uid://d03gy85budgqn" path="res://burnt_food.gd" id="1_8crei"]
+[ext_resource type="Texture2D" uid="uid://dc20hypc22pxq" path="res://dishes-Sheet.png" id="2_3wvbr"]
+
+[node name="BurntOnigiri" type="Node2D" unique_id=1818345882]
+script = ExtResource("1_8crei")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=310103517]
+texture_filter = 1
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_3wvbr")
+region_enabled = true
+region_rect = Rect2(380, 70, 200, 190)

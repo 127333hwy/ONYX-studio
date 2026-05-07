@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnrdknmq77i7a"]
+[gd_scene format=3 uid="uid://dnrdknmq77i7a"]
 
 [ext_resource type="Script" uid="uid://n1b4enkxnvap" path="res://rice.gd" id="1_iqk3k"]
 [ext_resource type="Texture2D" uid="uid://bawmwoaqhpno6" path="res://ingredients-Sheet.png" id="2_3a3mk"]
@@ -22,22 +22,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weqpt"]
 size = Vector2(88, 88)
 
-[node name="Rice" type="Node2D" groups=["trash"]]
+[node name="Rice" type="Node2D" unique_id=149594703]
 z_index = 1
 script = ExtResource("1_iqk3k")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=808036927]
 texture_filter = 1
 position = Vector2(-2.38419e-07, 2.38419e-07)
 scale = Vector2(0.73, 0.73)
 sprite_frames = SubResource("SpriteFrames_j8cei")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1972724575]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1558520146]
 shape = SubResource("RectangleShape2D_weqpt")
 
-[node name="Interaction" type="Label" parent="."]
+[node name="Interaction" type="Label" parent="." unique_id=1759083121]
 z_index = 10
 offset_left = -44.0
 offset_top = -44.0

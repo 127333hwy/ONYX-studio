@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c6ui7clg7ku0d"]
+
+[ext_resource type="Script" uid="uid://d03gy85budgqn" path="res://burnt_food.gd" id="1_2wg7k"]
+[ext_resource type="Texture2D" uid="uid://dc20hypc22pxq" path="res://dishes-Sheet.png" id="2_etl11"]
+
+[node name="BurntSalad" type="Node2D" unique_id=340563798]
+script = ExtResource("1_2wg7k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1386051649]
+texture_filter = 1
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_etl11")
+region_enabled = true
+region_rect = Rect2(990, 80, 260, 200)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn2rlgbt7v75y"]
+[gd_scene format=3 uid="uid://bn2rlgbt7v75y"]
 
 [ext_resource type="Script" uid="uid://cogaiiaikvski" path="res://meat.gd" id="1_2fc84"]
 [ext_resource type="Theme" uid="uid://cxh5o6s07y25l" path="res://pickup_theme.tres" id="2_0wnju"]
@@ -22,22 +22,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weqpt"]
 size = Vector2(88, 88)
 
-[node name="Meat" type="Node2D" groups=["trash"]]
+[node name="Meat" type="Node2D" unique_id=1622673296]
 z_index = 1
 script = ExtResource("1_2fc84")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=185968460]
 texture_filter = 1
 position = Vector2(0, 4.5)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_fr2vu")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=373227065]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=918125477]
 shape = SubResource("RectangleShape2D_weqpt")
 
-[node name="Interaction" type="Label" parent="."]
+[node name="Interaction" type="Label" parent="." unique_id=910433504]
 z_index = 10
 offset_left = -44.0
 offset_top = -44.0
