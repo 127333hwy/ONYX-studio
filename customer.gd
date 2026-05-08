@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var speed:float = 120
 @export var possible_orders: Array[String] = ["FriedRice","Salad","Sushi","Onigiri"]
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var order_images: Dictionary = {
 	"FriedRice": preload("res://Fried_rice.tres"),
@@ -50,10 +51,13 @@ func leave_resturant():
 		my_table.occupied = false
 		my_table.customer_ref = null
 		
+	animated_sprite_2d.play("leaving")
 	set_target(exit_position)
 
 func _physics_process(_delta: float) -> void:
 	if arrived:
+		if $AnimationPlayer2D.current_animation == "walking":
+			$AnimationPlayer.play("idle")
 		return
 	if target_position == Vector2.ZERO:
 		return
@@ -76,13 +80,16 @@ func handle_arrival():
 		if my_table != null:
 			my_table.customer_ref = self
 		at_table = true
+		animated_sprite_2d.play("idle")
 		generate_order()
+		animated_sprite_2d.play("walking")
 		
 func receive_dish(dish_node):
 	print("dish_name: ", dish_node.get("item_name"), " | order_name: ", order_name)
 	var dish_name = dish_node.name
 	print("comparing: '", dish_name, "' == '", order_name, "'")
 	if dish_name == order_name:
+		animated_sprite_2d.play("happy")
 		print("Correct dish!")
 		$Bubble.visible = false
 		dish_node.z_index = 1
