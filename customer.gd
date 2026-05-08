@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 
 @export var speed:float = 120
-@export var possible_orders: Array[String] = ["Fried Rice","Salad","Sushi","Onigiri"]
+@export var possible_orders: Array[String] = ["FriedRice","Salad","Sushi","Onigiri"]
 
 @export var order_images: Dictionary = {
-	"Fried Rice": preload("res://Fried_rice.tres"),
+	"FriedRice": preload("res://Fried_rice.tres"),
 	"Onigiri": preload("res://Onigiri.tres"),
 	"Sushi": preload("res://Sushi.tres"),
 	"Salad": preload ("res://Salad.tres") }
@@ -16,6 +16,7 @@ var exit_position: Vector2 = Vector2.ZERO
 var order_name: String = ""
 var arrived: bool = false
 var leaving: bool = false
+var at_table: bool = false
 
 var my_table = null
 
@@ -74,10 +75,13 @@ func handle_arrival():
 	else:
 		if my_table != null:
 			my_table.customer_ref = self
+		at_table = true
 		generate_order()
 		
 func receive_dish(dish_node):
+	print("dish_name: ", dish_node.get("item_name"), " | order_name: ", order_name)
 	var dish_name = dish_node.name
+	print("comparing: '", dish_name, "' == '", order_name, "'")
 	if dish_name == order_name:
 		print("Correct dish!")
 		$Bubble.visible = false
@@ -89,3 +93,5 @@ func receive_dish(dish_node):
 	else:
 		print("Wrong dish!")
 		dish_node.queue_free()
+		
+	print("dish_name: ", dish_node.get("item_name"), " | order_name: ", order_name)

@@ -4482,8 +4482,8 @@ region_rect = Rect2(504, 120, 392, 776)
 
 [node name="ServeCounter" type="Sprite2D" parent="kitchen" unique_id=347559270]
 z_index = 7
-position = Vector2(584, 288)
-scale = Vector2(0.26403072, 0.36146903)
+position = Vector2(584, 285.875)
+scale = Vector2(0.26403072, 0.35599226)
 texture = ExtResource("1_tprrn")
 region_enabled = true
 region_rect = Rect2(504, 120, 392, 776)
@@ -4516,7 +4516,7 @@ z_as_relative = false
 y_sort_enabled = true
 position = Vector2(176, -32)
 scale = Vector2(0.790428, 1)
-polygon = PackedVector2Array(-2.5302734, -7, 576.90265, 4, 576.90265, 456, 465.57056, 456, 465.57056, 120, -2.5302734, 122)
+polygon = PackedVector2Array(-2.5302734, -7, 576.90265, 4, 576.90265, 448, 465.57056, 448, 465.57056, 120, -2.5302734, 122)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="kitchen/StaticBody2D" unique_id=1776919608]
 z_index = 1
@@ -4695,11 +4695,11 @@ z_index = 10
 position = Vector2(335.4, 328.88)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=1105673541]
-zoom = Vector2(2.2, 2.2)
+zoom = Vector2(1.9, 1.9)
 limit_left = 0
-limit_top = -115
+limit_top = -100
 limit_right = 1400
-limit_bottom = 651
+limit_bottom = 645
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -4747,7 +4747,7 @@ scale = Vector2(1.03, 1.03)
 
 [node name="Trashcan" parent="." unique_id=1870444832 instance=ExtResource("22_kea01")]
 z_index = 8
-position = Vector2(576, 384)
+position = Vector2(576, 380)
 scale = Vector2(4, 4)
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]

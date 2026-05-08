@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c1miqb0iwikql" path="res://salad.tscn" id="4_v45k4"]
 [ext_resource type="PackedScene" uid="uid://ba8ryw1h1yhit" path="res://onigiri.tscn" id="5_v45k4"]
 [ext_resource type="PackedScene" uid="uid://c76b6lbdu7tfk" path="res://burnt_sushi.tscn" id="6_hbb0h"]
+[ext_resource type="PackedScene" uid="uid://d2lrqjj2mvfbv" path="res://burnt_fried_rice.tscn" id="6_sccm7"]
 [ext_resource type="Texture2D" uid="uid://cikbmiiwiadb3" path="res://cooking animation-Sheet.png" id="7_ipmka"]
+[ext_resource type="PackedScene" uid="uid://c6ui7clg7ku0d" path="res://burnt_salad.tscn" id="8_7cs0s"]
 [ext_resource type="Texture2D" uid="uid://b6jljjgb1sf1s" path="res://cooking animation-Sheet (1).png" id="8_ipmka"]
+[ext_resource type="PackedScene" uid="uid://4kvea537us35" path="res://burnt_onigiri.tscn" id="9_mon0b"]
 [ext_resource type="Texture2D" uid="uid://cr4cgfwy321t0" path="res://timer2-Sheet-Sheet.png" id="9_wwgq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elmm"]
@@ -15,115 +18,115 @@ size = Vector2(128, 88)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fo5k"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1566, 0, 58, 8)
+region = Rect2(0, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ydf72"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1508, 0, 58, 8)
+region = Rect2(58, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_untby"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1450, 0, 58, 8)
+region = Rect2(116, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rao0l"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1392, 0, 58, 8)
+region = Rect2(174, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqghc"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1334, 0, 58, 8)
+region = Rect2(232, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sugn7"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1276, 0, 58, 8)
+region = Rect2(290, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3lb1"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1218, 0, 58, 8)
+region = Rect2(348, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rssj4"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1160, 0, 58, 8)
+region = Rect2(406, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yo6wl"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1102, 0, 58, 8)
+region = Rect2(464, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgdsc"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(1044, 0, 58, 8)
+region = Rect2(522, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iksw8"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(986, 0, 58, 8)
+region = Rect2(580, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmm7f"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(928, 0, 58, 8)
+region = Rect2(638, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7u1hx"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(870, 0, 58, 8)
+region = Rect2(696, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0yd14"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(812, 0, 58, 8)
+region = Rect2(754, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgdnd"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(754, 0, 58, 8)
+region = Rect2(812, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7t12g"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(696, 0, 58, 8)
+region = Rect2(870, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyn46"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(638, 0, 58, 8)
+region = Rect2(928, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vx7uw"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(580, 0, 58, 8)
+region = Rect2(986, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2f1ej"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(522, 0, 58, 8)
+region = Rect2(1044, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5eyw"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(464, 0, 58, 8)
+region = Rect2(1102, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kiop"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(406, 0, 58, 8)
+region = Rect2(1160, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fbq6t"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(348, 0, 58, 8)
+region = Rect2(1218, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7m30"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(290, 0, 58, 8)
+region = Rect2(1276, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kb63n"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(232, 0, 58, 8)
+region = Rect2(1334, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfy8k"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(174, 0, 58, 8)
+region = Rect2(1392, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfrxg"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(116, 0, 58, 8)
+region = Rect2(1450, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ow4j"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(58, 0, 58, 8)
+region = Rect2(1508, 0, 58, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffwny"]
 atlas = ExtResource("9_wwgq7")
-region = Rect2(0, 0, 58, 8)
+region = Rect2(1566, 0, 58, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ipmka"]
 animations = [{
@@ -376,7 +379,10 @@ sushi_scene = ExtResource("2_eim6s")
 fried_rice_scene = ExtResource("3_eim6s")
 salad_scene = ExtResource("4_v45k4")
 onigiri_scene = ExtResource("5_v45k4")
+burnt_fried_rice_scene = ExtResource("6_sccm7")
 burnt_sushi_scene = ExtResource("6_hbb0h")
+burnt_salad_scene = ExtResource("8_7cs0s")
+burnt_onigiri_scene = ExtResource("9_mon0b")
 
 [node name="CookTimer" type="Timer" parent="." unique_id=1576673524]
 one_shot = true
@@ -386,7 +392,7 @@ position = Vector2(8, 4)
 shape = SubResource("RectangleShape2D_5elmm")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=2091687212]
-modulate = Color(1, 0.8784314, 1, 1)
+modulate = Color(0.99849707, 0.8217798, 0.8927492, 1)
 texture_filter = 1
 position = Vector2(0, -40)
 scale = Vector2(1.25, 1.25)
@@ -403,6 +409,7 @@ animation = &"cooking"
 autoplay = "idle"
 
 [node name="BurnTimer" type="Timer" parent="." unique_id=2078679376]
+wait_time = 0.1
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -54,6 +54,9 @@ func try_pickup():
 	var shortest_distance = interact_range
 	
 	for target in nearby:
+		print("on_stove check: ", target.name, " | has on_stove: ", "on_stove" in target, " | value: ", target.get("on_stove"))
+		if "on_stove" in target and target.on_stove:
+			continue
 		var dist = global_position.distance_to(target.global_position)
 		print("Target: ", target.name, " | Dist: ", dist, " | Range: ", interact_range)
 		
@@ -71,10 +74,6 @@ func try_pickup():
 	else:
 		print("nothing nearby")
 		
-	for target in nearby:
-		if "on_stove" in target and target.on_stove:
-			continue
-		var dist = global_position.distance_to(target.global_position)
 func pick_up(target):
 	if target == null: return
 	
@@ -92,6 +91,8 @@ func pick_up(target):
 	if target.has_node("CollisionShape2D"):
 		target.get_node("CollisionShape2D").disabled = true
 	
+	if "on_stove" in target:
+		target.on_stove = false
 	var closest_stove = _find_closest_in_group("stove")
 	if closest_stove and closest_stove.has_method("on_dish_picked_up"):
 		closest_stove.on_dish_picked_up()
