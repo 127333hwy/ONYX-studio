@@ -5,8 +5,6 @@ extends CharacterBody2D
 @export var possible_orders: Array[String] = ["FriedRice","Salad","Sushi","Onigiri"]
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-
-
 @export var order_images: Dictionary = {
 	"FriedRice": preload("res://Fried_rice.tres"),
 	"Onigiri": preload("res://Onigiri.tres"),
@@ -58,6 +56,8 @@ func leave_resturant():
 
 func _physics_process(_delta: float) -> void:
 	if arrived:
+		if $AnimationPlayer2D.current_animation == "walking":
+			$AnimationPlayer.play("idle")
 		return
 	if target_position == Vector2.ZERO:
 		return
@@ -67,24 +67,22 @@ func _physics_process(_delta: float) -> void:
 	if direction.length() > 1:
 		velocity = direction.normalized() * speed
 		move_and_slide()
-		
-		if animated_sprite_2d.animation!= "walking":
-			animated_sprite_2d.play("walking")
-	else: 
+	
+	if leaving and global_position.distance_to(target_position) < 5.0:
 		handle_arrival()
 
 func handle_arrival(): 
 	arrived = true
 	velocity = Vector2.ZERO
-	animated_sprite_2d.play("idle")
 	if leaving:
 		queue_free()
 	else:
 		if my_table != null:
 			my_table.customer_ref = self
 		at_table = true
+		animated_sprite_2d.play("idle")
 		generate_order()
-		
+		animated_sprite_2d.play("walking")
 		
 func receive_dish(dish_node):
 	print("dish_name: ", dish_node.get("item_name"), " | order_name: ", order_name)
