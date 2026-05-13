@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bowthejlbql7e"]
+[gd_scene load_steps=44 format=4 uid="uid://bowthejlbql7e"]
 
 [ext_resource type="PackedScene" uid="uid://c7dpq6e8hyk78" path="res://table.tscn" id="1_72gul"]
 [ext_resource type="Texture2D" uid="uid://c7namlp026bjg" path="res://tiles1 (1).png" id="1_sw1xi"]
@@ -20,7 +20,9 @@
 [ext_resource type="Script" uid="uid://c5jbkvsoy8upj" path="res://open_pause_button.gd" id="8_ji23w"]
 [ext_resource type="Texture2D" uid="uid://bylhgkui7le5q" path="res://crates-Sheet.png" id="9_e13xq"]
 [ext_resource type="PackedScene" uid="uid://cf1r0pydbne0c" path="res://stove.tscn" id="11_sws78"]
+[ext_resource type="Texture2D" uid="uid://cx0jpfvsv0fa3" path="res://door-export.png" id="18_tcsqq"]
 [ext_resource type="PackedScene" uid="uid://dhhdsy51kgscu" path="res://chair.tscn" id="19_oy8qm"]
+[ext_resource type="PackedScene" uid="uid://b7olpbwcd0r7s" path="res://energy_bar.tscn" id="20_uqens"]
 [ext_resource type="PackedScene" uid="uid://wedxf8l54qhy" path="res://ticket_board.tscn" id="21_k11fe"]
 [ext_resource type="PackedScene" uid="uid://bbksfvajwdvrx" path="res://trashcan.tscn" id="22_kea01"]
 
@@ -4525,7 +4527,7 @@ scale = Vector2(1, 0.832499)
 polygon = PackedVector2Array(110.4, 503.88, 544, 504, 544, 624, 110.4, 623.88)
 
 [node name="CustomerSpawner" type="Node2D" parent="."]
-z_index = 12
+z_index = 10
 position = Vector2(809, 92)
 script = ExtResource("3_uu44d")
 customer_scene = ExtResource("4_a2g17")
@@ -4680,10 +4682,15 @@ sprite_frames = SubResource("SpriteFrames_0c7e4")
 position = Vector2(866, -84)
 script = ExtResource("3_w6r6j")
 
-[node name="Polygon2D" type="Polygon2D" parent="KitchenDoor"]
-position = Vector2(-88, 88.6608)
-scale = Vector2(0.425912, 5.49629)
-polygon = PackedVector2Array(1.40874, 18.8235, 150.857, 18.8235, 150.857, 1.40246e-08, -1.60001, -0.120216)
+[node name="Sprite2D" type="Sprite2D" parent="KitchenDoor"]
+position = Vector2(-132, 155)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_tcsqq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="KitchenDoor"]
+position = Vector2(88.99999, 155)
+scale = Vector2(-0.20175463, 0.2)
+texture = ExtResource("18_tcsqq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenDoor"]
 position = Vector2(-55.400024, 122.029976)
@@ -4737,6 +4744,18 @@ text = "I I
 "
 script = ExtResource("8_ji23w")
 metadata/_edit_use_anchors_ = true
+
+[node name="EnergyBar" parent="CanvasLayer" instance=ExtResource("20_uqens")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 853.0
+offset_top = 45.0
+offset_right = 853.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.5, 5.5)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("8_hwjwa")]
 visible = false

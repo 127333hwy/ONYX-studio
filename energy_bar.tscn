@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7olpbwcd0r7s"]
+
+[ext_resource type="Texture2D" uid="uid://dvqfy48yihxgj" path="res://energy bar-Sheet2.png" id="1_rdnti"]
+
+[node name="EnergyBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_rdnti")
+region_enabled = true
+region_rect = Rect2(0, 416, 64, 16)

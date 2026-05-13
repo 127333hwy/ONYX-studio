@@ -56,8 +56,6 @@ func leave_resturant():
 
 func _physics_process(_delta: float) -> void:
 	if arrived:
-		if $AnimationPlayer2D.current_animation == "walking":
-			$AnimationPlayer.play("idle")
 		return
 	if target_position == Vector2.ZERO:
 		return
@@ -68,21 +66,23 @@ func _physics_process(_delta: float) -> void:
 		velocity = direction.normalized() * speed
 		move_and_slide()
 	
-	if leaving and global_position.distance_to(target_position) < 5.0:
+		if animated_sprite_2d.animation!= "walking":
+				animated_sprite_2d.play("walking")
+	else: 
 		handle_arrival()
 
 func handle_arrival(): 
 	arrived = true
 	velocity = Vector2.ZERO
+	animated_sprite_2d.play("idle")
 	if leaving:
 		queue_free()
 	else:
 		if my_table != null:
 			my_table.customer_ref = self
 		at_table = true
-		animated_sprite_2d.play("idle")
 		generate_order()
-		animated_sprite_2d.play("walking")
+		
 		
 func receive_dish(dish_node):
 	print("dish_name: ", dish_node.get("item_name"), " | order_name: ", order_name)
