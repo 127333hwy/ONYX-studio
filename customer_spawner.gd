@@ -2,6 +2,7 @@ extends Node2D
 
 @export var customer_scene : PackedScene
 
+@onready var audio_player: AudioStreamPlayer2D = %AudioPlayer
 
 func _on_timer_timeout() -> void:
 	print("Timer triggered")
@@ -16,6 +17,7 @@ func spawn_customer():
 	
 	var customer = customer_scene.instantiate()
 	add_child(customer)
+	audio_player.play()
 	
 	customer.global_position = get_tree().root.find_child("SpawnPoint", true, false).global_position
 	customer.exit_position =get_tree().root.find_child("SpawnPoint", true, false).global_position
@@ -32,3 +34,4 @@ func get_nearest_empty_table():
 		if not table.occupied:
 			return table
 	return null
+	

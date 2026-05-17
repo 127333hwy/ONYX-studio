@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var speed:float = 120
 @export var possible_orders: Array[String] = ["FriedRice","Salad","Sushi","Onigiri"]
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
