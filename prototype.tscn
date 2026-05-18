@@ -4755,6 +4755,7 @@ text = "I I
 script = ExtResource("8_ji23w")
 metadata/_edit_use_anchors_ = true
 
+<<<<<<< Updated upstream
 [node name="EnergyBar" parent="CanvasLayer" unique_id=1012577451 instance=ExtResource("20_uqens")]
 anchors_preset = 15
 anchor_right = 1.0
@@ -4766,6 +4767,34 @@ offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.5, 5.5)
+=======
+[node name="EnergyBar2" parent="CanvasLayer" instance=ExtResource("20_uqens")]
+modulate = Color(0.41406584, 0.41406578, 0.41406578, 1)
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.069000006
+anchor_right = 0.8
+anchor_bottom = 0.069000006
+offset_left = 98.39996
+offset_top = -47.712006
+offset_right = 98.39996
+offset_bottom = -47.712006
+grow_horizontal = 0
+scale = Vector2(10, 10)
+
+[node name="EnergyBar" parent="CanvasLayer" instance=ExtResource("20_uqens")]
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.069000006
+anchor_right = 0.8
+anchor_bottom = 0.069000006
+offset_left = 91.39996
+offset_top = -52.712006
+offset_right = 91.39996
+offset_bottom = -52.712006
+grow_horizontal = 0
+scale = Vector2(10, 10)
+>>>>>>> Stashed changes
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1800815388 instance=ExtResource("8_hwjwa")]
 visible = false
