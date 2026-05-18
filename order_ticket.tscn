@@ -36,7 +36,15 @@ border_color = Color(0.8, 0.8, 0.8, 0.196078)
 [node name="OrderTicket" type="Control" unique_id=1790043653]
 top_level = true
 layout_mode = 3
-anchors_preset = 0
+anchor_left = 0.065000005
+anchor_top = 0.17300001
+anchor_right = 0.065000005
+anchor_bottom = 0.17300001
+offset_left = -74.880005
+offset_top = -112.104004
+offset_right = -74.880005
+offset_bottom = -112.104004
+scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(100, 150)
 script = ExtResource("1_0t5jx")
 

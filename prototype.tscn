@@ -4771,8 +4771,7 @@ scale = Vector2(5.5, 5.5)
 visible = false
 
 [node name="TicketBoard" parent="." unique_id=207632670 instance=ExtResource("21_k11fe")]
-position = Vector2(167, 13)
-scale = Vector2(1.03, 1.03)
+position = Vector2(177, 14)
 
 [node name="Trashcan" parent="." unique_id=1695737473 instance=ExtResource("22_kea01")]
 z_index = 8

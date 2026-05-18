@@ -35,7 +35,10 @@ func generate_order():
 	order_name = possible_orders.pick_random()
 	print(order_name)
 	show_bubble()
-
+	
+	if order_images.has(order_name):
+		var food_tex = order_images[order_name]
+		GlobalSignals.customer_ordered.emit(order_name, food_tex, self)
 func show_bubble():
 	if order_images.has(order_name):
 		food_icon.texture = order_images[order_name]

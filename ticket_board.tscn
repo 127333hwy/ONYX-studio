@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://wedxf8l54qhy"]
 
+[ext_resource type="Script" uid="uid://dx1k8eiajy5m4" path="res://ticket_board.gd" id="1_2cgbe"]
 [ext_resource type="Texture2D" uid="uid://hdq2b5hke7ih" path="res://orderboard2.png" id="1_pdks4"]
-[ext_resource type="Texture2D" uid="uid://clbircqbwbjhd" path="res://orderboard2.0.png" id="2_2cgbe"]
 
 [node name="TicketBoard" type="Sprite2D" unique_id=1390296161]
+script = ExtResource("1_2cgbe")
 
 [node name="Board" type="NinePatchRect" parent="." unique_id=1625376653]
 anchors_preset = 8
@@ -23,31 +24,13 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="Board2" type="NinePatchRect" parent="." unique_id=2069564547]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -136.5
-offset_top = -80.5
-offset_right = 143.5
-offset_bottom = 79.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_2cgbe")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-
 [node name="TicketList" type="HBoxContainer" parent="." unique_id=1158867725]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -79.0
-offset_right = -59.0
-offset_bottom = 159.0
+offset_left = -88.60556
+offset_top = 53.452583
+offset_right = -5.866745
+offset_bottom = 239.66202
 grow_horizontal = 2
 rotation = -1.567
 alignment = 1
