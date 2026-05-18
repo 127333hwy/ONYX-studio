@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb6lnioe3npad"]
+[gd_scene format=3 uid="uid://blexssafhd3cj"]
 
-[ext_resource type="Script" path="res://order_ticket.gd" id="1_0t5jx"]
+[ext_resource type="Script" uid="uid://sys5daxcaanp" path="res://order_ticket.gd" id="1_0t5jx"]
 [ext_resource type="Texture2D" uid="uid://bxd7ay05fyvnu" path="res://orderticket1.png" id="1_jxwmt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bonw"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uepb5"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xa48"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -19,7 +25,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.8, 0.8, 0.8, 0.196078)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xa48"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bonw"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -27,20 +33,14 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.8, 0.8, 0.8, 0.196078)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uepb5"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-
-[node name="OrderTicket" type="Control"]
+[node name="OrderTicket" type="Control" unique_id=1790043653]
 top_level = true
 layout_mode = 3
 anchors_preset = 0
 pivot_offset = Vector2(100, 150)
 script = ExtResource("1_0t5jx")
 
-[node name="Dimmer" type="ColorRect" parent="."]
+[node name="Dimmer" type="ColorRect" parent="." unique_id=19898516]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -48,9 +48,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.372549)
+color = Color(0, 0, 0, 0.6745098)
 
-[node name="Paper" type="TextureRect" parent="."]
+[node name="Paper" type="TextureRect" parent="." unique_id=548825361]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -64,7 +64,7 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_jxwmt")
 
-[node name="OrderName" type="Label" parent="Paper"]
+[node name="OrderName" type="Label" parent="Paper" unique_id=1864899710]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.27
@@ -76,7 +76,7 @@ offset_top = -0.600006
 offset_right = -0.119995
 offset_bottom = 0.199951
 
-[node name="OrderImage" type="TextureRect" parent="Paper"]
+[node name="OrderImage" type="TextureRect" parent="Paper" unique_id=1830068261]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.375
@@ -87,7 +87,7 @@ offset_left = 13.3333
 offset_right = -0.226715
 offset_bottom = 0.399994
 
-[node name="IngredientList" type="HBoxContainer" parent="Paper"]
+[node name="IngredientList" type="HBoxContainer" parent="Paper" unique_id=52460717]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.271
@@ -99,7 +99,7 @@ offset_top = 0.199951
 offset_right = 0.880005
 offset_bottom = 0.399963
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=493156476]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,10 +110,10 @@ offset_right = 80.0
 offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_1bonw")
-theme_override_styles/hover = SubResource("StyleBoxFlat_c85yy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8xa48")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uepb5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8xa48")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c85yy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1bonw")
 flat = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -21,10 +21,10 @@ func setup_ticket(food_name, dish_image, ingredient_images):
 	
 	for img in ingredient_images:
 		var icon = TextureRect.new()
-		icon.texture = img
-		icon.rect_min_size = Vector2(40, 40)
-		icon.expand = true
+		icon.custom_minimum_size = Vector2(40, 40)
+		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE # or EXPAND_FIT_WIDTH_PROPORTIONAL
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		
 		ingredient_list.add_child(icon)
 	
 
