@@ -64,8 +64,12 @@ func _physics_process(_delta: float) -> void:
 	if direction.length() > 1:
 		velocity = direction.normalized() * speed
 		move_and_slide()
-	
-		if animated_sprite_2d.animation!= "walking":
+		if leaving:
+			if animated_sprite_2d.animation!= "leaving":
+				animated_sprite_2d.play("leaving")
+
+		else: 
+			if animated_sprite_2d.animation!= "walking":
 				animated_sprite_2d.play("walking")
 	else: 
 		handle_arrival()
@@ -96,6 +100,7 @@ func receive_dish(dish_node):
 		if dish_node != null:
 			dish_node.queue_free()
 		leave_resturant()
+		
 	else:
 		print("Wrong dish!")
 		dish_node.queue_free()

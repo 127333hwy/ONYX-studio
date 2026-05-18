@@ -4450,6 +4450,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_5crrw")
 Button/styles/pressed = SubResource("StyleBoxFlat_b7xfc")
 
 [node name="prototype" type="Node2D" unique_id=680032301]
+position = Vector2(-1, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1354071156]
 modulate = Color(1, 0.9999623, 0.9762818, 1)
