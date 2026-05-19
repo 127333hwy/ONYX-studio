@@ -12,6 +12,7 @@ extends Area2D
 @onready var burn_animated_sprite: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var burn_timer: Timer = $BurnTimer
 @onready var cook_timer: Timer = $CookTimer
+@onready var cooking_sound: AudioStreamPlayer2D = $CookingSound
 
 var dish_picked_up: bool = false
 var ingredients : Array = []
@@ -109,6 +110,9 @@ func start_cooking_timer(dish_scene):
 	cooking = true
 	current_dish_scene = dish_scene
 	animated_sprite.play("cooking")
+	var start_second: float = 1.0
+	cooking_sound.play(start_second)
+	
 	for item in ingredients:
 		if is_instance_valid(item):
 			item.queue_free()
@@ -118,6 +122,7 @@ func start_cooking_timer(dish_scene):
 	await cook_timer.timeout
 	
 	cooking = false
+	cooking_sound.stop()
 	animated_sprite.play("idle")
 	spawn_finished_dish(dish_scene)
 	

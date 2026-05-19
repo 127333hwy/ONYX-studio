@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b6jljjgb1sf1s" path="res://cooking animation-Sheet (1).png" id="8_ipmka"]
 [ext_resource type="PackedScene" uid="uid://4kvea537us35" path="res://burnt_onigiri.tscn" id="9_mon0b"]
 [ext_resource type="Texture2D" uid="uid://cr4cgfwy321t0" path="res://timer2-Sheet-Sheet.png" id="9_wwgq7"]
+[ext_resource type="AudioStream" uid="uid://by13qqm7ax1le" path="res://Untitled song (May 18%2C 2026 8%3A07 PM).wav" id="13_7cs0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elmm"]
 size = Vector2(128, 88)
@@ -411,6 +412,9 @@ autoplay = "idle"
 [node name="BurnTimer" type="Timer" parent="." unique_id=755625583]
 wait_time = 0.1
 one_shot = true
+
+[node name="CookingSound" type="AudioStreamPlayer2D" parent="." unique_id=628554907]
+stream = ExtResource("13_7cs0s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
