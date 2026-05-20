@@ -13,4 +13,4 @@ func remove_energy():
 	energy_bar.frame = max(energy_bar.frame - 1, 0)
 	
 func on_bar_full():
-	print("Bar is full! Trigger new scene here.")
+	print("Bar is full!")

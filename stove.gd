@@ -68,16 +68,13 @@ func place_item(item_to_add):
 	item_to_add.position = Vector2.ZERO
 	item_to_add.visible = true
 	item_to_add.z_index = 1
-	
 	print("Stove added: ", item_to_add.item_name)
-		
 	if ingredients.size() >= 2:
 		check_recipe()
-
 	
 func start_cooking():
 	cooking = true
-	print("Cooking started...")
+	print("Cooking started")
 	cook_timer.start(2.5)
 
 func check_recipe():
@@ -87,7 +84,6 @@ func check_recipe():
 			names.append(item.item_name)
 	names.sort()
 	var key = ",".join(names)
-	
 	print("STOVE DEBUG: Current Key is ['" + key + "']")
 	
 	var recipes = {
@@ -112,15 +108,12 @@ func start_cooking_timer(dish_scene):
 	animated_sprite.play("cooking")
 	var start_second: float = 1.0
 	cooking_sound.play(start_second)
-	
 	for item in ingredients:
 		if is_instance_valid(item):
 			item.queue_free()
 	ingredients.clear()
-	
 	cook_timer.start(2.5)
 	await cook_timer.timeout
-	
 	cooking = false
 	cooking_sound.stop()
 	animated_sprite.play("idle")

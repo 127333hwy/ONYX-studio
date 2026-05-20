@@ -1,38 +1,51 @@
-[gd_scene format=3 uid="uid://qsr0kovdhi5u"]
+[gd_scene load_steps=15 format=3 uid="uid://qsr0kovdhi5u"]
 
 [ext_resource type="Script" uid="uid://dydin1hmfg6ca" path="res://customer.gd" id="1_00dqi"]
 [ext_resource type="Texture2D" uid="uid://dj6ig0hycqb5i" path="res://speeching bubble.png" id="2_dumot"]
 [ext_resource type="Texture2D" uid="uid://bhpj3mevi0m2c" path="res://customer-Sheet (1).png" id="2_f7asb"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7asb"]
-atlas = ExtResource("2_f7asb")
-region = Rect2(0, 2520, 662, 630)
+[ext_resource type="Texture2D" uid="uid://kx2qb51d8ao3" path="res://officallcustomer-Sheet (1).png" id="3_co351"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_co351"]
-atlas = ExtResource("2_f7asb")
-region = Rect2(0, 630, 662, 630)
+atlas = ExtResource("3_co351")
+region = Rect2(0, 1248, 800, 624)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0rcyg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sll7s"]
 atlas = ExtResource("2_f7asb")
-region = Rect2(662, 1890, 662, 630)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_frhio"]
-atlas = ExtResource("2_f7asb")
-region = Rect2(1324, 1890, 662, 630)
+region = Rect2(0, 2520, 827, 630)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gn8fi"]
-atlas = ExtResource("2_f7asb")
-region = Rect2(662, 630, 662, 630)
+atlas = ExtResource("3_co351")
+region = Rect2(0, 624, 800, 624)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eas7q"]
-atlas = ExtResource("2_f7asb")
-region = Rect2(1324, 630, 662, 630)
+atlas = ExtResource("3_co351")
+region = Rect2(800, 1872, 800, 624)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rcyg"]
+atlas = ExtResource("3_co351")
+region = Rect2(1600, 1872, 800, 624)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frhio"]
+atlas = ExtResource("3_co351")
+region = Rect2(800, 624, 800, 624)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_551dw"]
+atlas = ExtResource("3_co351")
+region = Rect2(1600, 624, 800, 624)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rcyg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f7asb")
+"texture": SubResource("AtlasTexture_co351")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sll7s")
 }],
 "loop": true,
 "name": &"happy",
@@ -40,7 +53,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_co351")
+"texture": SubResource("AtlasTexture_gn8fi")
 }],
 "loop": true,
 "name": &"idle",
@@ -48,10 +61,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0rcyg")
+"texture": SubResource("AtlasTexture_eas7q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_frhio")
+"texture": SubResource("AtlasTexture_0rcyg")
 }],
 "loop": true,
 "name": &"leaving",
@@ -59,10 +72,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gn8fi")
+"texture": SubResource("AtlasTexture_frhio")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eas7q")
+"texture": SubResource("AtlasTexture_551dw")
 }],
 "loop": true,
 "name": &"walking",
@@ -74,27 +87,28 @@ size = Vector2(27, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unyuo"]
 
-[node name="Customer" type="CharacterBody2D" unique_id=1540385249 groups=["customer"]]
+[node name="Customer" type="CharacterBody2D" groups=["customer"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_00dqi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=150311559]
-position = Vector2(-10, -9)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-71.99999, -55.999996)
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("SpriteFrames_0rcyg")
-animation = &"leaving"
+animation = &"angry"
+centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1549501643]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
 position = Vector2(1.5, 5.5)
 shape = SubResource("RectangleShape2D_ttndt")
 
-[node name="Bubble" type="Node2D" parent="." unique_id=1554918628]
+[node name="Bubble" type="Node2D" parent="."]
 z_index = 1
-position = Vector2(25, -48)
+position = Vector2(35, -41)
 
-[node name="BubbleBG" type="TextureRect" parent="Bubble" unique_id=318325720]
+[node name="BubbleBG" type="TextureRect" parent="Bubble"]
 offset_left = -10.0
 offset_top = -55.0
 offset_right = 502.0
@@ -105,7 +119,7 @@ size_flags_vertical = 0
 texture = ExtResource("2_dumot")
 metadata/_edit_use_anchors_ = true
 
-[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG" unique_id=1743578477]
+[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1

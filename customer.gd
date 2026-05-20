@@ -119,6 +119,7 @@ func receive_dish(dish_node):
 		
 	else:
 		print("Wrong dish!")
+		animated_sprite_2d.play("angry")
 		if energy:
 			energy.remove_energy()
 		dish_node.queue_free()
