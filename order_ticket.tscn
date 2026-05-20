@@ -35,42 +35,50 @@ border_color = Color(0.8, 0.8, 0.8, 0.196078)
 
 [node name="OrderTicket" type="Control" unique_id=1790043653]
 top_level = true
+custom_minimum_size = Vector2(120, 160)
 layout_mode = 3
-anchor_left = 0.065000005
-anchor_top = 0.17300001
-anchor_right = 0.065000005
-anchor_bottom = 0.17300001
-offset_left = -74.880005
-offset_top = -112.104004
-offset_right = -74.880005
-offset_bottom = -112.104004
+anchor_left = 0.47300002
+anchor_top = 0.476
+anchor_right = 0.47300002
+anchor_bottom = 0.476
+offset_left = -110.895996
+offset_top = -155.448
+offset_right = 173.104
+offset_bottom = 186.552
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(100, 150)
 script = ExtResource("1_0t5jx")
 
-[node name="Dimmer" type="ColorRect" parent="." unique_id=19898516]
+[node name="Paper" type="TextureRect" parent="." unique_id=548825361]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11400001
+anchor_right = 0.92800003
+anchor_bottom = 0.96700007
+offset_left = -136.37598
+offset_top = -139.99995
+offset_right = 628.36
+offset_bottom = 779.0381
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jxwmt")
+
+[node name="Dimmer" type="ColorRect" parent="Paper" unique_id=19898516]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2960.0
+offset_top = -2260.0
+offset_right = 1352.0001
+offset_bottom = 399.99988
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.6745098)
-
-[node name="Paper" type="TextureRect" parent="." unique_id=548825361]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.96
-offset_left = -160.0
-offset_top = -200.0
-offset_right = 480.0
-offset_bottom = 600.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_jxwmt")
+color = Color(0, 0, 0, 0.45490196)
 
 [node name="OrderName" type="Label" parent="Paper" unique_id=1864899710]
 layout_mode = 1
@@ -109,13 +117,14 @@ offset_bottom = 0.399963
 
 [node name="Button" type="Button" parent="." unique_id=493156476]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = -96.0
-offset_right = 80.0
-offset_bottom = 104.0
+anchors_preset = -1
+anchor_top = -0.042000003
+anchor_right = 0.86500007
+anchor_bottom = 0.88100004
+offset_left = -60.00003
+offset_top = -83.63603
+offset_right = 93.69594
+offset_bottom = 71.313934
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uepb5")

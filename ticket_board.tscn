@@ -25,12 +25,15 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="TicketList" type="HBoxContainer" parent="." unique_id=1158867725]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -88.60556
-offset_top = 53.452583
-offset_right = -5.866745
-offset_bottom = 239.66202
+anchors_preset = -1
+anchor_left = -88.288
+anchor_top = -30.286001
+anchor_right = 95.701004
+anchor_bottom = 54.152004
+offset_left = -0.3175583
+offset_top = 83.73859
+offset_right = -100.56775
+offset_bottom = 185.51001
 grow_horizontal = 2
 rotation = -1.567
 alignment = 1
