@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://dx1k8eiajy5m4" path="res://ticket_board.gd" id="1_2cgbe"]
 [ext_resource type="Texture2D" uid="uid://hdq2b5hke7ih" path="res://orderboard2.png" id="1_pdks4"]
 
-[node name="TicketBoard" type="Sprite2D" unique_id=1390296161]
+[node name="TicketBoard" type="Control" unique_id=1390296161]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_2cgbe")
 
 [node name="Board" type="NinePatchRect" parent="." unique_id=1625376653]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -25,15 +28,13 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="TicketList" type="HBoxContainer" parent="." unique_id=1158867725]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = -88.288
-anchor_top = -30.286001
-anchor_right = 95.701004
-anchor_bottom = 54.152004
-offset_left = -0.3175583
-offset_top = 83.73859
-offset_right = -100.56775
-offset_bottom = 185.51001
+offset_left = -80.0
+offset_top = -24.0
+offset_right = 88.0
+offset_bottom = 34.0
 grow_horizontal = 2
-rotation = -1.567
+grow_vertical = 2
+theme_override_constants/separation = 3
 alignment = 1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blexssafhd3cj"]
 
 [ext_resource type="Script" uid="uid://sys5daxcaanp" path="res://order_ticket.gd" id="1_0t5jx"]
-[ext_resource type="Texture2D" uid="uid://bxd7ay05fyvnu" path="res://orderticket1.png" id="1_jxwmt"]
+[ext_resource type="Texture2D" uid="uid://dp5wkfhwgmsat" path="res://orderticket4.png" id="2_8n621"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uepb5"]
 content_margin_left = 2.0
@@ -34,37 +34,25 @@ border_width_bottom = 2
 border_color = Color(0.8, 0.8, 0.8, 0.196078)
 
 [node name="OrderTicket" type="Control" unique_id=1790043653]
-top_level = true
-custom_minimum_size = Vector2(120, 160)
+custom_minimum_size = Vector2(38, 48)
 layout_mode = 3
-anchor_left = 0.47300002
-anchor_top = 0.476
-anchor_right = 0.47300002
-anchor_bottom = 0.476
-offset_left = -110.895996
-offset_top = -155.448
-offset_right = 173.104
-offset_bottom = 186.552
+anchors_preset = 0
+offset_right = 38.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(100, 150)
 script = ExtResource("1_0t5jx")
 
 [node name="Paper" type="TextureRect" parent="." unique_id=548825361]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.11400001
-anchor_right = 0.92800003
-anchor_bottom = 0.96700007
-offset_left = -136.37598
-offset_top = -139.99995
-offset_right = 628.36
-offset_bottom = 779.0381
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_jxwmt")
+texture = ExtResource("2_8n621")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Dimmer" type="ColorRect" parent="Paper" unique_id=19898516]
 show_behind_parent = true
@@ -83,48 +71,50 @@ color = Color(0, 0, 0, 0.45490196)
 [node name="OrderName" type="Label" parent="Paper" unique_id=1864899710]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.27
-anchor_top = 0.517
-anchor_right = 0.708
-anchor_bottom = 0.566
-offset_left = 0.199997
-offset_top = -0.600006
-offset_right = -0.119995
-offset_bottom = 0.199951
+anchor_left = 0.273
+anchor_top = 0.332
+anchor_right = 0.711
+anchor_bottom = 0.423
+offset_left = -0.37400055
+offset_top = -0.0080013275
+offset_right = -0.018001556
+offset_bottom = 0.01599884
+theme_override_colors/font_color = Color(0.298039, 0.25098, 0.517647, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0.823529, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 3
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="OrderImage" type="TextureRect" parent="Paper" unique_id=1830068261]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.375
-anchor_top = 0.4
-anchor_right = 0.604
-anchor_bottom = 0.517
-offset_left = 13.3333
-offset_right = -0.226715
-offset_bottom = 0.399994
+anchor_left = 0.36
+anchor_top = 0.435
+anchor_right = 0.64
+anchor_bottom = 0.545
+expand_mode = 1
+stretch_mode = 5
 
 [node name="IngredientList" type="HBoxContainer" parent="Paper" unique_id=52460717]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.271
-anchor_top = 0.616
-anchor_right = 0.708
-anchor_bottom = 0.732
-offset_left = 13.56
-offset_top = 0.199951
-offset_right = 0.880005
-offset_bottom = 0.399963
+anchor_left = 0.289
+anchor_top = 0.646
+anchor_right = 0.711
+anchor_bottom = 0.708
+offset_left = 0.017999649
+offset_top = -0.0080013275
+offset_right = -0.018001556
+offset_bottom = 0.01599884
+theme_override_constants/separation = 1
+alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=493156476]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.042000003
-anchor_right = 0.86500007
-anchor_bottom = 0.88100004
-offset_left = -60.00003
-offset_top = -83.63603
-offset_right = 93.69594
-offset_bottom = 71.313934
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uepb5")
