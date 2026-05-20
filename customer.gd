@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @export var speed:float = 120
+@export var patience_time: float = 20.0
+@export var angry_energy_penalty: int = 1
 @export var possible_orders: Array[String] = ["FriedRice","Salad","Sushi","Onigiri"]
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -17,15 +19,20 @@ var order_name: String = ""
 var arrived: bool = false
 var leaving: bool = false
 var at_table: bool = false
+var patience_left: float = 0.0
+var patience_expired: bool = false
+var served_successfully: bool = false
 
 var my_table = null
 
 @onready var bubble_bg: TextureRect = $Bubble/BubbleBG
 @onready var food_icon: TextureRect = $"Bubble/BubbleBG/Food Icon"
+@onready var customer_timer: Sprite2D = $CustomerTimer
 
 func _ready() -> void:
-	handle_arrival()
-	show_bubble()
+	patience_left = patience_time
+	update_customer_timer()
+	$Bubble.visible = false
 	
 func set_target(pos:Vector2):
 	target_position = pos
@@ -37,6 +44,10 @@ func generate_order():
 		
 	order_generated = true
 	order_name = possible_orders.pick_random()
+	patience_left = patience_time
+	patience_expired = false
+	served_successfully = false
+	update_customer_timer()
 	print(order_name)
 	show_bubble()
 	
@@ -46,6 +57,7 @@ func generate_order():
 		
 func show_bubble():
 	if order_images.has(order_name):
+		$Bubble.visible = true
 		food_icon.texture = order_images[order_name]
 		bubble_bg.visible = true
 	else:
@@ -54,7 +66,9 @@ func leave_resturant():
 	
 	leaving = true
 	arrived = false
+	at_table = false
 	order_generated = false
+	update_customer_timer()
 	
 	if my_table != null:
 		my_table.occupied = false
@@ -63,7 +77,9 @@ func leave_resturant():
 	animated_sprite_2d.play("leaving")
 	set_target(exit_position)
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	update_customer_patience(delta)
+
 	if arrived:
 		return
 	if target_position == Vector2.ZERO:
@@ -93,12 +109,50 @@ func handle_arrival():
 	else:
 		if my_table != null:
 			my_table.customer_ref = self
-		at_table = true
-		generate_order()
-		
-		
+			at_table = true
+			generate_order()
+
+func update_customer_patience(delta: float) -> void:
+	if not at_table or not order_generated or leaving or served_successfully or patience_expired:
+		return
+
+	patience_left = max(patience_left - delta, 0.0)
+	update_customer_timer()
+
+	if patience_left <= 0.0:
+		patience_expired = true
+		customer_got_angry_and_left()
+
+func update_customer_timer() -> void:
+	if customer_timer == null:
+		return
+	customer_timer.visible = at_table and order_generated and not leaving and not served_successfully
+	if patience_time <= 0.0:
+		customer_timer.frame = customer_timer.hframes * customer_timer.vframes - 1
+		return
+	var empty_amount = 1.0 - clamp(patience_left / patience_time, 0.0, 1.0)
+	var last_frame = customer_timer.hframes * customer_timer.vframes - 1
+	customer_timer.frame = clampi(roundi(empty_amount * last_frame), 0, last_frame)
+
+func customer_got_angry_and_left() -> void:
+	print("Customer got angry and left!")
+	at_table = false
+	animated_sprite_2d.play("angry")
+	$Bubble.visible = false
+	update_customer_timer()
+
+	var energy = get_tree().get_first_node_in_group("energy")
+	if energy:
+		for _i in range(angry_energy_penalty):
+			energy.remove_energy()
+
+	GlobalSignals.customer_served.emit(order_name, self)
+	await get_tree().create_timer(1.0).timeout
+	leave_resturant()
+
+
 func receive_dish(dish_node):
-	if not at_table:
+	if not at_table or patience_expired or leaving:
 		print("Customer not seated yet!")
 		return
 	print("dish_name: ", dish_node.get("item_name"), " | order_name: ", order_name)
@@ -109,6 +163,8 @@ func receive_dish(dish_node):
 	var energy = get_tree().get_first_node_in_group("energy")
 	print("comparing: '", dish_name, "' == '", order_name, "'")
 	if dish_name == order_name:
+		served_successfully = true
+		update_customer_timer()
 		if energy:
 			energy.add_energy()
 		animated_sprite_2d.play("happy")

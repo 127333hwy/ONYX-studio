@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://qsr0kovdhi5u"]
+[gd_scene format=3 uid="uid://qsr0kovdhi5u"]
 
 [ext_resource type="Script" uid="uid://dydin1hmfg6ca" path="res://customer.gd" id="1_00dqi"]
 [ext_resource type="Texture2D" uid="uid://dj6ig0hycqb5i" path="res://speeching bubble.png" id="2_dumot"]
 [ext_resource type="Texture2D" uid="uid://bhpj3mevi0m2c" path="res://customer-Sheet (1).png" id="2_f7asb"]
 [ext_resource type="Texture2D" uid="uid://kx2qb51d8ao3" path="res://officallcustomer-Sheet (1).png" id="3_co351"]
+[ext_resource type="Texture2D" uid="uid://bti2sbauj6tlt" path="res://customertimer-Sheet.png" id="4_timer"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_co351"]
 atlas = ExtResource("3_co351")
@@ -87,28 +88,36 @@ size = Vector2(27, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unyuo"]
 
-[node name="Customer" type="CharacterBody2D" groups=["customer"]]
+[node name="Customer" type="CharacterBody2D" unique_id=1870444303 groups=["customer"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_00dqi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1867553525]
 position = Vector2(-71.99999, -55.999996)
 scale = Vector2(0.175, 0.175)
 sprite_frames = SubResource("SpriteFrames_0rcyg")
 animation = &"angry"
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=613603490]
 light_mask = 2
 position = Vector2(1.5, 5.5)
 shape = SubResource("RectangleShape2D_ttndt")
 
-[node name="Bubble" type="Node2D" parent="."]
+[node name="CustomerTimer" type="Sprite2D" parent="." unique_id=791624870]
+z_index = 2
+position = Vector2(-36, 4.999999)
+scale = Vector2(0.19187501, 0.136875)
+texture = ExtResource("4_timer")
+hframes = 6
+vframes = 6
+
+[node name="Bubble" type="Node2D" parent="." unique_id=178524552]
 z_index = 1
 position = Vector2(35, -41)
 
-[node name="BubbleBG" type="TextureRect" parent="Bubble"]
+[node name="BubbleBG" type="TextureRect" parent="Bubble" unique_id=2139907295]
 offset_left = -10.0
 offset_top = -55.0
 offset_right = 502.0
@@ -119,7 +128,7 @@ size_flags_vertical = 0
 texture = ExtResource("2_dumot")
 metadata/_edit_use_anchors_ = true
 
-[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG"]
+[node name="Food Icon" type="TextureRect" parent="Bubble/BubbleBG" unique_id=1964687344]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1

@@ -4698,7 +4698,7 @@ position = Vector2(1214, 507)
 chair = NodePath("../../Chairs/Chair4")
 
 [node name="Timer" type="Timer" parent="." unique_id=1284225922]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [node name="Worldboundries" parent="." unique_id=2064885530 instance=ExtResource("2_8ftn4")]
