@@ -12,7 +12,7 @@ extends CharacterBody2D
 	
 var target_position: Vector2 = Vector2(-9999, 9999)
 var exit_position: Vector2 = Vector2.ZERO
-
+var order_generated:bool = false
 var order_name: String = ""
 var arrived: bool = false
 var leaving: bool = false
@@ -32,6 +32,10 @@ func set_target(pos:Vector2):
 	arrived = false
 
 func generate_order():
+	if order_generated:
+		return
+		
+	order_generated = true
 	order_name = possible_orders.pick_random()
 	print(order_name)
 	show_bubble()
@@ -39,6 +43,7 @@ func generate_order():
 	if order_images.has(order_name):
 		var food_tex = order_images[order_name]
 		GlobalSignals.customer_ordered.emit(order_name, food_tex, self)
+		
 func show_bubble():
 	if order_images.has(order_name):
 		food_icon.texture = order_images[order_name]
@@ -46,13 +51,15 @@ func show_bubble():
 	else:
 		print("Error: No image found for ", order_name)
 func leave_resturant():
+	
 	leaving = true
 	arrived = false
+	order_generated = false
 	
 	if my_table != null:
 		my_table.occupied = false
 		my_table.customer_ref = null
-		
+	
 	animated_sprite_2d.play("leaving")
 	set_target(exit_position)
 
