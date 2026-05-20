@@ -1,19 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7olpbwcd0r7s"]
+[gd_scene format=3 uid="uid://b7olpbwcd0r7s"]
 
-[ext_resource type="Shader" uid="uid://ckig1qj6pbvn5" path="res://energy_bar.gdshader" id="1_q48n7"]
-[ext_resource type="Texture2D" uid="uid://dvqfy48yihxgj" path="res://energy bar-Sheet2.png" id="1_rdnti"]
+[ext_resource type="Script" uid="uid://crj6yj6bp433q" path="res://energy_bar.gd" id="1_q48n7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d65ol"]
-render_priority = 0
-shader = ExtResource("1_q48n7")
-
-[node name="EnergyBar" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-material = SubResource("ShaderMaterial_d65ol")
-texture = ExtResource("1_rdnti")
-region_enabled = true
-region_rect = Rect2(0, 416, 64, 16)
+[node name="Energy" type="CanvasLayer" unique_id=656705183]
+script = ExtResource("1_q48n7")

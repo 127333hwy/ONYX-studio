@@ -91,10 +91,16 @@ func handle_arrival():
 		
 		
 func receive_dish(dish_node):
+	if not at_table:
+		print("Customer not seated yet!")
+		return
 	print("dish_name: ", dish_node.get("item_name"), " | order_name: ", order_name)
 	var dish_name = dish_node.name
+	var energy = get_tree().get_first_node_in_group("energy")
 	print("comparing: '", dish_name, "' == '", order_name, "'")
 	if dish_name == order_name:
+		if energy:
+			energy.add_energy()
 		animated_sprite_2d.play("happy")
 		print("Correct dish!")
 		$Bubble.visible = false
@@ -106,6 +112,8 @@ func receive_dish(dish_node):
 		
 	else:
 		print("Wrong dish!")
+		if energy:
+			energy.remove_energy()
 		dish_node.queue_free()
 		
 	print("dish_name: ", dish_node.get("item_name"), " | order_name: ", order_name)

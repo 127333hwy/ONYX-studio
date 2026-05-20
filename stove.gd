@@ -167,6 +167,9 @@ func _on_burn_timer_timeout():
 	burn_all_finished()
 
 func burn_all_finished():
+	var energy = get_tree().get_first_node_in_group("energy")
+	if energy:
+		energy.remove_energy()
 	for child in get_children():
 		if child.is_in_group("dish"):
 			return
