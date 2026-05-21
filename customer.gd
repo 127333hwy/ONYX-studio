@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var angry_energy_penalty: int = 1
 @export var possible_orders: Array[String] = ["FriedRice","Salad","Sushi","Onigiri"]
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var laugh: AudioStreamPlayer2D = $laugh
 
 @export var order_images: Dictionary = {
 	"FriedRice": preload("res://Fried_rice.tres"),
@@ -138,6 +140,7 @@ func customer_got_angry_and_left() -> void:
 	print("Customer got angry and left!")
 	at_table = false
 	animated_sprite_2d.play("angry")
+	audio_stream_player_2d.play()
 	$Bubble.visible = false
 	update_customer_timer()
 
@@ -168,6 +171,7 @@ func receive_dish(dish_node):
 		if energy:
 			energy.add_energy()
 		animated_sprite_2d.play("happy")
+		laugh.play()
 		print("Correct dish!")
 		$Bubble.visible = false
 		GlobalSignals.customer_served.emit(order_name, self)
@@ -180,6 +184,7 @@ func receive_dish(dish_node):
 	else:
 		print("Wrong dish!")
 		animated_sprite_2d.play("angry")
+		audio_stream_player_2d.play()
 		if energy:
 			energy.remove_energy()
 		dish_node.queue_free()

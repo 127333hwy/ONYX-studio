@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bhpj3mevi0m2c" path="res://customer-Sheet (1).png" id="2_f7asb"]
 [ext_resource type="Texture2D" uid="uid://kx2qb51d8ao3" path="res://officallcustomer-Sheet (1).png" id="3_co351"]
 [ext_resource type="Texture2D" uid="uid://bti2sbauj6tlt" path="res://customertimer-Sheet.png" id="4_timer"]
+[ext_resource type="AudioStream" uid="uid://b80unr8nc41hl" path="res://222647__mariallinas__angry-scream.mp3" id="6_eas7q"]
+[ext_resource type="AudioStream" uid="uid://p4piwemwtifr" path="res://697530__riippumattog__clown-laugh.wav" id="7_0rcyg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_co351"]
 atlas = ExtResource("3_co351")
@@ -146,3 +148,9 @@ scale = Vector2(8, 8)
 texture = SubResource("AtlasTexture_unyuo")
 stretch_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2019029266]
+stream = ExtResource("6_eas7q")
+
+[node name="laugh" type="AudioStreamPlayer2D" parent="." unique_id=1816454203]
+stream = ExtResource("7_0rcyg")
