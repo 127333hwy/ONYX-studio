@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://t20v7g1jois8"]
+
+[ext_resource type="Texture2D" uid="uid://fhxa8yafnyrm" path="res://monkey-Sheet.png" id="1_mggpi"]
+[ext_resource type="Script" uid="uid://crwg77eet54ob" path="res://loading_screen.gd" id="1_weff3"]
+[ext_resource type="FontFile" uid="uid://bkx762o0tya34" path="res://Jersey10-Regular.ttf" id="2_fgney"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htrc2"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weff3"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgney"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(1280, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74xf4"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(1920, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa1l2"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(0, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_401ed"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(640, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38ncu"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(1280, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrdmd"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(1920, 640, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx0w1"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(0, 1280, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0ihe"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(640, 1280, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgwxq"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(1280, 1280, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he51e"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(1920, 1280, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spc7j"]
+atlas = ExtResource("1_mggpi")
+region = Rect2(0, 1920, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wpy5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htrc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weff3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgney")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74xf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa1l2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_401ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38ncu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrdmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx0w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0ihe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgwxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he51e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spc7j")
+}],
+"loop": true,
+"name": &"cooking",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LoadingScreen" type="Control" unique_id=537730284]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_weff3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=89412702]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.800001
+anchor_bottom = 16.25
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.252195, 0.5476248, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=697739110]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -40.5
+offset_right = 2.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1530949890]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fgney")
+theme_override_font_sizes/font_size = 246
+text = "Loading"
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=1869736497]
+layout_mode = 2
+
+[node name="TipLabel" type="Label" parent="VBoxContainer" unique_id=1135626796]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer" unique_id=1245185554]
+position = Vector2(-121, 138)
+scale = Vector2(0.56386715, 0.5798828)
+sprite_frames = SubResource("SpriteFrames_wpy5q")
+animation = &"cooking"
+autoplay = "cooking"
+frame_progress = 0.519175
