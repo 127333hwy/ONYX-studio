@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d2jl8e2d2nd3d"]
+
+[ext_resource type="AudioStream" uid="uid://q6evuo74bqow" path="res://AJ Melody (feat. Joshua F. Olmos).mp3" id="1_3h6ak"]
+
+[node name="Music" type="AudioStreamPlayer2D" unique_id=1112056419]
+stream = ExtResource("1_3h6ak")
+autoplay = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q6evuo74bqow"
+path="res://.godot/imported/AJ Melody (feat. Joshua F. Olmos).mp3-ed0417eb0ddd6be158f4b36df37358d9.mp3str"
+
+[deps]
+
+source_file="res://AJ Melody (feat. Joshua F. Olmos).mp3"
+dest_files=["res://.godot/imported/AJ Melody (feat. Joshua F. Olmos).mp3-ed0417eb0ddd6be158f4b36df37358d9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

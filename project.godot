@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalSignals="*uid://bfrtfvxbcmg87"
+Music="*uid://d2jl8e2d2nd3d"
 
 [input]
 
