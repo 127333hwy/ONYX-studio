@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://k1kmo8bj7t1c"]
+[gd_scene format=3 uid="uid://t20v7g1jois8"]
 
 [ext_resource type="Texture2D" uid="uid://fhxa8yafnyrm" path="res://monkey-Sheet.png" id="1_mggpi"]
-[ext_resource type="Script" path="res://loading_screen.gd" id="1_weff3"]
+[ext_resource type="Script" uid="uid://crwg77eet54ob" path="res://loading_screen.gd" id="1_weff3"]
 [ext_resource type="FontFile" uid="uid://bkx762o0tya34" path="res://Jersey10-Regular.ttf" id="2_fgney"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_htrc2"]
@@ -124,7 +124,7 @@ anchor_right = 28.800001
 anchor_bottom = 16.25
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.70284903, 0.8425186, 1)
+color = Color(0, 0.252195, 0.5476248, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=697739110]
 layout_mode = 1
