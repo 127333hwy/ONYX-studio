@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://b51woqxxuo3me" path="res://customer_spawner.gd" id="3_uu44d"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
 [ext_resource type="PackedScene" uid="uid://ce4jmslr8mb7v" path="res://lettuce.tscn" id="6_vm637"]
-[ext_resource type="Script" uid="uid://cwugidfdenkn" path="res://item_pickup.gd" id="7_3c612"]
+[ext_resource type="Script" path="res://item_pickup.gd" id="7_3c612"]
 [ext_resource type="Texture2D" uid="uid://bvtvg57g4w68e" path="res://chairs-Sheet.png" id="7_80ko1"]
 [ext_resource type="PackedScene" uid="uid://d1axh0eib7r6q" path="res://fish.tscn" id="7_h681u"]
 [ext_resource type="PackedScene" uid="uid://bn2rlgbt7v75y" path="res://meat.tscn" id="8_67dyb"]
@@ -19,13 +19,13 @@
 [ext_resource type="Script" uid="uid://c5jbkvsoy8upj" path="res://open_pause_button.gd" id="8_ji23w"]
 [ext_resource type="Texture2D" uid="uid://bylhgkui7le5q" path="res://crates-Sheet.png" id="9_e13xq"]
 [ext_resource type="PackedScene" uid="uid://cf1r0pydbne0c" path="res://stove.tscn" id="11_sws78"]
-[ext_resource type="Script" uid="uid://cyyp8p5oq06fg" path="res://kitchen_door.gd" id="17_j14tx"]
+[ext_resource type="Script" path="res://kitchen_door.gd" id="17_j14tx"]
 [ext_resource type="Texture2D" uid="uid://cx0jpfvsv0fa3" path="res://door-export.png" id="18_tcsqq"]
 [ext_resource type="AudioStream" uid="uid://bxf00o8xk0rdd" path="res://doorbell.wav" id="19_j14tx"]
-[ext_resource type="PackedScene" uid="uid://dhhdsy51kgscu" path="res://chair.tscn" id="19_oy8qm"]
+[ext_resource type="PackedScene" path="res://chair.tscn" id="19_oy8qm"]
 [ext_resource type="PackedScene" uid="uid://b7olpbwcd0r7s" path="res://energy_bar.tscn" id="20_uqens"]
 [ext_resource type="PackedScene" uid="uid://wedxf8l54qhy" path="res://ticket_board.tscn" id="21_k11fe"]
-[ext_resource type="PackedScene" uid="uid://bbksfvajwdvrx" path="res://trashcan.tscn" id="22_kea01"]
+[ext_resource type="PackedScene" path="res://trashcan.tscn" id="22_kea01"]
 [ext_resource type="Texture2D" uid="uid://dvqfy48yihxgj" path="res://energy bar-Sheet2.png" id="27_knmng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kea01"]
@@ -4603,10 +4603,10 @@ position = Vector2(909.5, 166)
 position = Vector2(1213.5, 166)
 
 [node name="Chair3" parent="Chairs" unique_id=1161675566 instance=ExtResource("19_oy8qm")]
-position = Vector2(913, 416)
+position = Vector2(908, 448)
 
 [node name="Chair4" parent="Chairs" unique_id=2061214864 instance=ExtResource("19_oy8qm")]
-position = Vector2(1217, 419)
+position = Vector2(1214, 449)
 
 [node name="Chair5" type="Sprite2D" parent="Chairs" unique_id=952947832]
 texture_filter = 1
@@ -4618,7 +4618,7 @@ region_rect = Rect2(6, 8, 19, 21)
 
 [node name="Chair6" type="Sprite2D" parent="Chairs" unique_id=1691159032]
 texture_filter = 1
-position = Vector2(1296, 480)
+position = Vector2(1296, 524)
 scale = Vector2(3, 3)
 texture = ExtResource("7_80ko1")
 region_enabled = true
@@ -4626,7 +4626,7 @@ region_rect = Rect2(6, 8, 19, 21)
 
 [node name="Chair7" type="Sprite2D" parent="Chairs" unique_id=460440726]
 texture_filter = 1
-position = Vector2(1125.5, 246)
+position = Vector2(1126, 246)
 scale = Vector2(3, 3)
 texture = ExtResource("7_80ko1")
 region_enabled = true
@@ -4634,7 +4634,7 @@ region_rect = Rect2(102, 8, 19, 21)
 
 [node name="Chair8" type="Sprite2D" parent="Chairs" unique_id=1719346087]
 texture_filter = 1
-position = Vector2(992.00006, 491)
+position = Vector2(992, 523)
 scale = Vector2(3, 3)
 texture = ExtResource("7_80ko1")
 region_enabled = true
@@ -4654,12 +4654,12 @@ chair = NodePath("../../Chairs/Chair2")
 
 [node name="Table3" parent="Tables" unique_id=456082869 node_paths=PackedStringArray("chair") groups=["tables"] instance=ExtResource("1_72gul")]
 z_index = 11
-position = Vector2(912, 503)
+position = Vector2(908, 536)
 chair = NodePath("../../Chairs/Chair3")
 
 [node name="Table4" parent="Tables" unique_id=1303384664 node_paths=PackedStringArray("chair") groups=["tables"] instance=ExtResource("1_72gul")]
 z_index = 11
-position = Vector2(1214, 507)
+position = Vector2(1214, 537)
 chair = NodePath("../../Chairs/Chair4")
 
 [node name="Timer" type="Timer" parent="." unique_id=1284225922]

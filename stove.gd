@@ -140,7 +140,7 @@ func spawn_finished_dish(dish_scene):
 	dish_picked_up = false
 	burn_animated_sprite.visible = true
 	burn_animated_sprite.play("burn_timer_animation")
-	burn_timer.start(4.5)
+	burn_timer.start(5.5)
 
 func _on_burn_timer_timeout():
 	if dish_picked_up:

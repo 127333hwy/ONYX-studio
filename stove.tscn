@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cf1r0pydbne0c"]
+[gd_scene format=3 uid="uid://cf1r0pydbne0c"]
 
 [ext_resource type="Script" uid="uid://cxfgwsvp7hgf5" path="res://stove.gd" id="1_ugy6n"]
 [ext_resource type="PackedScene" uid="uid://dt15obsj7t83i" path="res://sushi.tscn" id="2_eim6s"]
@@ -374,7 +374,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Stove" type="Area2D" groups=["stove"]]
+[node name="Stove" type="Area2D" unique_id=878069675 groups=["stove"]]
 script = ExtResource("1_ugy6n")
 sushi_scene = ExtResource("2_eim6s")
 fried_rice_scene = ExtResource("3_eim6s")
@@ -385,14 +385,14 @@ burnt_sushi_scene = ExtResource("6_hbb0h")
 burnt_salad_scene = ExtResource("8_7cs0s")
 burnt_onigiri_scene = ExtResource("9_mon0b")
 
-[node name="CookTimer" type="Timer" parent="."]
+[node name="CookTimer" type="Timer" parent="." unique_id=1293177792]
 one_shot = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=673990099]
 position = Vector2(8, 4)
 shape = SubResource("RectangleShape2D_5elmm")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1026156919]
 modulate = Color(0.99849707, 0.8217798, 0.8927492, 1)
 texture_filter = 1
 position = Vector2(0, -40)
@@ -402,18 +402,18 @@ animation = &"burn_timer_animation"
 frame = 27
 frame_progress = 1.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1885288644]
 position = Vector2(2, 9)
 scale = Vector2(0.17, 0.17)
 sprite_frames = SubResource("SpriteFrames_wwgq7")
 animation = &"cooking"
 autoplay = "idle"
 
-[node name="BurnTimer" type="Timer" parent="."]
+[node name="BurnTimer" type="Timer" parent="." unique_id=1203121628]
 wait_time = 0.1
 one_shot = true
 
-[node name="CookingSound" type="AudioStreamPlayer2D" parent="."]
+[node name="CookingSound" type="AudioStreamPlayer2D" parent="." unique_id=235744124]
 stream = ExtResource("13_7cs0s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
