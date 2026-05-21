@@ -118,7 +118,7 @@ func update_customer_patience(delta: float) -> void:
 	if not at_table or not order_generated or leaving or served_successfully or patience_expired:
 		return
 
-	patience_left = max(patience_left - delta, 0.0)
+	patience_left = max(patience_left - (delta * 0.5), 0.0)
 	update_customer_timer()
 
 	if patience_left <= 0.0:
