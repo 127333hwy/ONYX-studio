@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://b51woqxxuo3me" path="res://customer_spawner.gd" id="3_uu44d"]
 [ext_resource type="PackedScene" uid="uid://qsr0kovdhi5u" path="res://customer.tscn" id="4_a2g17"]
 [ext_resource type="PackedScene" uid="uid://ce4jmslr8mb7v" path="res://lettuce.tscn" id="6_vm637"]
-[ext_resource type="Script" path="res://item_pickup.gd" id="7_3c612"]
+[ext_resource type="Script" uid="uid://cwugidfdenkn" path="res://item_pickup.gd" id="7_3c612"]
 [ext_resource type="Texture2D" uid="uid://bvtvg57g4w68e" path="res://chairs-Sheet.png" id="7_80ko1"]
 [ext_resource type="PackedScene" uid="uid://d1axh0eib7r6q" path="res://fish.tscn" id="7_h681u"]
 [ext_resource type="PackedScene" uid="uid://bn2rlgbt7v75y" path="res://meat.tscn" id="8_67dyb"]
@@ -22,10 +22,10 @@
 [ext_resource type="Script" uid="uid://cyyp8p5oq06fg" path="res://kitchen_door.gd" id="17_j14tx"]
 [ext_resource type="Texture2D" uid="uid://cx0jpfvsv0fa3" path="res://door-export.png" id="18_tcsqq"]
 [ext_resource type="AudioStream" uid="uid://bxf00o8xk0rdd" path="res://doorbell.wav" id="19_j14tx"]
-[ext_resource type="PackedScene" path="res://chair.tscn" id="19_oy8qm"]
+[ext_resource type="PackedScene" uid="uid://dhhdsy51kgscu" path="res://chair.tscn" id="19_oy8qm"]
 [ext_resource type="PackedScene" uid="uid://b7olpbwcd0r7s" path="res://energy_bar.tscn" id="20_uqens"]
 [ext_resource type="PackedScene" uid="uid://wedxf8l54qhy" path="res://ticket_board.tscn" id="21_k11fe"]
-[ext_resource type="PackedScene" path="res://trashcan.tscn" id="22_kea01"]
+[ext_resource type="PackedScene" uid="uid://bbksfvajwdvrx" path="res://trashcan.tscn" id="22_kea01"]
 [ext_resource type="Texture2D" uid="uid://dvqfy48yihxgj" path="res://energy bar-Sheet2.png" id="27_knmng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kea01"]
@@ -4456,47 +4456,27 @@ region = Rect2(0, 416, 64, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sx5s1"]
 atlas = ExtResource("27_knmng")
-region = Rect2(0, 384, 64, 16)
+region = Rect2(0, 352, 64, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkt3b"]
 atlas = ExtResource("27_knmng")
-region = Rect2(0, 352, 64, 16)
+region = Rect2(0, 304, 64, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ni4q"]
 atlas = ExtResource("27_knmng")
-region = Rect2(0, 304, 64, 16)
+region = Rect2(0, 240, 64, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cou3c"]
 atlas = ExtResource("27_knmng")
-region = Rect2(0, 272, 64, 16)
+region = Rect2(0, 160, 64, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obmqa"]
 atlas = ExtResource("27_knmng")
-region = Rect2(0, 240, 64, 16)
+region = Rect2(0, 96, 64, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8owx"]
 atlas = ExtResource("27_knmng")
-region = Rect2(0, 192, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jvysm"]
-atlas = ExtResource("27_knmng")
-region = Rect2(0, 160, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3iu0a"]
-atlas = ExtResource("27_knmng")
-region = Rect2(0, 128, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0md0"]
-atlas = ExtResource("27_knmng")
-region = Rect2(0, 96, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8h1ea"]
-atlas = ExtResource("27_knmng")
-region = Rect2(0, 64, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vo70k"]
-atlas = ExtResource("27_knmng")
-region = Rect2(0, 32, 64, 16)
+region = Rect2(0, 16, 64, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sx5s1"]
 animations = [{
@@ -4521,21 +4501,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y8owx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jvysm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3iu0a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q0md0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1ea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vo70k")
 }],
 "loop": true,
 "name": &"default",
@@ -4880,7 +4845,7 @@ modulate = Color(1, 0.92941177, 1, 1)
 texture_filter = 1
 position = Vector2(65.166664, 49.999996)
 sprite_frames = SubResource("SpriteFrames_sx5s1")
-frame_progress = 0.20657489
+frame_progress = 0.9184402
 
 [connection signal="timeout" from="Timer" to="CustomerSpawner" method="_on_timer_timeout"]
 [connection signal="body_entered" from="KitchenDoor" to="KitchenDoor" method="_on_body_entered"]
