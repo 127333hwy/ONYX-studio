@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bb8kq4d115eb7"]
+
+[ext_resource type="Texture2D" uid="uid://cqbityngxy1gq" path="res://Screenshot 2026-05-20 221708.png" id="1_fsb5k"]
+
+[node name="Ending" type="CanvasLayer" unique_id=107091611]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=935185554]
+position = Vector2(576, 328)
+scale = Vector2(1.095, 1.095)
+texture = ExtResource("1_fsb5k")
+
+[node name="Label" type="Label" parent="." unique_id=2102121858]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -11.5
+offset_right = 69.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "To be continued..."

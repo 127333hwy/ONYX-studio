@@ -14,3 +14,4 @@ func remove_energy():
 	
 func on_bar_full():
 	print("Bar is full!")
+	get_tree().change_scene_to_file("res://ending.tscn")
